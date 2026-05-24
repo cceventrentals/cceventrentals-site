@@ -1,79 +1,516 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>C&C Event Rentals LLC</title>
-<style>
-body{font-family:Arial,sans-serif;margin:0;background:#f7f4ee;color:#1f2d1f}
-header{background:#2f4f3a;color:white;padding:40px 20px;text-align:center}
-section{padding:30px 20px;max-width:1000px;margin:auto}
-.card-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px}
-.card{background:white;padding:20px;border-radius:12px;box-shadow:0 2px 8px rgba(0,0,0,0.1)}
-button{background:#2f4f3a;color:white;padding:12px 18px;border:none;border-radius:8px}
-footer{background:#2f4f3a;color:white;text-align:center;padding:20px}
-form input,form textarea{width:100%;padding:12px;margin-top:10px;margin-bottom:15px}
-</style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>C&C Event Rentals LLC | Tables & Chairs in Eastern Kentucky</title>
+  <style>
+    :root {
+      --green: #1f2d1f;
+      --green-2: #2f4f3a;
+      --cream: #f7f4ee;
+      --cream-2: #ece5d8;
+      --text: #1f2d1f;
+      --white: #ffffff;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background: var(--cream);
+      color: var(--text);
+    }
+
+    .topbar {
+      background: rgba(18, 28, 18, 0.96);
+      color: var(--white);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 16px 32px;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    .brand {
+      font-weight: 800;
+      letter-spacing: 1px;
+      font-size: 18px;
+    }
+
+    .nav {
+      display: flex;
+      gap: 24px;
+      align-items: center;
+      font-size: 14px;
+      text-transform: uppercase;
+      font-weight: 700;
+    }
+
+    .nav a {
+      color: var(--white);
+      text-decoration: none;
+    }
+
+    .nav .quote {
+      background: var(--cream);
+      color: var(--green);
+      padding: 12px 18px;
+      border-radius: 6px;
+    }
+
+    .hero {
+      min-height: 760px;
+      background:
+        linear-gradient(rgba(18, 28, 18, 0.72), rgba(18, 28, 18, 0.86)),
+        radial-gradient(circle at center, rgba(255,255,255,0.08), transparent 45%),
+        #1f2d1f;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 70px 20px 85px;
+    }
+
+    .hero-inner {
+      max-width: 950px;
+      margin: 0 auto;
+    }
+
+    .hero-logo {
+      width: min(680px, 92%);
+      display: block;
+      margin: 0 auto 28px;
+      filter: drop-shadow(0 10px 25px rgba(0,0,0,0.45));
+    }
+
+    .hero h1 {
+      font-size: clamp(34px, 5vw, 58px);
+      margin: 10px 0 6px;
+      font-family: Georgia, serif;
+      line-height: 1.1;
+    }
+
+    .tagline {
+      font-size: clamp(25px, 4vw, 44px);
+      font-style: italic;
+      margin: 0 0 20px;
+      font-family: Georgia, serif;
+    }
+
+    .hero p {
+      font-size: 20px;
+      line-height: 1.55;
+      max-width: 720px;
+      margin: 0 auto;
+    }
+
+    .hero-button,
+    .button {
+      display: inline-block;
+      margin-top: 28px;
+      background: var(--cream);
+      color: var(--green);
+      padding: 15px 30px;
+      border-radius: 7px;
+      text-decoration: none;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: .5px;
+    }
+
+    .feature-strip {
+      background: linear-gradient(90deg, #f6f0e4, #fffaf0, #f6f0e4);
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0;
+      border-bottom: 1px solid #ddd2c3;
+    }
+
+    .feature {
+      text-align: center;
+      padding: 34px 24px;
+      border-right: 1px solid #d7cdbd;
+    }
+
+    .feature:last-child {
+      border-right: none;
+    }
+
+    .feature-icon {
+      font-size: 34px;
+      margin-bottom: 12px;
+    }
+
+    .feature h3 {
+      margin: 0 0 10px;
+      font-size: 16px;
+      text-transform: uppercase;
+    }
+
+    .feature p {
+      margin: 0;
+      line-height: 1.5;
+    }
+
+    section {
+      padding: 55px 22px;
+      max-width: 1120px;
+      margin: auto;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .section-title h2 {
+      font-size: 38px;
+      margin: 0;
+      font-family: Georgia, serif;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .section-title p {
+      font-size: 18px;
+      margin-top: 10px;
+    }
+
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 22px;
+    }
+
+    .card {
+      background: white;
+      padding: 24px;
+      border-radius: 14px;
+      box-shadow: 0 4px 18px rgba(0,0,0,0.10);
+      border: 1px solid #e8dfd2;
+    }
+
+    .card h3 {
+      margin-top: 0;
+      text-transform: uppercase;
+      letter-spacing: .5px;
+    }
+
+    .price {
+      color: var(--green-2);
+      font-weight: 900;
+      font-size: 24px;
+    }
+
+    .split {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 34px;
+      align-items: start;
+    }
+
+    .highlight {
+      background: var(--green);
+      color: white;
+      padding: 46px 22px;
+      max-width: none;
+    }
+
+    .highlight-inner {
+      max-width: 1100px;
+      margin: auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 24px;
+    }
+
+    .highlight h2 {
+      margin: 0 0 8px;
+      font-size: 34px;
+      font-family: Georgia, serif;
+    }
+
+    form {
+      background: white;
+      padding: 28px;
+      border-radius: 14px;
+      box-shadow: 0 4px 18px rgba(0,0,0,0.10);
+      border: 1px solid #e8dfd2;
+    }
+
+    form label {
+      font-weight: 700;
+      display: block;
+      margin-top: 12px;
+    }
+
+    form input,
+    form textarea,
+    form select {
+      width: 100%;
+      padding: 13px;
+      margin-top: 7px;
+      margin-bottom: 12px;
+      border: 1px solid #cfc5b6;
+      border-radius: 7px;
+      font-size: 16px;
+    }
+
+    form button {
+      background: var(--green-2);
+      color: white;
+      padding: 15px 22px;
+      border: none;
+      border-radius: 7px;
+      font-weight: 800;
+      text-transform: uppercase;
+      cursor: pointer;
+      width: 100%;
+      font-size: 16px;
+    }
+
+    footer {
+      background: #172417;
+      color: white;
+      padding: 34px 22px;
+      text-align: center;
+    }
+
+    footer p {
+      margin: 6px 0;
+    }
+
+    @media (max-width: 760px) {
+      .topbar {
+        display: block;
+        text-align: center;
+        padding: 14px;
+      }
+
+      .nav {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 12px;
+        margin-top: 12px;
+        font-size: 12px;
+      }
+
+      .hero {
+        min-height: 650px;
+        padding-top: 40px;
+      }
+
+      .feature-strip {
+        grid-template-columns: 1fr;
+      }
+
+      .feature {
+        border-right: none;
+        border-bottom: 1px solid #d7cdbd;
+      }
+
+      .split {
+        grid-template-columns: 1fr;
+      }
+
+      .highlight-inner {
+        display: block;
+        text-align: center;
+      }
+    }
+  </style>
 </head>
 <body>
-<header>
-<h1>C&C Event Rentals LLC</h1>
-<p>Tables, Chairs, Delivery & Setup Across Eastern Kentucky</p>
-<p>606-634-9988 | 606-634-9996</p>
-</header>
 
-<section>
-<h2>Our Rentals</h2>
-<div class="card-grid">
-<div class="card">
-<h3>White Folding Chairs</h3>
-<p>80 Available</p>
-<p>$2 Each</p>
-</div>
-<div class="card">
-<h3>60-Inch Round Tables</h3>
-<p>9 Available</p>
-<p>$10 Each</p>
-</div>
-</div>
-</section>
+  <div class="topbar">
+    <div class="brand">C&C Event Rentals LLC</div>
+    <nav class="nav">
+      <a href="#rentals">Rentals</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#agreement">Agreement</a>
+      <a href="#contact">Contact</a>
+      <a class="quote" href="#booking">Request a Quote</a>
+    </nav>
+  </div>
 
-<section>
-<h2>Services</h2>
-<div class="card-grid">
-<div class="card">
-<h3>Delivery</h3>
-<p>$25 up to 15 miles</p>
-<p>Travel up to 60 miles</p>
-</div>
-<div class="card">
-<h3>Setup & Breakdown</h3>
-<p>Chair Setup: $1 each</p>
-<p>Table Setup: $3 each</p>
-</div>
-</div>
-</section>
+  <header class="hero">
+    <div class="hero-inner">
+      <img src="images/logo.png" class="hero-logo" alt="C&C Event Rentals Logo">
+      <h1>Quality Rentals. Dependable Service.</h1>
+      <p class="tagline">Built for Every Gathering.</p>
+      <p>C&C Event Rentals provides tables, chairs, delivery, setup, and breakdown service for gatherings across Eastern Kentucky.</p>
+      <a href="#booking" class="hero-button">Request a Quote</a>
+    </div>
+  </header>
 
-<section>
-<h2>Request a Booking</h2>
-<form>
-<input type="text" placeholder="Your Name">
-<input type="email" placeholder="Email">
-<input type="text" placeholder="Phone Number">
-<input type="date">
-<textarea placeholder="Tell us what you need"></textarea>
-<button type="submit">Submit Booking Request</button>
-</form>
-</section>
+  <div class="feature-strip">
+    <div class="feature">
+      <div class="feature-icon">👥</div>
+      <h3>Perfect For Any Event</h3>
+      <p>Weddings, birthdays, reunions, church events, graduations, and more.</p>
+    </div>
+    <div class="feature">
+      <div class="feature-icon">✅</div>
+      <h3>Clean & Maintained</h3>
+      <p>Inventory is inspected and prepared before each rental.</p>
+    </div>
+    <div class="feature">
+      <div class="feature-icon">🚚</div>
+      <h3>Delivery Available</h3>
+      <p>Delivery, setup, and pickup options available across Eastern Kentucky.</p>
+    </div>
+    <div class="feature">
+      <div class="feature-icon">📍</div>
+      <h3>Eastern KY Service Area</h3>
+      <p>Serving Eastern Kentucky with travel up to 60 miles and beyond by quote.</p>
+    </div>
+  </div>
 
-<section>
-<h2>Rental Agreement</h2>
-<p>Customers are responsible for damaged, missing, or excessively dirty items. Booking requests are subject to inventory availability and approval.</p>
-</section>
+  <section id="rentals">
+    <div class="section-title">
+      <h2>Our Rentals</h2>
+      <p>Simple, reliable rentals for events of every size.</p>
+    </div>
 
-<footer>
-<p>Serving Eastern Kentucky</p>
-<p>cceventrentals.net</p>
-</footer>
+    <div class="card-grid">
+      <div class="card">
+        <h3>White Folding Chairs</h3>
+        <p>80 available. Clean white plastic folding chairs with black steel frame.</p>
+        <p class="price">$2 each</p>
+      </div>
+
+      <div class="card">
+        <h3>60-Inch Round Tables</h3>
+        <p>9 available. Great for weddings, parties, dinners, and family gatherings.</p>
+        <p class="price">$10 each</p>
+      </div>
+
+      <div class="card">
+        <h3>Delivery</h3>
+        <p>$25 flat fee up to 15 miles. Up to 60 miles available. Longer trips quoted separately.</p>
+      </div>
+
+      <div class="card">
+        <h3>Setup & Breakdown</h3>
+        <p>Chair setup/breakdown: $1 each. Table setup/breakdown: $3 each.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="pricing">
+    <div class="section-title">
+      <h2>Pricing</h2>
+      <p>Clear pricing with no customer account required.</p>
+    </div>
+
+    <div class="card-grid">
+      <div class="card"><h3>Chair Rental</h3><p class="price">$2 each</p></div>
+      <div class="card"><h3>Table Rental</h3><p class="price">$10 each</p></div>
+      <div class="card"><h3>Delivery</h3><p class="price">$25</p><p>Flat fee up to 15 miles.</p></div>
+      <div class="card"><h3>Additional Mileage</h3><p class="price">$1/mile</p><p>Round trip mileage after included area.</p></div>
+    </div>
+  </section>
+
+  <section class="highlight">
+    <div class="highlight-inner">
+      <div>
+        <h2>Ready To Plan Your Event?</h2>
+        <p>Submit a request and we’ll confirm availability before payment.</p>
+      </div>
+      <a href="#booking" class="button">Request a Quote</a>
+    </div>
+  </section>
+
+  <section id="booking">
+    <div class="section-title">
+      <h2>Request a Booking</h2>
+      <p>Tell us what you need. We’ll review availability and follow up.</p>
+    </div>
+
+    <form>
+      <label>Your Name</label>
+      <input type="text" name="name" placeholder="Your Name">
+
+      <label>Email</label>
+      <input type="email" name="email" placeholder="Email">
+
+      <label>Phone Number</label>
+      <input type="text" name="phone" placeholder="Phone Number">
+
+      <label>Event Date</label>
+      <input type="date" name="event_date">
+
+      <label>Number of Chairs</label>
+      <input type="number" name="chairs" placeholder="Example: 40" min="0" max="80">
+
+      <label>Number of Tables</label>
+      <input type="number" name="tables" placeholder="Example: 6" min="0" max="9">
+
+      <label>Service Needed</label>
+      <select name="service">
+        <option>Customer pickup</option>
+        <option>Delivery only</option>
+        <option>Full service: delivery, setup, and breakdown</option>
+      </select>
+
+      <label>Event Address / Location</label>
+      <textarea name="location" placeholder="Enter event address or general location"></textarea>
+
+      <label>Additional Details</label>
+      <textarea name="details" placeholder="Tell us anything else we should know"></textarea>
+
+      <button type="submit">Submit Booking Request</button>
+    </form>
+  </section>
+
+  <section id="agreement">
+    <div class="section-title">
+      <h2>Rental Agreement</h2>
+      <p>Final agreement may be updated as business policies are finalized.</p>
+    </div>
+
+    <div class="card">
+      <p>Booking requests are subject to inventory availability and approval by C&C Event Rentals LLC.</p>
+      <p>Customers are responsible for missing, damaged, or excessively dirty items. Items must be returned clean and in the same condition they were received.</p>
+      <p>Delivery, setup, and breakdown fees may apply depending on service selected and event location.</p>
+      <p>Late returns may include additional fees. Refundable damage deposits may be required based on order size and event details.</p>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="section-title">
+      <h2>Contact Us</h2>
+      <p>Serving Eastern Kentucky</p>
+    </div>
+
+    <div class="split">
+      <div class="card">
+        <h3>Call or Text</h3>
+        <p>606-634-9988</p>
+        <p>606-634-9996</p>
+      </div>
+
+      <div class="card">
+        <h3>Email</h3>
+        <p>ccrentalcompany@gmail.com</p>
+        <p>Website: cceventrentals.net</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p><strong>C&C Event Rentals LLC</strong></p>
+    <p>Tables • Chairs • Events</p>
+    <p>Serving Eastern Kentucky</p>
+  </footer>
+
 </body>
 </html>
