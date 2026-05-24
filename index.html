@@ -9,14 +9,11 @@
       --green: #1f2d1f;
       --green-2: #2f4f3a;
       --cream: #f7f4ee;
-      --cream-2: #ece5d8;
       --text: #1f2d1f;
       --white: #ffffff;
     }
 
-    * {
-      box-sizing: border-box;
-    }
+    * { box-sizing: border-box; }
 
     body {
       font-family: Arial, sans-serif;
@@ -45,7 +42,7 @@
 
     .nav {
       display: flex;
-      gap: 24px;
+      gap: 20px;
       align-items: center;
       font-size: 14px;
       text-transform: uppercase;
@@ -65,10 +62,9 @@
     }
 
     .hero {
-      min-height: 760px;
+      min-height: 720px;
       background:
         linear-gradient(rgba(18, 28, 18, 0.72), rgba(18, 28, 18, 0.86)),
-        radial-gradient(circle at center, rgba(255,255,255,0.08), transparent 45%),
         #1f2d1f;
       color: white;
       display: flex;
@@ -111,8 +107,7 @@
       margin: 0 auto;
     }
 
-    .hero-button,
-    .button {
+    .hero-button, .button {
       display: inline-block;
       margin-top: 28px;
       background: var(--cream);
@@ -129,7 +124,6 @@
       background: linear-gradient(90deg, #f6f0e4, #fffaf0, #f6f0e4);
       display: grid;
       grid-template-columns: repeat(4, 1fr);
-      gap: 0;
       border-bottom: 1px solid #ddd2c3;
     }
 
@@ -139,9 +133,7 @@
       border-right: 1px solid #d7cdbd;
     }
 
-    .feature:last-child {
-      border-right: none;
-    }
+    .feature:last-child { border-right: none; }
 
     .feature-icon {
       font-size: 34px;
@@ -209,13 +201,6 @@
       font-size: 24px;
     }
 
-    .split {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 34px;
-      align-items: start;
-    }
-
     .highlight {
       background: var(--green);
       color: white;
@@ -252,9 +237,7 @@
       margin-top: 12px;
     }
 
-    form input,
-    form textarea,
-    form select {
+    form input, form textarea, form select {
       width: 100%;
       padding: 13px;
       margin-top: 7px;
@@ -277,6 +260,31 @@
       font-size: 16px;
     }
 
+    .small-note {
+      font-size: 14px;
+      color: #4a4a4a;
+      line-height: 1.5;
+      margin-top: 14px;
+    }
+
+    .direct-email {
+      margin-top: 18px;
+      text-align: center;
+      font-size: 16px;
+    }
+
+    .direct-email a {
+      color: var(--green-2);
+      font-weight: 800;
+    }
+
+    .split {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 34px;
+      align-items: start;
+    }
+
     footer {
       background: #172417;
       color: white;
@@ -284,9 +292,7 @@
       text-align: center;
     }
 
-    footer p {
-      margin: 6px 0;
-    }
+    footer p { margin: 6px 0; }
 
     @media (max-width: 760px) {
       .topbar {
@@ -317,13 +323,13 @@
         border-bottom: 1px solid #d7cdbd;
       }
 
-      .split {
-        grid-template-columns: 1fr;
-      }
-
       .highlight-inner {
         display: block;
         text-align: center;
+      }
+
+      .split {
+        grid-template-columns: 1fr;
       }
     }
   </style>
@@ -415,7 +421,7 @@
       <div class="card"><h3>Chair Rental</h3><p class="price">$2 each</p></div>
       <div class="card"><h3>Table Rental</h3><p class="price">$10 each</p></div>
       <div class="card"><h3>Delivery</h3><p class="price">$25</p><p>Flat fee up to 15 miles.</p></div>
-      <div class="card"><h3>Additional Mileage</h3><p class="price">$1/mile</p><p>Round trip mileage after included area.</p></div>
+      <div class="card"><h3>Additional Mileage</h3><p class="price">$1/mile</p><p>After included delivery area.</p></div>
     </div>
   </section>
 
@@ -435,39 +441,45 @@
       <p>Tell us what you need. We’ll review availability and follow up.</p>
     </div>
 
-    <form>
-      <label>Your Name</label>
-      <input type="text" name="name" placeholder="Your Name">
+    <form action="https://formspree.io/f/xwvznknz" method="POST">
+      <input type="hidden" name="_subject" value="New Booking Request from C&C Event Rentals Website">
+      <input type="hidden" name="_replyto" value="ccrentalcompany@gmail.com">
 
-      <label>Email</label>
-      <input type="email" name="email" placeholder="Email">
+      <label for="name">Your Name</label>
+      <input id="name" type="text" name="Customer Name" placeholder="Your Name" required>
 
-      <label>Phone Number</label>
-      <input type="text" name="phone" placeholder="Phone Number">
+      <label for="email">Email</label>
+      <input id="email" type="email" name="Customer Email" placeholder="Email" required>
 
-      <label>Event Date</label>
-      <input type="date" name="event_date">
+      <label for="phone">Phone Number</label>
+      <input id="phone" type="tel" name="Customer Phone" placeholder="Phone Number" required>
 
-      <label>Number of Chairs</label>
-      <input type="number" name="chairs" placeholder="Example: 40" min="0" max="80">
+      <label for="event_date">Event Date</label>
+      <input id="event_date" type="date" name="Event Date" required>
 
-      <label>Number of Tables</label>
-      <input type="number" name="tables" placeholder="Example: 6" min="0" max="9">
+      <label for="chairs">Number of Chairs</label>
+      <input id="chairs" type="number" name="Number of Chairs" placeholder="Example: 40" min="0" max="80">
 
-      <label>Service Needed</label>
-      <select name="service">
+      <label for="tables">Number of Tables</label>
+      <input id="tables" type="number" name="Number of Tables" placeholder="Example: 6" min="0" max="9">
+
+      <label for="service">Service Needed</label>
+      <select id="service" name="Service Needed">
         <option>Customer pickup</option>
         <option>Delivery only</option>
         <option>Full service: delivery, setup, and breakdown</option>
       </select>
 
-      <label>Event Address / Location</label>
-      <textarea name="location" placeholder="Enter event address or general location"></textarea>
+      <label for="location">Event Address / Location</label>
+      <textarea id="location" name="Event Address or Location" placeholder="Enter event address or general location"></textarea>
 
-      <label>Additional Details</label>
-      <textarea name="details" placeholder="Tell us anything else we should know"></textarea>
+      <label for="details">Additional Details</label>
+      <textarea id="details" name="Additional Details" placeholder="Tell us anything else we should know"></textarea>
 
       <button type="submit">Submit Booking Request</button>
+
+      <p class="small-note">After submitting, you may see a quick Formspree confirmation page. We will review your request and follow up to confirm availability.</p>
+      <p class="direct-email">Prefer email? Send requests directly to <a href="mailto:ccrentalcompany@gmail.com?subject=C%26C%20Event%20Rentals%20Booking%20Request">ccrentalcompany@gmail.com</a>.</p>
     </form>
   </section>
 
@@ -500,7 +512,7 @@
 
       <div class="card">
         <h3>Email</h3>
-        <p>ccrentalcompany@gmail.com</p>
+        <p><a href="mailto:ccrentalcompany@gmail.com">ccrentalcompany@gmail.com</a></p>
         <p>Website: cceventrentals.net</p>
       </div>
     </div>
