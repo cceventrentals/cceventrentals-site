@@ -1,12 +1,13 @@
-This keeps your website design the same.
+C&C Event Rentals Clickable Star Reviews Update
 
-Changes added:
-- Photos link in the top menu
-- Event Photos gallery section
-- Two uploaded event photos
+Changes:
+- Replaced review dropdown with clickable stars
+- Stars highlight gold when selected
+- Matches existing website style
+- Keeps the rest of the site unchanged
 
-IMPORTANT:
-Keep your existing images/logo.png file in the images folder.
-Only add:
-- gallery-1.jpg
-- gallery-2.jpg
+How to use:
+1. Replace index.html with this updated version
+2. Keep your existing images/logo.png file
+3. Commit changes to GitHub
+4. Vercel redeploys automatically
