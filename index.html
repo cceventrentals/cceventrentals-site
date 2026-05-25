@@ -317,51 +317,6 @@
     }
 
 
-
-    .review-intro {
-      text-align: center;
-      max-width: 760px;
-      margin: 0 auto 24px;
-      font-size: 18px;
-      line-height: 1.6;
-    }
-
-    .review-stars {
-      font-size: 26px;
-      color: var(--green-2);
-      letter-spacing: 2px;
-      text-align: center;
-      margin-bottom: 18px;
-      font-weight: 900;
-    }
-
-
-    .star-rating {
-      display: flex;
-      flex-direction: row-reverse;
-      justify-content: flex-end;
-      gap: 6px;
-      margin: 14px 0 18px;
-    }
-
-    .star-rating input {
-      display: none;
-    }
-
-    .star-rating label {
-      font-size: 34px;
-      color: #c7c7c7;
-      cursor: pointer;
-      transition: color 0.2s ease;
-    }
-
-    .star-rating label:hover,
-    .star-rating label:hover ~ label,
-    .star-rating input:checked ~ label {
-      color: #d4a017;
-    }
-
-
     @media (max-width: 760px) {
       .topbar {
         display: block;
@@ -412,7 +367,6 @@
       <a href="#gallery">Photos</a>
       <a href="#agreement">Agreement</a>
       <a href="#contact">Contact</a>
-      <a href="#reviews">Reviews</a>
       <a class="quote" href="#booking">Request a Quote</a>
     </nav>
   </div>
@@ -517,6 +471,10 @@
       <div class="gallery-item">
         <img src="images/gallery-2.jpg" alt="Barn event setup with white folding chairs and round table">
       </div>
+
+      <div class="gallery-item">
+        <img src="images/gallery-3.jpg" alt="6ft rectangular table setup for food and catering">
+      </div>
     </div>
   </section>
 
@@ -592,53 +550,6 @@
       <p>Customers are responsible for missing, damaged, or excessively dirty items. Items must be returned clean and in the same condition they were received.</p>
       <p>Delivery, setup, and breakdown fees may apply depending on service selected and event location.</p>
       <p>Late returns may include additional fees. Refundable damage deposits may be required based on order size and event details.</p>
-    </div>
-  </section>
-
-
-  <section id="reviews">
-    <div class="section-title">
-      <h2>Leave a Review</h2>
-      <p>Had a good experience with C&C Event Rentals? We would love to hear from you.</p>
-    </div>
-
-    <div class="card">
-      <div class="review-stars">★★★★★</div>
-      <p class="review-intro">Your feedback helps future customers feel confident booking tables, chairs, delivery, setup, and breakdown service with us.</p>
-
-      <form action="https://formspree.io/f/xwvznknz" method="POST">
-        <input type="hidden" name="_subject" value="New Customer Review from C&C Event Rentals Website">
-        <input type="hidden" name="_replyto" value="ccrentalcompany@gmail.com">
-
-        <label for="review_name">Your Name</label>
-        <input id="review_name" type="text" name="Reviewer Name" placeholder="Your Name" required>
-
-        <label>Rating</label>
-
-        <div class="star-rating">
-          <input type="radio" id="star5" name="Rating" value="5 Stars" required>
-          <label for="star5">★</label>
-
-          <input type="radio" id="star4" name="Rating" value="4 Stars">
-          <label for="star4">★</label>
-
-          <input type="radio" id="star3" name="Rating" value="3 Stars">
-          <label for="star3">★</label>
-
-          <input type="radio" id="star2" name="Rating" value="2 Stars">
-          <label for="star2">★</label>
-
-          <input type="radio" id="star1" name="Rating" value="1 Star">
-          <label for="star1">★</label>
-        </div>
-
-        <label for="review_text">Your Review</label>
-        <textarea id="review_text" name="Customer Review" placeholder="Tell us about your experience" required></textarea>
-
-        <button type="submit">Submit Review</button>
-
-        <p class="small-note">Reviews are sent to C&C Event Rentals for review before being posted publicly.</p>
-      </form>
     </div>
   </section>
 
