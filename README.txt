@@ -1,14 +1,16 @@
-C&C Event Rentals Gallery Photo Update
+C&C Event Rentals Review Section Update
 
-This update:
-- Keeps your website design the same
-- Adds the new rectangular table photo to the gallery
+This update was added directly to your uploaded index.html.
 
-Files included:
-- Updated index.html
-- images/gallery-1.jpg
-- images/gallery-2.jpg
-- images/gallery-3.jpg
+Changes:
+- Added Reviews link to the top navigation
+- Added Leave a Review section
+- Added clickable star rating
+- Review form sends through your existing Formspree endpoint
+- Everything else stays the same
 
-IMPORTANT:
-Keep your existing images/logo.png file in the images folder.
+How to use:
+1. Unzip this file
+2. Replace your current index.html in GitHub with the included index.html
+3. Commit changes
+4. Vercel should redeploy automatically
