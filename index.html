@@ -294,6 +294,29 @@
 
     footer p { margin: 6px 0; }
 
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 22px;
+    }
+
+    .gallery-item {
+      background: white;
+      padding: 10px;
+      border-radius: 14px;
+      box-shadow: 0 4px 18px rgba(0,0,0,0.10);
+      border: 1px solid #e8dfd2;
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: 340px;
+      object-fit: cover;
+      border-radius: 10px;
+    }
+
+
     @media (max-width: 760px) {
       .topbar {
         display: block;
@@ -341,6 +364,7 @@
     <nav class="nav">
       <a href="#rentals">Rentals</a>
       <a href="#pricing">Pricing</a>
+      <a href="#gallery">Photos</a>
       <a href="#agreement">Agreement</a>
       <a href="#contact">Contact</a>
       <a class="quote" href="#booking">Request a Quote</a>
@@ -429,6 +453,24 @@
       <div class="card"><h3>6ft Rectangular Table Rental</h3><p class="price">$10 each</p></div>
       <div class="card"><h3>Delivery</h3><p class="price">$25</p><p>Flat fee up to 15 miles.</p></div>
       <div class="card"><h3>Additional Mileage</h3><p class="price">$1/mile</p><p>After included delivery area.</p></div>
+    </div>
+  </section>
+
+
+  <section id="gallery">
+    <div class="section-title">
+      <h2>Event Photos</h2>
+      <p>Recent setups from C&C Event Rentals events.</p>
+    </div>
+
+    <div class="gallery-grid">
+      <div class="gallery-item">
+        <img src="images/gallery-1.jpg" alt="Outdoor event setup with white folding chairs and round tables">
+      </div>
+
+      <div class="gallery-item">
+        <img src="images/gallery-2.jpg" alt="Barn event setup with white folding chairs and round table">
+      </div>
     </div>
   </section>
 
