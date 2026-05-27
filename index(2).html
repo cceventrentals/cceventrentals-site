@@ -1,0 +1,1480 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>C&C Event Rentals LLC | Tables & Chairs in Eastern Kentucky</title>
+  <style>
+    :root {
+      --forest: #142015;
+      --green: #223623;
+      --sage: #3c5f43;
+      --cream: #f6f0e6;
+      --paper: #fffdf8;
+      --tan: #c9ad7c;
+      --tan-soft: #eadcc5;
+      --text: #1d281e;
+      --muted: #667066;
+      --line: #e2d5c3;
+      --white: #ffffff;
+      --shadow: 0 22px 55px rgba(20, 32, 21, 0.12);
+      --shadow-soft: 0 12px 28px rgba(20, 32, 21, 0.08);
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top left, rgba(201, 173, 124, 0.22), transparent 34rem),
+        linear-gradient(180deg, #fbf8f1 0%, var(--cream) 48%, #efe4d5 100%);
+    }
+
+    a { color: inherit; }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      background: rgba(20, 32, 21, 0.97);
+      color: var(--white);
+      border-bottom: 1px solid rgba(255,255,255,0.12);
+      backdrop-filter: blur(12px);
+    }
+
+    .nav-wrap {
+      max-width: 1240px;
+      margin: 0 auto;
+      padding: 14px 22px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand {
+      display: flex;
+      flex-direction: column;
+      font-weight: 900;
+      line-height: 1.08;
+      letter-spacing: 0.6px;
+      white-space: nowrap;
+    }
+
+    .brand span {
+      color: var(--tan-soft);
+      font-size: 11px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-top: 4px;
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      flex-wrap: wrap;
+      gap: 16px;
+      font-size: 12px;
+      font-weight: 850;
+      letter-spacing: 0.55px;
+      text-transform: uppercase;
+    }
+
+    .nav a {
+      color: rgba(255,255,255,0.84);
+      text-decoration: none;
+      transition: color .2s ease, transform .2s ease;
+    }
+
+    .nav a:hover { color: white; transform: translateY(-1px); }
+
+    .nav .quote {
+      background: var(--tan-soft);
+      color: var(--forest);
+      padding: 10px 16px;
+      border-radius: 6px;
+      box-shadow: 0 10px 24px rgba(0,0,0,0.22);
+    }
+
+    .hero {
+      color: white;
+      background:
+        linear-gradient(120deg, rgba(20,32,21,0.98), rgba(34,54,35,0.92)),
+        radial-gradient(circle at 82% 18%, rgba(201,173,124,0.28), transparent 26rem),
+        var(--forest);
+      border-bottom: 5px solid var(--tan);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: auto -8rem -13rem auto;
+      width: 34rem;
+      height: 34rem;
+      border: 1px solid rgba(234,220,197,0.16);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    .hero-inner {
+      max-width: 1240px;
+      min-height: 395px;
+      margin: 0 auto;
+      padding: 58px 22px 64px;
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 280px;
+      gap: 42px;
+      align-items: center;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-copy { max-width: 850px; }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 8px 12px;
+      border: 1px solid rgba(234,220,197,0.22);
+      border-radius: 4px;
+      color: var(--tan-soft);
+      font-size: 12px;
+      font-weight: 900;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      background: rgba(255,255,255,0.06);
+    }
+
+    .hero h1 {
+      margin: 18px 0 8px;
+      font-family: Georgia, 'Times New Roman', serif;
+      font-size: clamp(40px, 5vw, 70px);
+      line-height: 0.98;
+      letter-spacing: -1.4px;
+    }
+
+    .tagline {
+      margin: 0 0 18px;
+      color: #f1dfc1;
+      font-family: Georgia, 'Times New Roman', serif;
+      font-size: clamp(24px, 3vw, 38px);
+      font-style: italic;
+    }
+
+    .hero p:not(.tagline) {
+      max-width: 760px;
+      margin: 0;
+      color: rgba(255,255,255,0.9);
+      font-size: 19px;
+      line-height: 1.65;
+    }
+
+    .hero-logo-card {
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.15);
+      padding: 24px;
+      box-shadow: 0 24px 60px rgba(0,0,0,0.22);
+    }
+
+    .hero-logo-card img {
+      width: 100%;
+      display: block;
+      filter: drop-shadow(0 10px 22px rgba(0,0,0,0.35));
+    }
+
+    .hero-actions, .inline-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      align-items: center;
+      margin-top: 28px;
+    }
+
+    .button, .hero-button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 46px;
+      padding: 13px 22px;
+      border-radius: 5px;
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 900;
+      letter-spacing: 0.7px;
+      text-transform: uppercase;
+      transition: transform .2s ease, box-shadow .2s ease, background .2s ease;
+    }
+
+    .hero-button, .button.primary {
+      background: var(--tan-soft);
+      color: var(--forest);
+      box-shadow: 0 14px 30px rgba(0,0,0,0.22);
+    }
+
+    .button.secondary {
+      color: white;
+      border: 1px solid rgba(255,255,255,0.28);
+      background: rgba(255,255,255,0.07);
+    }
+
+    .button.dark {
+      background: var(--forest);
+      color: white;
+    }
+
+    .button:hover, .hero-button:hover { transform: translateY(-2px); box-shadow: 0 18px 34px rgba(0,0,0,0.18); }
+
+    .hero-trust {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 22px;
+    }
+
+    .hero-trust span {
+      padding: 8px 11px;
+      border: 1px solid rgba(255,255,255,0.15);
+      background: rgba(255,255,255,0.06);
+      color: rgba(255,255,255,0.86);
+      font-size: 13px;
+      font-weight: 800;
+    }
+
+    .feature-strip {
+      max-width: 1180px;
+      margin: -34px auto 0;
+      padding: 0 22px;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0;
+      position: relative;
+      z-index: 3;
+    }
+
+    .feature {
+      background: var(--paper);
+      padding: 28px 24px;
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+      border-left: 1px solid var(--line);
+      box-shadow: var(--shadow-soft);
+    }
+
+    .feature:first-child { border-radius: 16px 0 0 16px; }
+    .feature:last-child { border-right: 1px solid var(--line); border-radius: 0 16px 16px 0; }
+
+    .feature-icon {
+      width: 40px;
+      height: 40px;
+      display: grid;
+      place-items: center;
+      margin-bottom: 14px;
+      background: #f2eadc;
+      border: 1px solid var(--line);
+      border-radius: 50%;
+      font-size: 22px;
+    }
+
+    .feature h3, .card h3, .quality-card h3, .service-card h3 {
+      margin: 0 0 9px;
+      color: var(--forest);
+      font-size: 15px;
+      text-transform: uppercase;
+      letter-spacing: 0.7px;
+    }
+
+    .feature p, .card p, .quality-card p, .service-card p { margin: 0; color: var(--muted); line-height: 1.6; }
+
+    section {
+      max-width: 1160px;
+      margin: auto;
+      padding: 70px 22px;
+    }
+
+    .section-title {
+      max-width: 760px;
+      margin: 0 auto 34px;
+      text-align: center;
+    }
+
+    .section-title .kicker {
+      display: block;
+      margin-bottom: 10px;
+      color: var(--sage);
+      font-size: 12px;
+      font-weight: 900;
+      letter-spacing: 1.6px;
+      text-transform: uppercase;
+    }
+
+    .section-title h2 {
+      margin: 0;
+      color: var(--forest);
+      font-family: Georgia, 'Times New Roman', serif;
+      font-size: clamp(32px, 4vw, 46px);
+      line-height: 1.05;
+      letter-spacing: -0.7px;
+    }
+
+    .section-title p { margin: 12px 0 0; color: var(--muted); font-size: 18px; line-height: 1.55; }
+
+    .card-grid, .quality-grid, .service-grid, .testimonial-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .card, .quality-card, .service-card, .testimonial-card {
+      background: rgba(255,253,248,0.96);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 26px;
+      box-shadow: var(--shadow-soft);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .card::before, .quality-card::before, .service-card::before, .testimonial-card::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, var(--tan), transparent);
+    }
+
+    .card .price {
+      margin-top: 18px;
+      color: var(--forest);
+      font-size: 24px;
+      font-weight: 900;
+    }
+
+    .card.refined-card {
+      padding: 28px;
+      border-radius: 10px;
+      background: linear-gradient(180deg, #fffdf8, #fbf5eb);
+      transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+    }
+
+    .card.refined-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 18px 38px rgba(20, 32, 21, 0.12);
+      border-color: #d5be98;
+    }
+
+    .card.refined-card h3 {
+      margin-bottom: 10px;
+      letter-spacing: .55px;
+    }
+
+    .card.refined-card p {
+      color: var(--muted);
+      line-height: 1.65;
+    }
+
+    .card-tag {
+      display: inline-flex;
+      align-items: center;
+      margin-top: 16px;
+      padding: 7px 10px;
+      border: 1px solid var(--line);
+      border-radius: 4px;
+      color: var(--sage);
+      background: rgba(255,255,255,0.6);
+      font-size: 11px;
+      font-weight: 900;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    .card-grid .card:nth-last-child(-n+2) { grid-column: span 1; }
+
+    .pricing-section {
+      max-width: none;
+      background: linear-gradient(180deg, rgba(20,32,21,0.04), rgba(20,32,21,0.08));
+      border-top: 1px solid rgba(20,32,21,0.08);
+      border-bottom: 1px solid rgba(20,32,21,0.08);
+    }
+
+    .pricing-inner { max-width: 1160px; margin: auto; }
+
+    .rate-board {
+      background: var(--forest);
+      color: white;
+      border: 1px solid rgba(255,255,255,0.12);
+      box-shadow: var(--shadow);
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    .rate-top {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      padding: 24px 28px;
+      background: linear-gradient(90deg, rgba(201,173,124,0.16), rgba(255,255,255,0.04));
+      border-bottom: 1px solid rgba(255,255,255,0.12);
+    }
+
+    .rate-top h3 { margin: 0 0 6px; font-size: 18px; letter-spacing: 0.8px; text-transform: uppercase; }
+    .rate-top p { margin: 0; color: rgba(255,255,255,0.74); line-height: 1.5; }
+    .rate-note { color: var(--tan-soft); font-weight: 900; text-transform: uppercase; font-size: 12px; letter-spacing: 1px; white-space: nowrap; }
+
+    .rate-table { width: 100%; border-collapse: collapse; }
+
+    .rate-table th {
+      text-align: left;
+      padding: 14px 28px;
+      color: var(--tan-soft);
+      font-size: 11px;
+      letter-spacing: 1.4px;
+      text-transform: uppercase;
+      background: rgba(255,255,255,0.04);
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .rate-table td {
+      padding: 20px 28px;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+      vertical-align: top;
+      color: rgba(255,255,255,0.78);
+      line-height: 1.55;
+    }
+
+    .rate-table tr:last-child td { border-bottom: none; }
+    .rate-table strong { display: block; color: white; font-size: 16px; text-transform: uppercase; letter-spacing: 0.45px; margin-bottom: 4px; }
+    .rate-table .amount { color: var(--tan-soft); font-size: 22px; font-weight: 900; white-space: nowrap; }
+
+    .quote-panel {
+      margin-top: 22px;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 20px;
+      align-items: center;
+      padding: 24px 28px;
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .quote-panel strong { display: block; color: var(--forest); font-size: 18px; margin-bottom: 5px; }
+    .quote-panel p { margin: 0; color: var(--muted); line-height: 1.55; }
+
+    .quality-card span {
+      display: inline-block;
+      margin-bottom: 18px;
+      color: var(--tan);
+      font-family: Georgia, 'Times New Roman', serif;
+      font-size: 32px;
+      font-weight: 900;
+    }
+
+    .booking-process-wrap {
+      background: linear-gradient(180deg, rgba(255,255,255,0.72), rgba(239,233,222,0.68));
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      box-shadow: var(--shadow-soft);
+      overflow: hidden;
+    }
+
+    .process {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      background: var(--paper);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .process-step {
+      position: relative;
+      padding: 32px 26px 30px;
+      border-right: 1px solid var(--line);
+    }
+
+    .process-step:last-child { border-right: none; }
+
+    .process-step::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, var(--tan), var(--sage));
+      opacity: 0.85;
+    }
+
+    .process-step b {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      background: var(--forest);
+      color: white;
+      font-size: 13px;
+      letter-spacing: 0.4px;
+      margin-bottom: 18px;
+      box-shadow: 0 10px 22px rgba(25,38,27,0.18);
+    }
+
+    .process-step h3 {
+      margin: 0 0 9px;
+      color: var(--forest);
+      font-size: 18px;
+      letter-spacing: 0.2px;
+    }
+
+    .process-step p { margin: 0; color: var(--muted); line-height: 1.6; }
+
+    .process-summary {
+      display: grid;
+      grid-template-columns: 1.15fr 1fr;
+      gap: 28px;
+      align-items: center;
+      padding: 28px 30px;
+      background: rgba(255,255,255,0.52);
+    }
+
+    .process-summary h3 {
+      margin: 0 0 8px;
+      color: var(--forest);
+      font-size: 20px;
+    }
+
+    .process-summary p { margin: 0; color: var(--muted); line-height: 1.6; }
+
+    .process-checks {
+      display: grid;
+      gap: 10px;
+    }
+
+    .process-checks span {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      color: var(--forest);
+      font-weight: 800;
+      font-size: 14px;
+    }
+
+    .process-checks span::before {
+      content: '✓';
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(47,79,58,0.12);
+      color: var(--sage);
+      font-size: 13px;
+      flex: 0 0 auto;
+    }
+
+    .service-area {
+      max-width: none;
+      background: var(--forest);
+      color: white;
+    }
+
+    .service-area-inner {
+      max-width: 1160px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: 1.1fr 1fr;
+      gap: 34px;
+      align-items: center;
+    }
+
+    .service-area h2 {
+      margin: 0 0 12px;
+      font-family: Georgia, 'Times New Roman', serif;
+      font-size: clamp(32px, 4vw, 46px);
+      line-height: 1.08;
+    }
+
+    .service-area p { color: rgba(255,255,255,0.82); line-height: 1.7; font-size: 18px; }
+
+    .service-list {
+      display: grid;
+      gap: 12px;
+    }
+
+    .service-list div {
+      background: rgba(255,255,255,0.07);
+      border: 1px solid rgba(255,255,255,0.13);
+      padding: 18px;
+    }
+
+    .service-list strong { display: block; color: var(--tan-soft); margin-bottom: 5px; text-transform: uppercase; letter-spacing: .6px; }
+    .service-list span { color: rgba(255,255,255,0.82); }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .gallery-item {
+      background: var(--paper);
+      border: 1px solid var(--line);
+      padding: 10px;
+      box-shadow: var(--shadow-soft);
+      border-radius: 14px;
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: 330px;
+      object-fit: cover;
+      border-radius: 10px;
+      display: block;
+    }
+
+    .highlight {
+      max-width: none;
+      padding: 0 22px 70px;
+    }
+
+    .highlight-inner {
+      max-width: 1160px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 22px;
+      align-items: center;
+      background: linear-gradient(120deg, var(--green), var(--forest));
+      color: white;
+      border-radius: 16px;
+      padding: 34px;
+      box-shadow: var(--shadow);
+    }
+
+    .highlight h2 { margin: 0 0 8px; font-family: Georgia, 'Times New Roman', serif; font-size: 34px; }
+    .highlight p { margin: 0; color: rgba(255,255,255,0.82); line-height: 1.55; }
+
+    .form-shell {
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 30px;
+      box-shadow: var(--shadow);
+    }
+
+    .form-section-title {
+      margin: 10px 0 16px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid var(--line);
+      color: var(--forest);
+      font-size: 14px;
+      font-weight: 900;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    .form-section-title:first-child { margin-top: 0; }
+    .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+    .form-full { grid-column: 1 / -1; }
+
+    label { display: block; margin-bottom: 7px; color: var(--forest); font-weight: 850; }
+
+    input, textarea, select {
+      width: 100%;
+      padding: 13px 14px;
+      border: 1px solid #cabca8;
+      border-radius: 5px;
+      background: #fffaf2;
+      color: var(--text);
+      font-size: 16px;
+      outline: none;
+      transition: border .2s ease, box-shadow .2s ease, background .2s ease;
+    }
+
+    textarea { min-height: 108px; resize: vertical; }
+    input:focus, textarea:focus, select:focus { border-color: var(--sage); box-shadow: 0 0 0 4px rgba(60,95,67,0.12); background: white; }
+
+    form button {
+      width: 100%;
+      margin-top: 20px;
+      padding: 15px 20px;
+      border: none;
+      border-radius: 5px;
+      background: var(--forest);
+      color: white;
+      font-size: 15px;
+      font-weight: 900;
+      letter-spacing: 0.7px;
+      text-transform: uppercase;
+      cursor: pointer;
+    }
+
+    .small-note { margin: 16px 0 0; color: var(--muted); font-size: 14px; line-height: 1.55; }
+    .direct-email { margin-top: 14px; text-align: center; color: var(--muted); }
+    .direct-email a { color: var(--forest); font-weight: 900; }
+
+    .split { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; }
+
+    .review-intro { max-width: 740px; margin: 0 auto 22px; text-align: center; color: var(--muted); font-size: 18px; line-height: 1.6; }
+    .testimonial-card p { font-family: Georgia, 'Times New Roman', serif; color: var(--text); font-size: 18px; line-height: 1.6; margin-bottom: 18px; }
+    .testimonial-card strong { display: block; color: var(--forest); }
+    .testimonial-card span { display: block; margin-top: 4px; color: var(--muted); font-size: 14px; }
+
+    .star-rating {
+      display: flex;
+      flex-direction: row-reverse;
+      justify-content: center;
+      gap: 8px;
+      margin: 16px 0 22px;
+    }
+
+    .star-rating input { display: none; }
+    .star-rating label { font-size: 42px; color: #c9c9c9; cursor: pointer; transition: color .2s ease, transform .2s ease; }
+    .star-rating label:hover, .star-rating label:hover ~ label, .star-rating input:checked ~ label { color: #c19235; }
+    .star-rating label:hover { transform: scale(1.06); }
+
+    footer {
+      background: #111a12;
+      color: white;
+      padding: 34px 22px;
+      text-align: center;
+    }
+
+    footer p { margin: 6px 0; color: rgba(255,255,255,0.82); }
+
+    @media (max-width: 980px) {
+      .nav-wrap { align-items: flex-start; flex-direction: column; }
+      .nav { justify-content: flex-start; }
+      .hero-inner { grid-template-columns: 1fr; }
+      .hero-logo-card { max-width: 260px; }
+      .feature-strip, .card-grid, .quality-grid, .service-grid, .testimonial-grid, .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+      .process { grid-template-columns: repeat(2, 1fr); }
+      .process-summary { grid-template-columns: 1fr; }
+      .service-area-inner { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 720px) {
+      .nav-wrap { text-align: center; align-items: center; }
+      .brand { align-items: center; }
+      .nav { justify-content: center; gap: 12px; font-size: 11px; }
+      .nav .quote { width: 100%; text-align: center; }
+      .hero-inner { text-align: center; padding: 42px 18px 58px; }
+      .hero-logo-card { margin: auto; }
+      .hero p:not(.tagline) { margin: auto; }
+      .hero-actions, .hero-trust { justify-content: center; }
+      .feature-strip { grid-template-columns: 1fr; margin-top: -24px; }
+      .feature, .feature:first-child, .feature:last-child { border-radius: 0; border-right: 1px solid var(--line); }
+      section { padding: 58px 18px; }
+      .card-grid, .quality-grid, .service-grid, .testimonial-grid, .gallery-grid, .split { grid-template-columns: 1fr; }
+      .rate-top, .quote-panel, .highlight-inner { display: block; text-align: center; }
+      .rate-note { margin-top: 12px; display: block; }
+      .rate-table, .rate-table tbody, .rate-table tr, .rate-table td, .rate-table th { display: block; width: 100%; }
+      .rate-table thead { display: none; }
+      .rate-table td { padding: 12px 22px; }
+      .rate-table td:first-child { padding-top: 20px; }
+      .rate-table td:last-child { padding-bottom: 20px; }
+      .quote-panel .button, .highlight .button { margin-top: 20px; }
+      .process { grid-template-columns: 1fr; }
+      .process-step { border-right: none; border-bottom: 1px solid var(--line); }
+      .process-step:last-child { border-bottom: none; }
+      .process-summary { grid-template-columns: 1fr; padding: 24px; text-align: left; }
+      .form-grid { grid-template-columns: 1fr; }
+      .form-shell, .card, .quality-card, .service-card, .testimonial-card { padding: 24px; }
+    }
+
+
+    .rate-board {
+      border-radius: 10px;
+      box-shadow: 0 26px 65px rgba(20,32,21,0.18);
+    }
+
+    .rate-table tbody tr {
+      transition: background .2s ease;
+    }
+
+    .rate-table tbody tr:hover {
+      background: rgba(255,255,255,0.035);
+    }
+
+    .rate-table td:first-child {
+      width: 42%;
+    }
+
+    .rate-table td:nth-child(2) {
+      width: 18%;
+    }
+
+    .quote-panel strong {
+      display: block;
+      margin-bottom: 6px;
+      font-family: Georgia, 'Times New Roman', serif;
+      font-size: 23px;
+      color: var(--forest);
+    }
+
+  
+
+    /* Professional rate sheet refresh */
+    .pricing-section {
+      background:
+        radial-gradient(circle at top left, rgba(201,173,124,0.18), transparent 34%),
+        linear-gradient(180deg, #fbf8f1, #f1eadf);
+    }
+
+    .pricing-inner { max-width: 1180px; }
+
+    .rate-board {
+      background: #ffffff;
+      color: var(--forest);
+      border: 1px solid rgba(20,32,21,0.12);
+      border-radius: 14px;
+      box-shadow: 0 24px 70px rgba(20,32,21,0.16);
+      overflow: hidden;
+      position: relative;
+    }
+
+    .rate-board::before {
+      content: "";
+      display: block;
+      height: 6px;
+      background: linear-gradient(90deg, var(--forest), var(--sage), var(--tan));
+    }
+
+    .rate-top {
+      background: #ffffff;
+      color: var(--forest);
+      border-bottom: 1px solid var(--line);
+      padding: 30px 34px 24px;
+      align-items: flex-start;
+    }
+
+    .rate-top h3 {
+      font-family: Georgia, 'Times New Roman', serif;
+      font-size: 26px;
+      letter-spacing: 0.2px;
+      text-transform: none;
+    }
+
+    .rate-top p { color: var(--muted); max-width: 680px; }
+
+    .rate-note {
+      color: var(--forest);
+      background: #f3eee4;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 9px 13px;
+      font-size: 11px;
+    }
+
+    .rate-category {
+      padding: 16px 34px;
+      background: #f7f3ea;
+      color: var(--forest);
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+      font-size: 12px;
+      font-weight: 900;
+      letter-spacing: 1.4px;
+      text-transform: uppercase;
+    }
+
+    .rate-table { background: #fff; }
+
+    .rate-table th {
+      background: #fbfaf7;
+      color: #6f6a5e;
+      border-bottom: 1px solid var(--line);
+      padding: 13px 34px;
+    }
+
+    .rate-table td {
+      color: var(--muted);
+      border-bottom: 1px solid rgba(20,32,21,0.10);
+      padding: 21px 34px;
+    }
+
+    .rate-table tbody tr:hover { background: #fbf8f1; }
+
+    .rate-table strong {
+      color: var(--forest);
+      font-size: 15px;
+      text-transform: none;
+      letter-spacing: 0;
+      margin-bottom: 5px;
+    }
+
+    .rate-table .amount {
+      color: var(--forest);
+      font-size: 20px;
+      font-weight: 900;
+    }
+
+    .rate-table .amount span {
+      display: block;
+      margin-top: 4px;
+      color: #7c7468;
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.7px;
+    }
+
+    .rate-footnote {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 22px;
+      align-items: center;
+      padding: 22px 34px;
+      background: #142015;
+      color: rgba(255,255,255,0.78);
+    }
+
+    .rate-footnote strong {
+      display: block;
+      color: white;
+      margin-bottom: 4px;
+      font-family: Georgia, 'Times New Roman', serif;
+      font-size: 20px;
+    }
+
+    .rate-footnote p { margin: 0; line-height: 1.55; }
+
+    .pill-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 150px;
+      padding: 12px 18px;
+      border-radius: 999px;
+      background: var(--tan-soft);
+      color: var(--forest);
+      text-decoration: none;
+      font-weight: 900;
+      text-transform: uppercase;
+      font-size: 12px;
+      letter-spacing: 0.7px;
+    }
+
+    @media (max-width: 720px) {
+      .rate-top, .rate-footnote { display: block; text-align: left; }
+      .rate-note { margin-top: 14px; display: inline-block; }
+      .rate-category { padding: 15px 22px; }
+      .rate-table td { color: var(--muted); border-bottom: none; }
+      .rate-table tr { border-bottom: 1px solid var(--line); }
+      .rate-table tr:last-child { border-bottom: none; }
+      .rate-footnote .pill-link { margin-top: 16px; width: 100%; }
+    }
+
+  </style>
+</head>
+<body>
+
+  <div class="topbar">
+    <div class="nav-wrap">
+      <div class="brand">C&C Event Rentals LLC <span>Tables • Chairs • Events</span></div>
+      <nav class="nav">
+        <a href="#rentals">Rentals</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#why-us">Why Us</a>
+        <a href="#process">Process</a>
+        <a href="#service-area">Service Area</a>
+        <a href="#gallery">Photos</a>
+        <a href="#agreement">Agreement</a>
+        <a href="#contact">Contact</a>
+        <a href="#reviews">Reviews</a>
+        <a class="quote" href="#booking">Request a Quote</a>
+      </nav>
+    </div>
+  </div>
+
+  <header class="hero">
+    <div class="hero-inner">
+      <div class="hero-copy">
+        <div class="eyebrow">Serving Eastern Kentucky</div>
+        <h1>Quality Rentals. Dependable Service.</h1>
+        <p class="tagline">Built for Every Gathering.</p>
+        <p>C&C Event Rentals provides clean tables, chairs, delivery, setup, and breakdown service for weddings, parties, reunions, graduations, church events, and private gatherings across Eastern Kentucky.</p>
+        <div class="hero-actions">
+          <a href="#booking" class="hero-button">Request a Quote</a>
+          <a href="#pricing" class="button secondary">View Pricing</a>
+        </div>
+        <div class="hero-trust">
+          <span>Availability confirmed before payment</span>
+          <span>Pickup, delivery, setup, and breakdown options</span>
+          <span>Locally owned LLC</span>
+        </div>
+      </div>
+      <div class="hero-logo-card">
+        <img src="images/logo.png" alt="C&C Event Rentals Logo">
+      </div>
+    </div>
+  </header>
+
+  <div class="feature-strip">
+    <div class="feature">
+      <div class="feature-icon">👥</div>
+      <h3>Perfect For Any Event</h3>
+      <p>Weddings, birthdays, reunions, church events, graduations, and more.</p>
+    </div>
+    <div class="feature">
+      <div class="feature-icon">✅</div>
+      <h3>Clean & Maintained</h3>
+      <p>Inventory is inspected and prepared before each rental.</p>
+    </div>
+    <div class="feature">
+      <div class="feature-icon">🚚</div>
+      <h3>Delivery Available</h3>
+      <p>Delivery, setup, and pickup options available across Eastern Kentucky.</p>
+    </div>
+    <div class="feature">
+      <div class="feature-icon">📍</div>
+      <h3>Eastern KY Service Area</h3>
+      <p>Serving Eastern Kentucky with travel up to 60 miles and beyond by quote.</p>
+    </div>
+  </div>
+
+  <section id="rentals">
+    <div class="section-title">
+      <span class="kicker">Rental Inventory</span>
+      <h2>Our Rentals</h2>
+      <p>Simple, reliable rentals for events of every size.</p>
+    </div>
+
+    <div class="card-grid">
+      <div class="card refined-card">
+        <h3>White Folding Chairs</h3>
+        <p>Clean white plastic folding chairs with black steel frames, suited for ceremonies, receptions, parties, and community gatherings.</p>
+        <span class="card-tag">Guest Seating</span>
+      </div>
+
+      <div class="card refined-card">
+        <h3>6ft Round Tables</h3>
+        <p>A polished option for dinner seating, family-style gatherings, wedding receptions, and formal event layouts.</p>
+        <span class="card-tag">Dinner Seating</span>
+      </div>
+
+      <div class="card refined-card">
+        <h3>6ft Rectangular Tables</h3>
+        <p>Ideal for buffet lines, gift tables, registration, food service, displays, and flexible event layouts.</p>
+        <span class="card-tag">Flexible Layouts</span>
+      </div>
+
+      <div class="card refined-card">
+        <h3>Delivery</h3>
+        <p>Local delivery options are available so your tables and chairs arrive when and where they are needed.</p>
+        <span class="card-tag">Optional Service</span>
+      </div>
+
+      <div class="card refined-card">
+        <h3>Setup & Breakdown</h3>
+        <p>Add setup and breakdown support to make event preparation and cleanup easier from start to finish.</p>
+        <span class="card-tag">Event Support</span>
+      </div>
+
+      <div class="card refined-card">
+        <h3>Customer Pickup</h3>
+        <p>Pickup is available for customers who prefer to handle transportation themselves.</p>
+        <span class="card-tag">Self Service</span>
+      </div>
+
+      <div class="card refined-card">
+        <h3>White Tablecloths</h3>
+        <p>Add a cleaner, more finished look to guest tables, food service areas, gift tables, and displays.</p>
+        <span class="card-tag">Event Finish</span>
+      </div>
+
+      <div class="card refined-card">
+        <h3>Yard Games Package</h3>
+        <p>A fun add-on for receptions, birthdays, reunions, graduations, and outdoor gatherings.</p>
+        <span class="card-tag">Guest Entertainment</span>
+      </div>
+    </div>
+  </section>
+
+  <section id="pricing" class="pricing-section">
+    <div class="pricing-inner">
+      <div class="section-title">
+        <span class="kicker">Professional Pricing</span>
+        <h2>Rate Sheet</h2>
+        <p>A clean overview of rental and service options. Final quotes are confirmed after event location, date, and service needs are reviewed.</p>
+      </div>
+
+      <div class="rate-board">
+        <div class="rate-top">
+          <div>
+            <h3>Event Rental Rate Sheet</h3>
+            <p>Simple pricing for the essentials, optional service support, and add-ons that help complete the event setup.</p>
+          </div>
+          <div class="rate-note">Final quote confirmed before payment</div>
+        </div>
+
+        <div class="rate-category">Tables & Seating</div>
+        <table class="rate-table" aria-label="C&C Event Rentals tables and seating rate sheet">
+          <thead>
+            <tr>
+              <th>Item</th>
+              <th>Rate</th>
+              <th>Best For</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>White Folding Chairs</strong>Clean white plastic chairs with black steel frames.</td>
+              <td class="amount">$2<span>Each</span></td>
+              <td>Ceremonies, receptions, parties, meetings, and community events.</td>
+            </tr>
+            <tr>
+              <td><strong>6ft Round Tables</strong>Guest tables for seated events and group meals.</td>
+              <td class="amount">$10<span>Each</span></td>
+              <td>Weddings, dinners, family gatherings, and formal seating layouts.</td>
+            </tr>
+            <tr>
+              <td><strong>6ft Rectangular Tables</strong>Flexible tables for serving, seating, or displays.</td>
+              <td class="amount">$10<span>Each</span></td>
+              <td>Buffets, gift tables, registration, food service, and extra workspace.</td>
+            </tr>
+            <tr>
+              <td><strong>White Tablecloths</strong>A clean finishing touch for tables and display areas.</td>
+              <td class="amount">By quote<span>Add-on</span></td>
+              <td>Guest tables, buffet lines, cake tables, gift tables, and vendor displays.</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="rate-category">Packages & Services</div>
+        <table class="rate-table" aria-label="C&C Event Rentals packages and service rate sheet">
+          <thead>
+            <tr>
+              <th>Item</th>
+              <th>Rate</th>
+              <th>Details</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Yard Games Package</strong>Includes corn hole, yard pong, and other outdoor games.</td>
+              <td class="amount">$100<span>Package</span></td>
+              <td>Great for outdoor weddings, birthdays, reunions, graduations, and casual gatherings.</td>
+            </tr>
+            <tr>
+              <td><strong>Delivery</strong>Available for local events and nearby service areas.</td>
+              <td class="amount">$25<span>Starting rate</span></td>
+              <td>Flat fee up to 15 miles. Longer trips are quoted before booking.</td>
+            </tr>
+            <tr>
+              <td><strong>Additional Mileage</strong>For events outside the included delivery range.</td>
+              <td class="amount">$1/mile<span>After included area</span></td>
+              <td>Calculated by distance and confirmed before payment.</td>
+            </tr>
+            <tr>
+              <td><strong>Setup & Breakdown</strong>Optional hands-on support for easier event prep and cleanup.</td>
+              <td class="amount">$1–$3<span>Per item</span></td>
+              <td>Chair setup/breakdown is $1 each. Table setup/breakdown is $3 each.</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="rate-footnote">
+          <div>
+            <strong>Need help building a quote?</strong>
+            <p>Send the event date, location, service preference, and the items you are interested in. Availability and final pricing are confirmed before payment.</p>
+          </div>
+          <a href="#booking" class="pill-link">Request a Quote</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="why-us">
+    <div class="section-title">
+      <span class="kicker">Service Standards</span>
+      <h2>Why Choose C&C Event Rentals</h2>
+      <p>Dependable rental support for weddings, birthdays, reunions, graduations, church events, and private gatherings.</p>
+    </div>
+
+    <div class="quality-grid">
+      <div class="quality-card">
+        <span>01</span>
+        <h3>Clean, Maintained Inventory</h3>
+        <p>Tables and chairs are checked before each rental so your event setup looks ready when guests arrive.</p>
+      </div>
+      <div class="quality-card">
+        <span>02</span>
+        <h3>Flexible Service Options</h3>
+        <p>Choose customer pickup, delivery only, or full service with delivery, setup, and breakdown.</p>
+      </div>
+      <div class="quality-card">
+        <span>03</span>
+        <h3>Local Communication</h3>
+        <p>Booking requests are reviewed directly so availability, timing, and delivery details can be confirmed clearly.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="process">
+    <div class="section-title">
+      <span class="kicker">Booking Process</span>
+      <h2>Simple, Clear, and Organized</h2>
+      <p>Know exactly what happens from the first request to the final pickup.</p>
+    </div>
+
+    <div class="booking-process-wrap">
+      <div class="process">
+        <div class="process-step">
+          <b>01</b>
+          <h3>Request a Quote</h3>
+          <p>Share your event date, location, rental needs, and preferred service option.</p>
+        </div>
+        <div class="process-step">
+          <b>02</b>
+          <h3>Review & Confirm</h3>
+          <p>Availability, delivery distance, setup needs, and final pricing are confirmed before payment.</p>
+        </div>
+        <div class="process-step">
+          <b>03</b>
+          <h3>Prepare Your Order</h3>
+          <p>Tables, chairs, tablecloths, and add-ons are reviewed and prepared ahead of your rental date.</p>
+        </div>
+        <div class="process-step">
+          <b>04</b>
+          <h3>Pickup or Event Service</h3>
+          <p>Choose customer pickup, delivery only, or full service with setup and breakdown.</p>
+        </div>
+      </div>
+
+      <div class="process-summary">
+        <div>
+          <h3>Built to keep your event planning simple.</h3>
+          <p>C&C Event Rentals keeps communication clear from the start, so timing, services, pricing, and expectations are settled before your event day.</p>
+        </div>
+        <div class="process-checks">
+          <span>Availability confirmed before payment</span>
+          <span>Delivery and setup options reviewed upfront</span>
+          <span>Final quote approved before the rental is booked</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="service-area" class="service-area">
+    <div class="service-area-inner">
+      <div>
+        <h2>Serving Events Across Eastern Kentucky</h2>
+        <p>C&C Event Rentals offers pickup, delivery, setup, and breakdown options across Eastern Kentucky. Service details are confirmed before booking so you know exactly what to expect.</p>
+        <div class="inline-actions">
+          <a href="#booking" class="hero-button">Check Availability</a>
+        </div>
+      </div>
+      <div class="service-list">
+        <div><strong>Local delivery</strong><span>Available for nearby events.</span></div>
+        <div><strong>Extended delivery</strong><span>Reviewed based on event location.</span></div>
+        <div><strong>Longer trips</strong><span>Confirmed clearly before approval.</span></div>
+        <div><strong>Event types</strong><span>Weddings, birthdays, graduations, reunions, church events, and more.</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="gallery">
+    <div class="section-title">
+      <span class="kicker">Photo Gallery</span>
+      <h2>Event Photos</h2>
+    </div>
+
+    <div class="gallery-grid">
+      <div class="gallery-item">
+        <img src="images/gallery-1.jpg" alt="Outdoor event setup with white folding chairs and round tables">
+      </div>
+      <div class="gallery-item">
+        <img src="images/gallery-2.jpg" alt="Barn event setup with white folding chairs and round table">
+      </div>
+      <div class="gallery-item">
+        <img src="images/gallery-3.jpg" alt="6ft rectangular table setup for food and catering">
+      </div>
+    </div>
+  </section>
+
+  <section class="highlight">
+    <div class="highlight-inner">
+      <div>
+        <h2>Ready To Plan Your Event?</h2>
+        <p>Submit a request and C&C Event Rentals will confirm availability before payment.</p>
+      </div>
+      <a href="#booking" class="button primary">Request a Quote</a>
+    </div>
+  </section>
+
+  <section id="booking">
+    <div class="section-title">
+      <span class="kicker">Booking Request</span>
+      <h2>Request a Booking</h2>
+      <p>Tell us what you need. We’ll review availability and follow up.</p>
+    </div>
+
+    <form class="form-shell" action="https://formspree.io/f/xwvznknz" method="POST">
+      <input type="hidden" name="_subject" value="New Booking Request from C&C Event Rentals Website">
+      <input type="hidden" name="_replyto" value="ccrentalcompany@gmail.com">
+
+      <div class="form-section-title">Contact Information</div>
+      <div class="form-grid">
+        <div>
+          <label for="name">Your Name</label>
+          <input id="name" type="text" name="Customer Name" placeholder="Your Name" required>
+        </div>
+        <div>
+          <label for="email">Email</label>
+          <input id="email" type="email" name="Customer Email" placeholder="Email" required>
+        </div>
+        <div>
+          <label for="phone">Phone Number</label>
+          <input id="phone" type="tel" name="Customer Phone" placeholder="Phone Number" required>
+        </div>
+        <div>
+          <label for="event_date">Event Date</label>
+          <input id="event_date" type="date" name="Event Date" required>
+        </div>
+      </div>
+
+      <div class="form-section-title">Rental Needs</div>
+      <div class="form-grid">
+        <div>
+          <label for="chairs">Number of Chairs</label>
+          <input id="chairs" type="number" name="Number of Chairs" placeholder="Example: 40" min="0" max="80">
+        </div>
+        <div>
+          <label for="tables">Number of 6ft Round Tables</label>
+          <input id="tables" type="number" name="Number of 6ft Round Tables" placeholder="Example: 6" min="0" max="9">
+        </div>
+        <div>
+          <label for="rectangular_tables">Number of 6ft Rectangular Tables</label>
+          <input id="rectangular_tables" type="number" name="Number of 6ft Rectangular Tables" placeholder="Example: 4" min="0" max="50">
+        </div>
+        <div>
+          <label for="tablecloths">White Tablecloths</label>
+          <input id="tablecloths" type="text" name="White Tablecloths" placeholder="Example: Yes, for 6 tables">
+        </div>
+        <div>
+          <label for="yard_games">Yard Games Package</label>
+          <select id="yard_games" name="Yard Games Package">
+            <option>No yard games package</option>
+            <option>Yes, add the $100 yard games package</option>
+          </select>
+        </div>
+        <div>
+          <label for="service">Service Needed</label>
+          <select id="service" name="Service Needed">
+            <option>Customer pickup</option>
+            <option>Delivery only</option>
+            <option>Full service: delivery, setup, and breakdown</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="form-section-title">Event Details</div>
+      <div class="form-grid">
+        <div class="form-full">
+          <label for="location">Event Address / Location</label>
+          <textarea id="location" name="Event Address or Location" placeholder="Enter event address or general location"></textarea>
+        </div>
+        <div class="form-full">
+          <label for="details">Additional Details</label>
+          <textarea id="details" name="Additional Details" placeholder="Tell us anything else we should know"></textarea>
+        </div>
+      </div>
+
+      <button type="submit">Submit Booking Request</button>
+
+      <p class="small-note">After submitting, you may see a quick Formspree confirmation page. We will review your request and follow up to confirm availability.</p>
+      <p class="direct-email">Prefer email? Send requests directly to <a href="mailto:ccrentalcompany@gmail.com?subject=C%26C%20Event%20Rentals%20Booking%20Request">ccrentalcompany@gmail.com</a>.</p>
+    </form>
+  </section>
+
+  <section id="agreement">
+    <div class="section-title">
+      <span class="kicker">Terms</span>
+      <h2>Rental Agreement</h2>
+      <p>Final agreement may be updated as business policies are finalized.</p>
+    </div>
+
+    <div class="card">
+      <p>Booking requests are subject to inventory availability and approval by C&C Event Rentals LLC.</p>
+      <p>Customers are responsible for missing, damaged, or excessively dirty items. Items must be returned clean and in the same condition they were received.</p>
+      <p>Delivery, setup, and breakdown fees may apply depending on service selected and event location.</p>
+      <p>Late returns may include additional fees. Refundable damage deposits may be required based on order size and event details.</p>
+    </div>
+  </section>
+
+  <section id="reviews">
+    <div class="section-title">
+      <span class="kicker">Customer Feedback</span>
+      <h2>Leave a Review</h2>
+      <p>Had a good experience with C&C Event Rentals? We would love to hear from you.</p>
+    </div>
+
+    <p class="review-intro">Your feedback helps future customers feel confident booking tables, chairs, delivery, setup, and breakdown service with us.</p>
+
+    <div class="card" style="margin-top: 24px;">
+      <form action="https://formspree.io/f/xwvznknz" method="POST">
+        <input type="hidden" name="_subject" value="New Customer Review from C&C Event Rentals Website">
+        <input type="hidden" name="_replyto" value="ccrentalcompany@gmail.com">
+
+        <label for="review_name">Your Name</label>
+        <input id="review_name" type="text" name="Reviewer Name" placeholder="Your Name" required>
+
+        <label>Rating</label>
+        <div class="star-rating">
+          <input type="radio" id="star5" name="Rating" value="5 Stars" required><label for="star5">★</label>
+          <input type="radio" id="star4" name="Rating" value="4 Stars"><label for="star4">★</label>
+          <input type="radio" id="star3" name="Rating" value="3 Stars"><label for="star3">★</label>
+          <input type="radio" id="star2" name="Rating" value="2 Stars"><label for="star2">★</label>
+          <input type="radio" id="star1" name="Rating" value="1 Star"><label for="star1">★</label>
+        </div>
+
+        <label for="review_text">Your Review</label>
+        <textarea id="review_text" name="Customer Review" placeholder="Tell us about your experience" required></textarea>
+
+        <button type="submit">Submit Review</button>
+        <p class="small-note">Reviews are sent to C&C Event Rentals for review before being posted publicly.</p>
+      </form>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="section-title">
+      <span class="kicker">Contact</span>
+      <h2>Contact Us</h2>
+      <p>Serving Eastern Kentucky</p>
+    </div>
+
+    <div class="split">
+      <div class="card">
+        <h3>Call or Text</h3>
+        <p>606-634-9988</p>
+        <p>606-634-9996</p>
+      </div>
+
+      <div class="card">
+        <h3>Email</h3>
+        <p><a href="mailto:ccrentalcompany@gmail.com">ccrentalcompany@gmail.com</a></p>
+        <p>Website: cceventrentals.net</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p><strong>C&C Event Rentals LLC</strong></p>
+    <p>Tables • Chairs • Events</p>
+    <p>Serving Eastern Kentucky</p>
+  </footer>
+
+</body>
+</html>
