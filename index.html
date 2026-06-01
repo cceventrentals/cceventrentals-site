@@ -4,6 +4,28 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>C&C Event Rentals LLC | Tables & Chairs in Eastern Kentucky</title>
+  <script>
+    // Keep the homepage from opening at the booking section because of a saved #booking URL or restored browser scroll position.
+    if ('scrollRestoration' in history) {
+      history.scrollRestoration = 'manual';
+    }
+
+    if (window.location.hash) {
+      history.replaceState(null, document.title, window.location.pathname + window.location.search);
+    }
+
+    window.addEventListener('load', function () {
+      if (!window.location.hash) {
+        window.scrollTo(0, 0);
+      }
+    });
+
+    window.addEventListener('pageshow', function () {
+      if (!window.location.hash) {
+        window.scrollTo(0, 0);
+      }
+    });
+  </script>
   <style>
     :root {
       --forest: #142015;
@@ -1903,16 +1925,6 @@
 
       renderCart();
     });
-
-    // Keep the page from opening at the booking form because of a saved #booking link.
-    // Section links still work when clicked normally.
-    window.addEventListener('load', () => {
-      if (window.location.hash === '#booking') {
-        history.replaceState(null, '', window.location.pathname + window.location.search);
-        window.scrollTo({ top: 0, left: 0, behavior: 'auto' });
-      }
-    });
-
   </script>
 
 </body>
