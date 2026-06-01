@@ -1032,6 +1032,16 @@
       line-height: 1.45;
     }
 
+    .cart-warning {
+      margin-top: 8px;
+      color: #8a3b20;
+      font-size: 13px;
+      font-weight: 800;
+      line-height: 1.45;
+      display: none;
+    }
+
+
     .booking-cart {
       margin-bottom: 24px;
       background: linear-gradient(180deg, #fffdf8, #fbf5eb);
@@ -1190,7 +1200,7 @@
 
     
 <div class="card-grid">
-      <div class="card refined-card rental-card" data-item="White Folding Chairs" data-rate="2" data-unit="each" data-target="chairs">
+      <div class="card refined-card rental-card" data-item="White Folding Chairs" data-rate="2" data-unit="each" data-target="chairs" data-max="80">
         <img class="rental-item-image" src="images/white-folding-chairs.jpg" alt="White Folding Chairs">
         <h3>White Folding Chairs</h3>
         <p>$2 each</p>
@@ -1199,11 +1209,12 @@
             <input type="number" min="0" max="80" value="0" aria-label="White Folding Chairs quantity">
             <button type="button" class="add-to-cart-btn">Add to Request</button>
           </div>
-          <div class="cart-helper">Choose your quantity and add it to your booking request.</div>
+          <div class="cart-helper">Maximum available: 80 chairs.</div>
+          <div class="cart-warning"></div>
         </div>
       </div>
 
-      <div class="card refined-card rental-card" data-item="6ft Round Tables" data-rate="10" data-unit="each" data-target="tables">
+      <div class="card refined-card rental-card" data-item="6ft Round Tables" data-rate="10" data-unit="each" data-target="tables" data-max="9">
         <img class="rental-item-image" src="images/six-foot-round-table.jpg" alt="6ft Round Tables">
         <h3>6ft Round Tables</h3>
         <p>$10 each</p>
@@ -1212,20 +1223,22 @@
             <input type="number" min="0" max="9" value="0" aria-label="6ft Round Tables quantity">
             <button type="button" class="add-to-cart-btn">Add to Request</button>
           </div>
-          <div class="cart-helper">Add round guest tables to your quote request.</div>
+          <div class="cart-helper">Maximum available: 9 round tables.</div>
+          <div class="cart-warning"></div>
         </div>
       </div>
 
-      <div class="card refined-card rental-card" data-item="6ft Rectangular Tables" data-rate="10" data-unit="each" data-target="rectangular_tables">
+      <div class="card refined-card rental-card" data-item="6ft Rectangular Tables" data-rate="10" data-unit="each" data-target="rectangular_tables" data-max="4">
         <img class="rental-item-image" src="images/six-foot-rectangular-table.jpg" alt="6ft Rectangular Tables">
         <h3>6ft Rectangular Tables</h3>
         <p>$10 each</p>
         <div class="cart-card">
           <div class="cart-controls">
-            <input type="number" min="0" max="50" value="0" aria-label="6ft Rectangular Tables quantity">
+            <input type="number" min="0" max="4" value="0" aria-label="6ft Rectangular Tables quantity">
             <button type="button" class="add-to-cart-btn">Add to Request</button>
           </div>
-          <div class="cart-helper">Great for buffets, gifts, registration, or extra seating.</div>
+          <div class="cart-helper">Maximum available: 4 rectangular tables.</div>
+          <div class="cart-warning"></div>
         </div>
       </div>
 
@@ -1242,7 +1255,7 @@
         </div>
       </div>
 
-      <div class="card refined-card rental-card" data-item="Yard Games Package" data-rate="100" data-unit="package" data-target="yard_games">
+      <div class="card refined-card rental-card" data-item="Yard Games Package" data-rate="100" data-unit="package" data-target="yard_games" data-max="1">
         <img class="rental-item-image" src="images/yard-games-package.png" alt="Yard Games Package">
         <h3>Yard Games Package</h3>
         <p>$100 package</p>
@@ -1251,7 +1264,8 @@
             <input type="number" min="0" max="1" value="0" aria-label="Yard Games Package quantity">
             <button type="button" class="add-to-cart-btn">Add to Request</button>
           </div>
-          <div class="cart-helper">Add one yard games package to your request.</div>
+          <div class="cart-helper">Maximum available: 1 yard games package.</div>
+          <div class="cart-warning"></div>
         </div>
       </div>
     </div>
@@ -1443,7 +1457,7 @@
         </div>
         <div>
           <label for="rectangular_tables">Number of 6ft Rectangular Tables</label>
-          <input id="rectangular_tables" type="number" name="Number of 6ft Rectangular Tables" placeholder="Example: 4" min="0" max="50">
+          <input id="rectangular_tables" type="number" name="Number of 6ft Rectangular Tables" placeholder="Example: 4" min="0" max="4">
         </div>
         <div>
           <label for="tablecloths">White Tablecloths</label>
@@ -1639,10 +1653,27 @@
       const input = card.querySelector('input[type="number"]');
 
       button.addEventListener('click', () => {
-        const qty = parseInt(input.value, 10) || 0;
+        const max = Number(card.dataset.max || input.getAttribute('max') || Infinity);
+        const warning = card.querySelector('.cart-warning');
+        let qty = parseInt(input.value, 10) || 0;
+
+        if (warning) {
+          warning.style.display = 'none';
+          warning.textContent = '';
+        }
+
         if (qty <= 0) {
           input.focus();
           return;
+        }
+
+        if (qty > max) {
+          qty = max;
+          input.value = max;
+          if (warning) {
+            warning.textContent = `Only ${max} available for this item. Quantity has been adjusted.`;
+            warning.style.display = 'block';
+          }
         }
 
         const name = card.dataset.item;
@@ -1650,11 +1681,29 @@
           name,
           qty,
           rate: Number(card.dataset.rate),
-          unit: card.dataset.unit
+          unit: card.dataset.unit,
+          max
         };
 
         renderCart();
         document.getElementById('booking').scrollIntoView({ behavior: 'smooth', block: 'start' });
+      });
+
+      input.addEventListener('input', () => {
+        const max = Number(card.dataset.max || input.getAttribute('max') || Infinity);
+        const warning = card.querySelector('.cart-warning');
+        let qty = parseInt(input.value, 10) || 0;
+
+        if (qty > max) {
+          input.value = max;
+          if (warning) {
+            warning.textContent = `Maximum available for this item is ${max}.`;
+            warning.style.display = 'block';
+          }
+        } else if (warning) {
+          warning.style.display = 'none';
+          warning.textContent = '';
+        }
       });
     });
 
@@ -1663,7 +1712,28 @@
       renderCart();
     });
 
-    document.getElementById('bookingForm').addEventListener('submit', renderCart);
+    document.getElementById('bookingForm').addEventListener('submit', (event) => {
+      const limits = {
+        chairs: 80,
+        tables: 9,
+        rectangular_tables: 4
+      };
+
+      for (const [fieldId, max] of Object.entries(limits)) {
+        const field = document.getElementById(fieldId);
+        const value = parseInt(field.value, 10) || 0;
+        if (value > max) {
+          event.preventDefault();
+          field.value = max;
+          alert(`Maximum available for this item is ${max}. Please review your request.`);
+          field.focus();
+          renderCart();
+          return;
+        }
+      }
+
+      renderCart();
+    });
   </script>
 
 </body>
