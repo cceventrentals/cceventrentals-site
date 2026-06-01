@@ -1473,13 +1473,13 @@
         </div>
       </div>
 
-      <div class="card refined-card rental-card" data-item="6ft Round Tables" data-rate="10" data-unit="each" data-target="tables" data-max="9">
-        <img class="rental-item-image" src="images/six-foot-round-table.jpg" alt="6ft Round Tables">
-        <h3>6ft Round Tables</h3>
+      <div class="card refined-card rental-card" data-item="60 Inch Round Tables" data-rate="10" data-unit="each" data-target="tables" data-max="9">
+        <img class="rental-item-image" src="images/six-foot-round-table.jpg" alt="60 Inch Round Tables">
+        <h3>60 Inch Round Tables</h3>
         <p>$10 each</p>
         <div class="cart-card">
           <div class="cart-controls">
-            <input type="number" min="0" max="9" value="0" aria-label="6ft Round Tables quantity">
+            <input type="number" min="0" max="9" value="0" aria-label="60 Inch Round Tables quantity">
             <button type="button" class="add-to-cart-btn">Add to Request</button>
           </div>
           <div class="cart-helper">Maximum available: 9 round tables.</div>
@@ -1487,16 +1487,16 @@
         </div>
       </div>
 
-      <div class="card refined-card rental-card" data-item="6ft Rectangular Tables" data-rate="10" data-unit="each" data-target="rectangular_tables" data-max="4">
+      <div class="card refined-card rental-card" data-item="6ft Rectangular Tables" data-rate="10" data-unit="each" data-target="rectangular_tables" data-max="5">
         <img class="rental-item-image" src="images/six-foot-rectangular-table.jpg" alt="6ft Rectangular Tables">
         <h3>6ft Rectangular Tables</h3>
         <p>$10 each</p>
         <div class="cart-card">
           <div class="cart-controls">
-            <input type="number" min="0" max="4" value="0" aria-label="6ft Rectangular Tables quantity">
+            <input type="number" min="0" max="5" value="0" aria-label="6ft Rectangular Tables quantity">
             <button type="button" class="add-to-cart-btn">Add to Request</button>
           </div>
-          <div class="cart-helper">Maximum available: 4 rectangular tables.</div>
+          <div class="cart-helper">Maximum available: 5 rectangular tables.</div>
           <div class="cart-warning"></div>
         </div>
       </div>
@@ -1744,12 +1744,12 @@
           <input id="chairs" type="number" name="Number of Chairs" placeholder="Example: 40" min="0" max="80">
         </div>
         <div>
-          <label for="tables">Number of 6ft Round Tables</label>
-          <input id="tables" type="number" name="Number of 6ft Round Tables" placeholder="Example: 6" min="0" max="9">
+          <label for="tables">Number of 60 Inch Round Tables</label>
+          <input id="tables" type="number" name="Number of 60 Inch Round Tables" placeholder="Example: 6" min="0" max="9">
         </div>
         <div>
           <label for="rectangular_tables">Number of 6ft Rectangular Tables</label>
-          <input id="rectangular_tables" type="number" name="Number of 6ft Rectangular Tables" placeholder="Example: 4" min="0" max="4">
+          <input id="rectangular_tables" type="number" name="Number of 6ft Rectangular Tables" placeholder="Example: 5" min="0" max="5">
         </div>
         <div>
           <label for="tablecloths">White Tablecloths</label>
@@ -1879,7 +1879,7 @@
 
     function updateLinkedFormFields() {
       document.getElementById('chairs').value = cart['White Folding Chairs']?.qty || '';
-      document.getElementById('tables').value = cart['6ft Round Tables']?.qty || '';
+      document.getElementById('tables').value = cart['60 Inch Round Tables']?.qty || '';
       document.getElementById('rectangular_tables').value = cart['6ft Rectangular Tables']?.qty || '';
 
       const tableclothQty = cart['White Tablecloths']?.qty || 0;
@@ -2031,7 +2031,7 @@
       const limits = {
         chairs: 80,
         tables: 9,
-        rectangular_tables: 4
+        rectangular_tables: 5
       };
 
       for (const [fieldId, max] of Object.entries(limits)) {
