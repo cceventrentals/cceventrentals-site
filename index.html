@@ -1856,7 +1856,6 @@
         };
 
         renderCart();
-        document.getElementById('booking').scrollIntoView({ behavior: 'smooth', block: 'start' });
       });
 
       input.addEventListener('input', () => {
@@ -1904,6 +1903,16 @@
 
       renderCart();
     });
+
+    // Keep the page from opening at the booking form because of a saved #booking link.
+    // Section links still work when clicked normally.
+    window.addEventListener('load', () => {
+      if (window.location.hash === '#booking') {
+        history.replaceState(null, '', window.location.pathname + window.location.search);
+        window.scrollTo({ top: 0, left: 0, behavior: 'auto' });
+      }
+    });
+
   </script>
 
 </body>
