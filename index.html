@@ -987,6 +987,20 @@
     }
 
 
+
+    .package-includes {
+      margin: 12px 0 0;
+      padding-left: 18px;
+      color: var(--muted);
+      line-height: 1.6;
+      font-size: 14px;
+    }
+
+    .package-includes li {
+      margin-bottom: 3px;
+    }
+
+
     .cart-card {
       margin-top: 18px;
       padding-top: 18px;
@@ -1255,16 +1269,108 @@
         </div>
       </div>
 
+      <div class="card refined-card rental-card" data-item="Corn Hole" data-rate="25" data-unit="game" data-target="corn_hole" data-max="1">
+        <img class="rental-item-image" src="images/corn-hole-game.png" alt="Corn hole boards and bags">
+        <h3>Corn Hole</h3>
+        <p>$25</p>
+        <div class="cart-card">
+          <div class="cart-controls">
+            <input type="number" min="0" max="1" value="0" aria-label="Corn Hole quantity">
+            <button type="button" class="add-to-cart-btn">Add to Request</button>
+          </div>
+          <div class="cart-helper">Maximum available: 1 corn hole set.</div>
+          <div class="cart-warning"></div>
+        </div>
+      </div>
+
+      <div class="card refined-card rental-card" data-item="Kan Jam" data-rate="15" data-unit="game" data-target="kan_jam" data-max="1">
+        <img class="rental-item-image" src="images/kan-jam-game.png" alt="Kan Jam yard game">
+        <h3>Kan Jam</h3>
+        <p>$15</p>
+        <div class="cart-card">
+          <div class="cart-controls">
+            <input type="number" min="0" max="1" value="0" aria-label="Kan Jam quantity">
+            <button type="button" class="add-to-cart-btn">Add to Request</button>
+          </div>
+          <div class="cart-helper">Maximum available: 1 Kan Jam set.</div>
+          <div class="cart-warning"></div>
+        </div>
+      </div>
+
+      <div class="card refined-card rental-card" data-item="Spike Ball" data-rate="20" data-unit="game" data-target="spike_ball" data-max="1">
+        <img class="rental-item-image" src="images/spikeball-game.jpg" alt="Spike Ball yard game">
+        <h3>Spike Ball</h3>
+        <p>$20</p>
+        <div class="cart-card">
+          <div class="cart-controls">
+            <input type="number" min="0" max="1" value="0" aria-label="Spike Ball quantity">
+            <button type="button" class="add-to-cart-btn">Add to Request</button>
+          </div>
+          <div class="cart-helper">Maximum available: 1 Spike Ball set.</div>
+          <div class="cart-warning"></div>
+        </div>
+      </div>
+
+      <div class="card refined-card rental-card" data-item="Badminton Set" data-rate="30" data-unit="game" data-target="badminton_set" data-max="1">
+        <img class="rental-item-image" src="images/badminton-set.png" alt="Badminton set">
+        <h3>Badminton Set</h3>
+        <p>$30</p>
+        <div class="cart-card">
+          <div class="cart-controls">
+            <input type="number" min="0" max="1" value="0" aria-label="Badminton Set quantity">
+            <button type="button" class="add-to-cart-btn">Add to Request</button>
+          </div>
+          <div class="cart-helper">Maximum available: 1 badminton set.</div>
+          <div class="cart-warning"></div>
+        </div>
+      </div>
+
+      <div class="card refined-card rental-card" data-item="Croquet" data-rate="25" data-unit="game" data-target="croquet" data-max="1">
+        <img class="rental-item-image" src="images/croquet-game.png" alt="Croquet yard game">
+        <h3>Croquet</h3>
+        <p>$25</p>
+        <div class="cart-card">
+          <div class="cart-controls">
+            <input type="number" min="0" max="1" value="0" aria-label="Croquet quantity">
+            <button type="button" class="add-to-cart-btn">Add to Request</button>
+          </div>
+          <div class="cart-helper">Maximum available: 1 croquet set.</div>
+          <div class="cart-warning"></div>
+        </div>
+      </div>
+
+      <div class="card refined-card rental-card" data-item="Giant Yahtzee" data-rate="10" data-unit="game" data-target="giant_yahtzee" data-max="1">
+        <img class="rental-item-image" src="images/giant-yahtzee.png" alt="Giant Yahtzee yard game">
+        <h3>Giant Yahtzee</h3>
+        <p>$10</p>
+        <div class="cart-card">
+          <div class="cart-controls">
+            <input type="number" min="0" max="1" value="0" aria-label="Giant Yahtzee quantity">
+            <button type="button" class="add-to-cart-btn">Add to Request</button>
+          </div>
+          <div class="cart-helper">Maximum available: 1 Giant Yahtzee set.</div>
+          <div class="cart-warning"></div>
+        </div>
+      </div>
+
       <div class="card refined-card rental-card" data-item="Yard Games Package" data-rate="100" data-unit="package" data-target="yard_games" data-max="1">
-        <img class="rental-item-image" src="images/yard-games-package.png" alt="Yard Games Package">
+        <img class="rental-item-image" src="images/yard-games-package.png" alt="Complete yard games package">
         <h3>Yard Games Package</h3>
         <p>$100 package</p>
+        <ul class="package-includes">
+          <li>Corn Hole</li>
+          <li>Kan Jam</li>
+          <li>Spike Ball</li>
+          <li>Badminton Set</li>
+          <li>Croquet</li>
+          <li>Giant Yahtzee</li>
+        </ul>
         <div class="cart-card">
           <div class="cart-controls">
             <input type="number" min="0" max="1" value="0" aria-label="Yard Games Package quantity">
             <button type="button" class="add-to-cart-btn">Add to Request</button>
           </div>
-          <div class="cart-helper">Maximum available: 1 yard games package.</div>
+          <div class="cart-helper">Includes all yard games. Maximum available: 1 package.</div>
           <div class="cart-warning"></div>
         </div>
       </div>
@@ -1333,9 +1439,39 @@
           </thead>
           <tbody>
             <tr>
-              <td><strong>Yard Games Package</strong>Includes corn hole, yard pong, and other outdoor games.</td>
+              <td><strong>Corn Hole</strong>Classic boards and bags for casual competition.</td>
+              <td class="amount">$25<span>Game</span></td>
+              <td>Great for weddings, reunions, graduations, and backyard parties.</td>
+            </tr>
+            <tr>
+              <td><strong>Kan Jam</strong>Outdoor disc toss game for groups.</td>
+              <td class="amount">$15<span>Game</span></td>
+              <td>Easy add-on for casual outdoor events.</td>
+            </tr>
+            <tr>
+              <td><strong>Spike Ball</strong>Round net game for active outdoor play.</td>
+              <td class="amount">$20<span>Game</span></td>
+              <td>Great for teens, adults, parties, and outdoor gatherings.</td>
+            </tr>
+            <tr>
+              <td><strong>Badminton Set</strong>Net, rackets, and outdoor play setup.</td>
+              <td class="amount">$30<span>Game</span></td>
+              <td>Perfect for lawns, family events, and summer gatherings.</td>
+            </tr>
+            <tr>
+              <td><strong>Croquet</strong>Classic lawn game set.</td>
+              <td class="amount">$25<span>Game</span></td>
+              <td>Great for relaxed outdoor events and family gatherings.</td>
+            </tr>
+            <tr>
+              <td><strong>Giant Yahtzee</strong>Oversized dice game for groups.</td>
+              <td class="amount">$10<span>Game</span></td>
+              <td>Fun add-on for parties, reunions, and casual events.</td>
+            </tr>
+            <tr>
+              <td><strong>Yard Games Package</strong>Includes Corn Hole, Kan Jam, Spike Ball, Badminton Set, Croquet, and Giant Yahtzee.</td>
               <td class="amount">$100<span>Package</span></td>
-              <td>Great for outdoor weddings, birthdays, reunions, graduations, and casual gatherings.</td>
+              <td>Best value for outdoor weddings, birthdays, reunions, graduations, and casual gatherings.</td>
             </tr>
             <tr>
               <td><strong>Delivery</strong>Available for local events and nearby service areas.</td>
@@ -1424,6 +1560,12 @@
       <input type="hidden" name="_subject" value="New Booking Request from C&C Event Rentals Website">
       <input type="hidden" name="_replyto" value="ccrentalcompany@gmail.com">
       <input type="hidden" id="cartSummaryField" name="Request Cart Summary" value="No cart items selected">
+      <input type="hidden" id="corn_hole" name="Corn Hole" value="">
+      <input type="hidden" id="kan_jam" name="Kan Jam" value="">
+      <input type="hidden" id="spike_ball" name="Spike Ball" value="">
+      <input type="hidden" id="badminton_set" name="Badminton Set" value="">
+      <input type="hidden" id="croquet" name="Croquet" value="">
+      <input type="hidden" id="giant_yahtzee" name="Giant Yahtzee" value="">
 
       <div class="form-section-title">Contact Information</div>
       <div class="form-grid">
@@ -1593,6 +1735,20 @@
       const tableclothQty = cart['White Tablecloths']?.qty || 0;
       document.getElementById('tablecloths').value = tableclothQty ? `Yes, ${tableclothQty} requested` : '';
 
+      const yardGameFields = {
+        'Corn Hole': 'corn_hole',
+        'Kan Jam': 'kan_jam',
+        'Spike Ball': 'spike_ball',
+        'Badminton Set': 'badminton_set',
+        'Croquet': 'croquet',
+        'Giant Yahtzee': 'giant_yahtzee'
+      };
+
+      Object.entries(yardGameFields).forEach(([itemName, fieldId]) => {
+        const field = document.getElementById(fieldId);
+        if (field) field.value = cart[itemName]?.qty ? 'Yes' : '';
+      });
+
       const yardGamesQty = cart['Yard Games Package']?.qty || 0;
       document.getElementById('yard_games').value = yardGamesQty ? 'Yes, add the $100 yard games package' : 'No yard games package';
     }
@@ -1677,6 +1833,16 @@
         }
 
         const name = card.dataset.item;
+        const individualYardGames = ['Corn Hole', 'Kan Jam', 'Spike Ball', 'Badminton Set', 'Croquet', 'Giant Yahtzee'];
+
+        if (name === 'Yard Games Package') {
+          individualYardGames.forEach(game => delete cart[game]);
+        }
+
+        if (individualYardGames.includes(name)) {
+          delete cart['Yard Games Package'];
+        }
+
         cart[name] = {
           name,
           qty,
