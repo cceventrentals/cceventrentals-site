@@ -1438,6 +1438,39 @@
     }
 
 
+
+    .rental-tabs {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+      margin: 0 auto 28px;
+    }
+
+    .rental-tab {
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: #fffdf8;
+      color: var(--forest);
+      padding: 11px 16px;
+      font-size: 12px;
+      font-weight: 900;
+      letter-spacing: 0.7px;
+      text-transform: uppercase;
+      cursor: pointer;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .rental-tab.active {
+      background: var(--forest);
+      color: #ffffff;
+      border-color: var(--forest);
+    }
+
+    .rental-card[hidden] {
+      display: none !important;
+    }
+
   </style>
 </head>
 <body>
@@ -1512,8 +1545,16 @@
     </div>
 
     
+<div class="rental-tabs" aria-label="Rental categories">
+      <button type="button" class="rental-tab active" data-filter="all">All Rentals</button>
+      <button type="button" class="rental-tab" data-filter="tables">Tables &amp; Chairs</button>
+      <button type="button" class="rental-tab" data-filter="linens">Linens</button>
+      <button type="button" class="rental-tab" data-filter="concessions">Concessions</button>
+      <button type="button" class="rental-tab" data-filter="games">Yard Games</button>
+    </div>
+
 <div class="card-grid">
-      <div class="card refined-card rental-card" data-item="White Folding Chairs" data-rate="2" data-unit="each" data-target="chairs" data-max="80">
+      <div class="card refined-card rental-card" data-category="tables" data-item="White Folding Chairs" data-rate="2" data-unit="each" data-target="chairs" data-max="80">
         <img class="rental-item-image" src="images/white-folding-chairs.jpg" alt="White Folding Chairs">
         <h3>White Folding Chairs</h3>
         <p>$2 each</p>
@@ -1527,7 +1568,7 @@
         </div>
       </div>
 
-      <div class="card refined-card rental-card" data-item="60 Inch Round Tables" data-rate="10" data-unit="each" data-target="tables" data-max="9">
+      <div class="card refined-card rental-card" data-category="tables" data-item="60 Inch Round Tables" data-rate="10" data-unit="each" data-target="tables" data-max="9">
         <img class="rental-item-image" src="images/six-foot-round-table.jpg" alt="60 Inch Round Tables">
         <h3>60 Inch Round Tables</h3>
         <p>$10 each</p>
@@ -1541,7 +1582,7 @@
         </div>
       </div>
 
-      <div class="card refined-card rental-card" data-item="6ft Rectangular Tables" data-rate="10" data-unit="each" data-target="rectangular_tables" data-max="5">
+      <div class="card refined-card rental-card" data-category="tables" data-item="6ft Rectangular Tables" data-rate="10" data-unit="each" data-target="rectangular_tables" data-max="5">
         <img class="rental-item-image" src="images/six-foot-rectangular-table.jpg" alt="6ft Rectangular Tables">
         <h3>6ft Rectangular Tables</h3>
         <p>$10 each</p>
@@ -1555,7 +1596,7 @@
         </div>
       </div>
 
-      <div class="card refined-card rental-card" data-item="White Tablecloths" data-rate="0" data-unit="by quote" data-target="tablecloths">
+      <div class="card refined-card rental-card" data-category="linens" data-item="White Tablecloths" data-rate="0" data-unit="by quote" data-target="tablecloths">
         <img class="rental-item-image" src="images/white-tablecloths.png" alt="White Tablecloths">
         <h3>White Tablecloths</h3>
         <p>By quote</p>
@@ -1568,7 +1609,7 @@
         </div>
       </div>
 
-      <div class="card refined-card rental-card" data-item="Corn Hole" data-rate="25" data-unit="game" data-target="corn_hole" data-max="1">
+      <div class="card refined-card rental-card" data-category="games" data-item="Corn Hole" data-rate="25" data-unit="game" data-target="corn_hole" data-max="1">
         <img class="rental-item-image" src="images/corn-hole-game.png" alt="Corn hole boards and bags">
         <h3>Corn Hole</h3>
         <p>$25</p>
@@ -1582,7 +1623,7 @@
         </div>
       </div>
 
-      <div class="card refined-card rental-card" data-item="Kan Jam" data-rate="15" data-unit="game" data-target="kan_jam" data-max="1">
+      <div class="card refined-card rental-card" data-category="games" data-item="Kan Jam" data-rate="15" data-unit="game" data-target="kan_jam" data-max="1">
         <img class="rental-item-image" src="images/kan-jam-game.png" alt="Kan Jam yard game">
         <h3>Kan Jam</h3>
         <p>$15</p>
@@ -1596,7 +1637,7 @@
         </div>
       </div>
 
-      <div class="card refined-card rental-card" data-item="Spike Ball" data-rate="20" data-unit="game" data-target="spike_ball" data-max="1">
+      <div class="card refined-card rental-card" data-category="games" data-item="Spike Ball" data-rate="20" data-unit="game" data-target="spike_ball" data-max="1">
         <img class="rental-item-image" src="images/spikeball-game.jpg" alt="Spike Ball yard game">
         <h3>Spike Ball</h3>
         <p>$20</p>
@@ -1610,7 +1651,7 @@
         </div>
       </div>
 
-      <div class="card refined-card rental-card" data-item="Badminton Set" data-rate="30" data-unit="game" data-target="badminton_set" data-max="1">
+      <div class="card refined-card rental-card" data-category="games" data-item="Badminton Set" data-rate="30" data-unit="game" data-target="badminton_set" data-max="1">
         <img class="rental-item-image" src="images/badminton-set.png" alt="Badminton set">
         <h3>Badminton Set</h3>
         <p>$30</p>
@@ -1624,7 +1665,7 @@
         </div>
       </div>
 
-      <div class="card refined-card rental-card" data-item="Croquet" data-rate="25" data-unit="game" data-target="croquet" data-max="1">
+      <div class="card refined-card rental-card" data-category="games" data-item="Croquet" data-rate="25" data-unit="game" data-target="croquet" data-max="1">
         <img class="rental-item-image" src="images/croquet-game.png" alt="Croquet yard game">
         <h3>Croquet</h3>
         <p>$25</p>
@@ -1638,7 +1679,7 @@
         </div>
       </div>
 
-      <div class="card refined-card rental-card" data-item="Giant Yahtzee" data-rate="10" data-unit="game" data-target="giant_yahtzee" data-max="1">
+      <div class="card refined-card rental-card" data-category="games" data-item="Giant Yahtzee" data-rate="10" data-unit="game" data-target="giant_yahtzee" data-max="1">
         <img class="rental-item-image" src="images/giant-yahtzee.png" alt="Giant Yahtzee yard game">
         <h3>Giant Yahtzee</h3>
         <p>$10</p>
@@ -1652,7 +1693,7 @@
         </div>
       </div>
 
-      <div class="card refined-card rental-card" data-item="Yard Games Package" data-rate="100" data-unit="package" data-target="yard_games" data-max="1">
+      <div class="card refined-card rental-card" data-category="games" data-item="Yard Games Package" data-rate="100" data-unit="package" data-target="yard_games" data-max="1">
         <img class="rental-item-image" src="images/yard-games-package.png" alt="Complete yard games package">
         <h3>Yard Games Package</h3>
         <p>$100 package</p>
@@ -1673,6 +1714,38 @@
           <div class="cart-warning"></div>
         </div>
       </div>
+      <div class="card refined-card rental-card" data-category="concessions" data-item="Hot Dog Roller Grill" data-rate="50" data-unit="day" data-target="hot_dog_roller" data-max="1">
+        <img class="rental-item-image" src="images/hot-dog-roller.png" alt="Hot Dog Roller Grill">
+        <h3>Hot Dog Roller Grill</h3>
+        <p>$50 per day</p>
+        <div class="cart-card">
+          <div class="cart-controls">
+            <input type="number" min="0" max="1" value="0" aria-label="Hot Dog Roller Grill quantity">
+            <button type="button" class="add-to-cart-btn">Add to Request</button>
+          </div>
+          <div class="cart-helper">Hot dogs not included. Maximum available: 1 machine.</div>
+          <div class="cart-warning"></div>
+        </div>
+      </div>
+
+      <div class="card refined-card rental-card" data-category="concessions" data-item="Cotton Candy Machine" data-rate="100" data-unit="day" data-target="cotton_candy_machine" data-max="1">
+        <img class="rental-item-image" src="images/cotton-candy-machine.png" alt="Cotton Candy Machine">
+        <h3>Cotton Candy Machine</h3>
+        <p>$100 per day</p>
+        <ul class="package-includes">
+          <li>Includes machine rental</li>
+          <li>Includes two flavors</li>
+        </ul>
+        <div class="cart-card">
+          <div class="cart-controls">
+            <input type="number" min="0" max="1" value="0" aria-label="Cotton Candy Machine quantity">
+            <button type="button" class="add-to-cart-btn">Add to Request</button>
+          </div>
+          <div class="cart-helper">Includes two flavors with the machine. Maximum available: 1 machine.</div>
+          <div class="cart-warning"></div>
+        </div>
+      </div>
+
     </div>
 
   </section>
@@ -1692,7 +1765,7 @@
       <div class="pricing-summary-main">
         <div>
           <h3>Need a quick estimate?</h3>
-          <p>Use the rental cards above to choose chairs, tables, linens, yard games, and packages. Your request cart will keep an estimated rental subtotal as you add items.</p>
+          <p>Use the rental cards above to choose chairs, tables, linens, concession machines, yard games, and packages. Your request cart will keep an estimated rental subtotal as you add items.</p>
         </div>
 
         <div class="pricing-services" aria-label="Additional service pricing">
@@ -1700,6 +1773,8 @@
           <div class="pricing-service-row"><span>Additional Mileage</span><span>$1/mile</span></div>
           <div class="pricing-service-row"><span>Chair Setup &amp; Breakdown</span><span>$1 each</span></div>
           <div class="pricing-service-row"><span>Table Setup &amp; Breakdown</span><span>$3 each</span></div>
+          <div class="pricing-service-row"><span>Hot Dog Roller Grill</span><span>$50/day</span></div>
+          <div class="pricing-service-row"><span>Cotton Candy Machine</span><span>$100/day</span></div>
         </div>
       </div>
 
@@ -1767,6 +1842,8 @@
       <input type="hidden" id="badminton_set" name="Badminton Set" value="">
       <input type="hidden" id="croquet" name="Croquet" value="">
       <input type="hidden" id="giant_yahtzee" name="Giant Yahtzee" value="">
+      <input type="hidden" id="hot_dog_roller" name="Hot Dog Roller Grill" value="">
+      <input type="hidden" id="cotton_candy_machine" name="Cotton Candy Machine" value="">
 
       <div class="form-section-title">Contact Information</div>
       <div class="form-grid">
@@ -1815,6 +1892,20 @@
           <select id="yard_games" name="Yard Games Package">
             <option>No yard games package</option>
             <option>Yes, add the $100 yard games package</option>
+          </select>
+        </div>
+        <div>
+          <label for="hot_dog_roller">Hot Dog Roller Grill</label>
+          <select id="hot_dog_roller_select" name="Hot Dog Roller Grill Request">
+            <option>No hot dog roller grill</option>
+            <option>Yes, add the $50/day hot dog roller grill</option>
+          </select>
+        </div>
+        <div>
+          <label for="cotton_candy_machine">Cotton Candy Machine</label>
+          <select id="cotton_candy_machine_select" name="Cotton Candy Machine Request">
+            <option>No cotton candy machine</option>
+            <option>Yes, add the $100/day cotton candy machine with two flavors</option>
           </select>
         </div>
         <div>
@@ -2136,6 +2227,31 @@
       }
 
       renderCart();
+    });
+  </script>
+
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const tabs = document.querySelectorAll('.rental-tab');
+      const rentalCards = document.querySelectorAll('.rental-card');
+
+      tabs.forEach(function (tab) {
+        tab.addEventListener('click', function () {
+          const filter = tab.getAttribute('data-filter');
+
+          tabs.forEach(function (item) {
+            item.classList.remove('active');
+          });
+
+          tab.classList.add('active');
+
+          rentalCards.forEach(function (card) {
+            const category = card.getAttribute('data-category');
+            card.hidden = filter !== 'all' && category !== filter;
+          });
+        });
+      });
     });
   </script>
 
