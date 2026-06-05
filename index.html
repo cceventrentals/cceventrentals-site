@@ -1514,6 +1514,20 @@
         </div>
       </div>
 
+      <div class="card refined-card rental-card" data-category="tables" data-item="White Padded Folding Chairs" data-rate="4" data-unit="each" data-target="padded_chairs" data-max="50">
+        <img class="rental-item-image" src="images/white-padded-folding-chair.png" alt="White padded folding chair">
+        <h3>White Padded Folding Chairs</h3>
+        <p>$4 each</p>
+        <div class="cart-card">
+          <div class="cart-controls">
+            <input type="number" min="0" max="50" value="0" aria-label="White Padded Folding Chairs quantity">
+            <button type="button" class="add-to-cart-btn">Add to Request</button>
+          </div>
+          <div class="cart-helper">Maximum available: 50 chairs.</div>
+          <div class="cart-warning"></div>
+        </div>
+      </div>
+
       <div class="card refined-card rental-card" data-category="tables" data-item="60 Inch Round Tables" data-rate="10" data-unit="each" data-target="tables" data-max="9">
         <img class="rental-item-image" src="images/six-foot-round-table.jpg" alt="60 Inch Round Tables">
         <h3>60 Inch Round Tables</h3>
@@ -1821,6 +1835,10 @@
           <input id="chairs" type="number" name="Number of Chairs" placeholder="Example: 40" min="0" max="80">
         </div>
         <div>
+          <label for="padded_chairs">Number of White Padded Folding Chairs</label>
+          <input id="padded_chairs" type="number" name="Number of White Padded Folding Chairs" placeholder="Example: 20" min="0" max="50">
+        </div>
+        <div>
           <label for="tables">Number of 60 Inch Round Tables</label>
           <input id="tables" type="number" name="Number of 60 Inch Round Tables" placeholder="Example: 6" min="0" max="9">
         </div>
@@ -1954,6 +1972,7 @@
 
     function updateLinkedFormFields() {
       document.getElementById('chairs').value = cart['White Folding Chairs']?.qty || '';
+      document.getElementById('padded_chairs').value = cart['White Padded Folding Chairs']?.qty || '';
       document.getElementById('tables').value = cart['60 Inch Round Tables']?.qty || '';
       document.getElementById('rectangular_tables').value = cart['6ft Rectangular Tables']?.qty || '';
 
@@ -2105,6 +2124,7 @@
     document.getElementById('bookingForm').addEventListener('submit', (event) => {
       const limits = {
         chairs: 80,
+        padded_chairs: 50,
         tables: 9,
         rectangular_tables: 5
       };
