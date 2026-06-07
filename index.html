@@ -1492,8 +1492,7 @@
 
     
 <div class="rental-tabs" aria-label="Rental categories">
-      <button type="button" class="rental-tab active" data-filter="all">All Rentals</button>
-      <button type="button" class="rental-tab" data-filter="tables">Tables &amp; Chairs</button>
+      <button type="button" class="rental-tab active" data-filter="tables">Tables &amp; Chairs</button>
       <button type="button" class="rental-tab" data-filter="linens">Linens</button>
       <button type="button" class="rental-tab" data-filter="concessions">Concessions</button>
       <button type="button" class="rental-tab" data-filter="games">Yard Games</button>
@@ -1658,6 +1657,20 @@
         </div>
       </div>
 
+      <div class="card refined-card rental-card" data-category="games" data-item="Giant Connect Four" data-rate="15" data-unit="game" data-target="giant_connect_four" data-max="1">
+        <img class="rental-item-image" src="images/giant-connect-four.jpg" alt="Giant Connect Four yard game">
+        <h3>Giant Connect Four</h3>
+        <p>$15</p>
+        <div class="cart-card">
+          <div class="cart-controls">
+            <input type="number" min="0" max="1" value="0" aria-label="Giant Connect Four quantity">
+            <button type="button" class="add-to-cart-btn">Add to Request</button>
+          </div>
+          <div class="cart-helper">Maximum available: 1 Giant Connect Four set.</div>
+          <div class="cart-warning"></div>
+        </div>
+      </div>
+
       <div class="card refined-card rental-card" data-category="games" data-item="Yard Games Package" data-rate="100" data-unit="package" data-target="yard_games" data-max="1">
         <img class="rental-item-image" src="images/yard-games-package.png" alt="Complete yard games package">
         <h3>Yard Games Package</h3>
@@ -1669,6 +1682,7 @@
           <li>Badminton Set</li>
           <li>Croquet</li>
           <li>Giant Yahtzee</li>
+          <li>Giant Connect Four</li>
         </ul>
         <div class="cart-card">
           <div class="cart-controls">
@@ -1806,6 +1820,7 @@
       <input type="hidden" id="badminton_set" name="Badminton Set" value="">
       <input type="hidden" id="croquet" name="Croquet" value="">
       <input type="hidden" id="giant_yahtzee" name="Giant Yahtzee" value="">
+      <input type="hidden" id="giant_connect_four" name="Giant Connect Four" value="">
       <input type="hidden" id="hot_dog_roller" name="Hot Dog Roller Grill" value="">
       <input type="hidden" id="cotton_candy_machine" name="Cotton Candy Machine" value="">
 
@@ -2172,6 +2187,19 @@
             card.hidden = filter !== 'all' && category !== filter;
           });
         });
+      });
+    });
+  </script>
+
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const defaultFilter = 'tables';
+      document.querySelectorAll('.rental-card').forEach(function (card) {
+        card.hidden = card.dataset.category !== defaultFilter;
+      });
+      document.querySelectorAll('.rental-tab').forEach(function (tab) {
+        tab.classList.toggle('active', tab.dataset.filter === defaultFilter);
       });
     });
   </script>
