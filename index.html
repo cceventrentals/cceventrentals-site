@@ -1438,6 +1438,465 @@
     }
 
 
+
+    /* Booking section cleanup */
+    .booking-intro-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+      margin-bottom: 24px;
+    }
+
+    .booking-tip-card {
+      background: rgba(255,253,248,0.96);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 20px 22px;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .booking-tip-card strong {
+      display: block;
+      margin-bottom: 6px;
+      color: var(--forest);
+      font-size: 16px;
+    }
+
+    .booking-tip-card p {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.55;
+      font-size: 15px;
+    }
+
+    .booking-form-panel {
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: #fffdf8;
+      margin-bottom: 14px;
+      overflow: hidden;
+    }
+
+    .booking-form-panel summary {
+      list-style: none;
+      cursor: pointer;
+      padding: 17px 20px;
+      color: var(--forest);
+      font-size: 14px;
+      font-weight: 900;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      display: flex;
+      justify-content: space-between;
+      gap: 18px;
+      align-items: center;
+      background: linear-gradient(180deg, #fffaf2, #f7f0e4);
+    }
+
+    .booking-form-panel summary::-webkit-details-marker { display: none; }
+
+    .booking-form-panel summary::after {
+      content: '+';
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(60,95,67,0.12);
+      color: var(--sage);
+      font-size: 18px;
+      flex: 0 0 auto;
+    }
+
+    .booking-form-panel[open] summary::after { content: '–'; }
+
+    .booking-panel-body {
+      padding: 20px;
+      border-top: 1px solid var(--line);
+    }
+
+    .yard-games-note {
+      grid-column: 1 / -1;
+      padding: 14px 16px;
+      background: rgba(60,95,67,0.08);
+      border: 1px solid rgba(60,95,67,0.18);
+      border-radius: 8px;
+      color: var(--muted);
+      line-height: 1.55;
+      font-size: 14px;
+    }
+
+    .yard-games-note strong { color: var(--forest); }
+
+    @media (max-width: 720px) {
+      .booking-intro-grid { grid-template-columns: 1fr; }
+      .booking-form-panel summary { align-items: flex-start; }
+    }
+
+
+    /* Upgraded booking section polish */
+    .booking-section-upgraded {
+      max-width: 1220px;
+    }
+
+    .booking-steps {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+      margin: -10px auto 28px;
+    }
+
+    .booking-step-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      padding: 10px 14px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: rgba(255,253,248,0.9);
+      color: var(--forest);
+      font-size: 13px;
+      font-weight: 900;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .booking-step-pill span,
+    .summary-number {
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--forest);
+      color: #fff;
+      font-size: 12px;
+      font-weight: 900;
+      flex: 0 0 auto;
+    }
+
+    .booking-main-grid {
+      display: grid;
+      grid-template-columns: minmax(300px, 0.85fr) minmax(0, 1.45fr);
+      gap: 24px;
+      align-items: start;
+    }
+
+    .booking-side-panel {
+      display: grid;
+      gap: 16px;
+      position: sticky;
+      top: 92px;
+    }
+
+    .booking-cart {
+      margin-bottom: 0;
+      padding: 0;
+      overflow: hidden;
+    }
+
+    .booking-cart-header {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      align-items: flex-start;
+      padding: 22px 24px 16px;
+      background: linear-gradient(120deg, var(--forest), var(--green));
+      color: #fff;
+    }
+
+    .booking-cart-header h3 {
+      color: #fff;
+      margin: 4px 0 0;
+    }
+
+    .cart-kicker {
+      color: var(--tan-soft);
+      font-size: 11px;
+      font-weight: 900;
+      letter-spacing: 1.3px;
+      text-transform: uppercase;
+    }
+
+    .cart-badge {
+      white-space: nowrap;
+      padding: 7px 10px;
+      border-radius: 999px;
+      background: rgba(234,220,197,0.14);
+      border: 1px solid rgba(234,220,197,0.24);
+      color: var(--tan-soft);
+      font-size: 11px;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: .6px;
+    }
+
+
+    .cart-toggle {
+      display: none;
+      border: 1px solid rgba(234,220,197,0.28);
+      border-radius: 999px;
+      background: rgba(234,220,197,0.12);
+      color: var(--tan-soft);
+      padding: 8px 11px;
+      font-size: 11px;
+      font-weight: 900;
+      letter-spacing: .6px;
+      text-transform: uppercase;
+      cursor: pointer;
+    }
+
+    .cart-body {
+      display: block;
+    }
+
+    .mobile-booking-bar {
+      display: none;
+    }
+
+    .booking-cart > p,
+    .booking-cart .cart-items,
+    .booking-cart .cart-total,
+    .booking-cart .cart-actions {
+      margin-left: 24px;
+      margin-right: 24px;
+    }
+
+    .booking-cart > p {
+      margin-top: 18px;
+    }
+
+    .booking-cart .cart-actions {
+      margin-bottom: 24px;
+    }
+
+    .booking-help-card {
+      background: rgba(255,253,248,0.96);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 18px 20px;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .booking-help-card strong {
+      display: block;
+      margin-bottom: 6px;
+      color: var(--forest);
+      font-size: 15px;
+    }
+
+    .booking-help-card p {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.55;
+      font-size: 14px;
+    }
+
+    .booking-help-card.muted-card {
+      background: rgba(60,95,67,0.08);
+      border-color: rgba(60,95,67,0.18);
+    }
+
+    .upgraded-booking-form {
+      padding: 0;
+      overflow: hidden;
+    }
+
+    .form-topper {
+      padding: 24px 26px 18px;
+      border-bottom: 1px solid var(--line);
+      background: linear-gradient(180deg, #fffdf8, #fbf5eb);
+    }
+
+    .form-topper span {
+      color: var(--sage);
+      font-size: 12px;
+      font-weight: 900;
+      letter-spacing: 1.4px;
+      text-transform: uppercase;
+    }
+
+    .form-topper p {
+      margin: 7px 0 0;
+      color: var(--muted);
+      line-height: 1.5;
+    }
+
+    .upgraded-booking-form .booking-form-panel {
+      margin: 0;
+      border-left: none;
+      border-right: none;
+      border-radius: 0;
+      box-shadow: none;
+    }
+
+    .upgraded-booking-form .booking-form-panel:first-of-type {
+      border-top: none;
+    }
+
+    .upgraded-booking-form .booking-form-panel summary {
+      justify-content: flex-start;
+      padding: 18px 26px;
+      gap: 11px;
+      background: #fffdf8;
+    }
+
+    .upgraded-booking-form .booking-form-panel summary::after {
+      margin-left: auto;
+    }
+
+    .upgraded-booking-form .booking-panel-body {
+      padding: 22px 26px 26px;
+      background: #fffaf2;
+    }
+
+    .field-note {
+      margin-bottom: 18px;
+      padding: 12px 14px;
+      border-radius: 8px;
+      background: rgba(20,32,21,0.05);
+      border: 1px solid rgba(20,32,21,0.08);
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.5;
+    }
+
+    .compact-fields textarea {
+      min-height: 82px;
+    }
+
+    .upgraded-booking-form button[type="submit"] {
+      width: calc(100% - 52px);
+      margin: 24px 26px 0;
+    }
+
+    .upgraded-booking-form .small-note,
+    .upgraded-booking-form .direct-email {
+      margin-left: 26px;
+      margin-right: 26px;
+    }
+
+    .upgraded-booking-form .direct-email {
+      margin-bottom: 26px;
+    }
+
+    @media (max-width: 980px) {
+      .booking-main-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .booking-side-panel {
+        position: static;
+      }
+    }
+
+    @media (max-width: 720px) {
+      .booking-steps {
+        align-items: stretch;
+        flex-direction: column;
+      }
+
+      .booking-step-pill {
+        justify-content: center;
+      }
+
+      .booking-cart-header {
+        display: block;
+      }
+
+      .cart-badge {
+        display: inline-flex;
+        margin-top: 12px;
+      }
+
+      .booking-cart > p,
+      .booking-cart .cart-items,
+      .booking-cart .cart-total,
+      .booking-cart .cart-actions {
+        margin-left: 20px;
+        margin-right: 20px;
+      }
+
+      .form-topper,
+      .upgraded-booking-form .booking-form-panel summary,
+      .upgraded-booking-form .booking-panel-body {
+        padding-left: 20px;
+        padding-right: 20px;
+      }
+
+      .upgraded-booking-form button[type="submit"] {
+        width: calc(100% - 40px);
+        margin-left: 20px;
+        margin-right: 20px;
+      }
+
+      .upgraded-booking-form .small-note,
+      .upgraded-booking-form .direct-email {
+        margin-left: 20px;
+        margin-right: 20px;
+      }
+
+
+      .booking-cart-header {
+        align-items: center;
+      }
+
+      .cart-toggle {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 12px;
+      }
+
+      .booking-cart.is-collapsed .cart-body {
+        display: none;
+      }
+
+      .mobile-booking-bar {
+        position: fixed;
+        left: 14px;
+        right: 14px;
+        bottom: 14px;
+        z-index: 30;
+        display: grid;
+        grid-template-columns: 1fr auto;
+        gap: 12px;
+        align-items: center;
+        padding: 12px 14px;
+        background: rgba(20, 32, 21, 0.96);
+        color: white;
+        border: 1px solid rgba(255,255,255,0.14);
+        border-radius: 14px;
+        box-shadow: 0 18px 40px rgba(0,0,0,0.28);
+      }
+
+      .mobile-booking-bar span {
+        font-size: 13px;
+        font-weight: 850;
+        line-height: 1.35;
+      }
+
+      .mobile-booking-bar a {
+        color: var(--forest);
+        background: var(--tan-soft);
+        text-decoration: none;
+        padding: 10px 12px;
+        border-radius: 999px;
+        font-size: 11px;
+        font-weight: 900;
+        letter-spacing: .6px;
+        text-transform: uppercase;
+        white-space: nowrap;
+      }
+
+      body {
+        padding-bottom: 82px;
+      }
+
+    }
+
   </style>
 </head>
 <body>
@@ -1821,138 +2280,201 @@
 
   
 
-  <section id="booking">
+  <section id="booking" class="booking-section-upgraded">
     <div class="section-title">
       <span class="kicker">Booking Request</span>
       <h2>Request a Booking</h2>
-      <p>Tell us what you need. We’ll review availability and follow up.</p>
+      <p>Build your request, review the estimated rental subtotal, then send your event details for availability confirmation.</p>
     </div>
 
-    <div class="booking-cart" aria-live="polite">
-      <h3>Your Request Cart</h3>
-      <p>Add rental items above, then finish the contact and event details below. This is a request cart, not payment checkout.</p>
-      <div id="cartItems" class="cart-items">
-        <div class="cart-empty">No items added yet. Choose items from the rental section above.</div>
-      </div>
-      <div id="cartTotal" class="cart-total" style="display:none;">
-        <span>Estimated rental subtotal</span>
-        <span id="cartSubtotal">$0</span>
-      </div>
-      <div class="cart-actions">
-        <a href="#rentals" class="cart-mini-btn" style="text-decoration:none;">Add More Items</a>
-        <button type="button" id="clearCart" class="cart-mini-btn">Clear Cart</button>
-      </div>
+    <div class="booking-steps" aria-label="Booking request steps">
+      <div class="booking-step-pill"><span>1</span> Add rental items</div>
+      <div class="booking-step-pill"><span>2</span> Review your cart</div>
+      <div class="booking-step-pill"><span>3</span> Submit event details</div>
     </div>
 
-    <form id="bookingForm" class="form-shell" action="https://formspree.io/f/xwvznknz" method="POST">
-      <input type="hidden" name="_subject" value="New Booking Request from C&C Event Rentals Website">
-      <input type="hidden" name="_replyto" value="ccrentalcompany@gmail.com">
-      <input type="hidden" id="cartSummaryField" name="Request Cart Summary" value="No cart items selected">
-      <input type="hidden" id="corn_hole" name="Corn Hole" value="">
-      <input type="hidden" id="kan_jam" name="Kan Jam" value="">
-      <input type="hidden" id="spike_ball" name="Spike Ball" value="">
-      <input type="hidden" id="badminton_set" name="Badminton Set" value="">
-      <input type="hidden" id="croquet" name="Croquet" value="">
-      <input type="hidden" id="giant_yahtzee" name="Giant Yahtzee" value="">
-      <input type="hidden" id="giant_connect_four" name="Giant Connect Four" value="">
-      <input type="hidden" id="hot_dog_roller" name="Hot Dog Roller Grill" value="">
-      <input type="hidden" id="cotton_candy_machine" name="Cotton Candy Machine" value="">
+    <div class="booking-main-grid">
+      <aside class="booking-side-panel">
+        <div class="booking-cart" aria-live="polite">
+          <div class="booking-cart-header">
+            <div>
+              <span class="cart-kicker">Quote Preview</span>
+              <h3>Your Request Cart</h3>
+            </div>
+            <div>
+              <span id="cartCountText" class="cart-badge">No items yet</span>
+              <button type="button" id="toggleCart" class="cart-toggle" aria-expanded="true" aria-controls="cartBody">Hide cart</button>
+            </div>
+          </div>
+          <div id="cartBody" class="cart-body">
+            <p>Add rental items above. Your selections will copy into the form automatically.</p>
+            <div id="cartItems" class="cart-items">
+              <div class="cart-empty">No items added yet. Choose items from the rental section above.</div>
+            </div>
+            <div id="cartTotal" class="cart-total" style="display:none;">
+              <span>Estimated rental subtotal</span>
+              <span id="cartSubtotal">$0</span>
+            </div>
+            <div class="cart-actions">
+              <a href="#rentals" class="cart-mini-btn" style="text-decoration:none;">Add More Items</a>
+              <button type="button" id="clearCart" class="cart-mini-btn">Clear Cart</button>
+            </div>
+          </div>
+        </div>
 
-      <div class="form-section-title">Contact Information</div>
-      <div class="form-grid">
-        <div>
-          <label for="name">Your Name</label>
-          <input id="name" type="text" name="Customer Name" placeholder="Your Name" required>
+        <div class="booking-help-card">
+          <strong>Yard games tip</strong>
+          <p>The $100 yard games package is the best value if you need several games. Individual games can still be added from the Yard Games tab.</p>
         </div>
-        <div>
-          <label for="email">Email</label>
-          <input id="email" type="email" name="Customer Email" placeholder="Email" required>
-        </div>
-        <div>
-          <label for="phone">Phone Number</label>
-          <input id="phone" type="tel" name="Customer Phone" placeholder="Phone Number" required>
-        </div>
-        <div>
-          <label for="event_date">Event Date</label>
-          <input id="event_date" type="date" name="Event Date" required>
-        </div>
-        <div>
-          <label for="event_time">Event Time</label>
-          <input id="event_time" type="time" name="Event Time" required>
-        </div>
-      </div>
 
-      <div class="form-section-title">Rental Needs</div>
-      <div class="form-grid">
-        <div>
-          <label for="chairs">Number of Chairs</label>
-          <input id="chairs" type="number" name="Number of Chairs" placeholder="Example: 40" min="0" max="80">
+        <div class="booking-help-card muted-card">
+          <strong>Before payment</strong>
+          <p>Availability, delivery distance, setup needs, and final total are confirmed before booking is approved.</p>
         </div>
-        <div>
-          <label for="padded_chairs">Number of White Padded Folding Chairs</label>
-          <input id="padded_chairs" type="number" name="Number of White Padded Folding Chairs" placeholder="Example: 20" min="0" max="50">
-        </div>
-        <div>
-          <label for="tables">Number of 60 Inch Round Tables</label>
-          <input id="tables" type="number" name="Number of 60 Inch Round Tables" placeholder="Example: 6" min="0" max="9">
-        </div>
-        <div>
-          <label for="rectangular_tables">Number of 6ft Rectangular Tables</label>
-          <input id="rectangular_tables" type="number" name="Number of 6ft Rectangular Tables" placeholder="Example: 5" min="0" max="5">
-        </div>
-        <div>
-          <label for="tablecloths">White Tablecloths ($4 each)</label>
-          <input id="tablecloths" type="text" name="White Tablecloths" placeholder="Example: 6 round, 2 six-foot, 3 eight-foot">
-        </div>
-        <div>
-          <label for="yard_games">Yard Games Package</label>
-          <select id="yard_games" name="Yard Games Package">
-            <option>No yard games package</option>
-            <option>Yes, add the $100 yard games package</option>
-          </select>
-        </div>
-        <div>
-          <label for="hot_dog_roller">Hot Dog Roller Grill</label>
-          <select id="hot_dog_roller_select" name="Hot Dog Roller Grill Request">
-            <option>No hot dog roller grill</option>
-            <option>Yes, add the $50/day hot dog roller grill</option>
-          </select>
-        </div>
-        <div>
-          <label for="cotton_candy_machine">Cotton Candy Machine</label>
-          <select id="cotton_candy_machine_select" name="Cotton Candy Machine Request">
-            <option>No cotton candy machine</option>
-            <option>Yes, add the $100/day cotton candy machine with two flavors</option>
-          </select>
-        </div>
-        <div>
-          <label for="service">Service Needed</label>
-          <select id="service" name="Service Needed">
-            <option>Customer pickup</option>
-            <option>Delivery only</option>
-            <option>Full service: delivery, setup, and breakdown</option>
-          </select>
-        </div>
-      </div>
+      </aside>
 
-      <div class="form-section-title">Event Details</div>
-      <div class="form-grid">
-        <div class="form-full">
-          <label for="location">Event Address / Location</label>
-          <textarea id="location" name="Event Address or Location" placeholder="Enter event address or general location"></textarea>
-        </div>
-        <div class="form-full">
-          <label for="details">Additional Details</label>
-          <textarea id="details" name="Additional Details" placeholder="Tell us anything else we should know"></textarea>
-        </div>
-      </div>
+      <form id="bookingForm" class="form-shell upgraded-booking-form" action="https://formspree.io/f/xwvznknz" method="POST">
+        <input type="hidden" name="_subject" value="New Booking Request from C&C Event Rentals Website">
+        <input type="hidden" name="_replyto" value="ccrentalcompany@gmail.com">
+        <input type="hidden" id="cartSummaryField" name="Request Cart Summary" value="No cart items selected">
+        <input type="hidden" id="yardGameSummaryField" name="Yard Games Summary" value="No yard games selected">
+        <input type="hidden" id="corn_hole" name="Corn Hole" value="">
+        <input type="hidden" id="kan_jam" name="Kan Jam" value="">
+        <input type="hidden" id="spike_ball" name="Spike Ball" value="">
+        <input type="hidden" id="badminton_set" name="Badminton Set" value="">
+        <input type="hidden" id="croquet" name="Croquet" value="">
+        <input type="hidden" id="giant_yahtzee" name="Giant Yahtzee" value="">
+        <input type="hidden" id="giant_connect_four" name="Giant Connect Four" value="">
+        <input type="hidden" id="hot_dog_roller" name="Hot Dog Roller Grill" value="">
+        <input type="hidden" id="cotton_candy_machine" name="Cotton Candy Machine" value="">
 
-      <button type="submit">Submit Booking Request</button>
+        <div class="form-topper">
+          <span>Quick quote form</span>
+          <p>Most customers can finish this in under a minute.</p>
+        </div>
 
-      <p class="small-note">After submitting, you may see a quick Formspree confirmation page. We will review your request and follow up to confirm availability.</p>
-      <p class="direct-email">Prefer email? Send requests directly to <a href="mailto:ccrentalcompany@gmail.com?subject=C%26C%20Event%20Rentals%20Booking%20Request">ccrentalcompany@gmail.com</a>.</p>
-    </form>
+        <details class="booking-form-panel" open>
+          <summary><span class="summary-number">1</span> Contact &amp; Event Time</summary>
+          <div class="booking-panel-body">
+            <div class="form-grid">
+              <div>
+                <label for="name">Your Name</label>
+                <input id="name" type="text" name="Customer Name" placeholder="Your Name" required>
+              </div>
+              <div>
+                <label for="email">Email</label>
+                <input id="email" type="email" name="Customer Email" placeholder="Email" required>
+              </div>
+              <div>
+                <label for="phone">Phone Number</label>
+                <input id="phone" type="tel" name="Customer Phone" placeholder="Phone Number" required>
+              </div>
+              <div>
+                <label for="event_date">Event Date</label>
+                <input id="event_date" type="date" name="Event Date" required>
+              </div>
+              <div>
+                <label for="event_time">Event Time</label>
+                <input id="event_time" type="time" name="Event Time" required>
+              </div>
+            </div>
+          </div>
+        </details>
+
+        <details class="booking-form-panel" open>
+          <summary><span class="summary-number">2</span> Rental Needs</summary>
+          <div class="booking-panel-body">
+            <div class="field-note">These fields auto-fill when items are added to your request cart. You can still edit them before submitting.</div>
+            <div class="form-grid compact-fields">
+              <div>
+                <label for="chairs">White Folding Chairs</label>
+                <input id="chairs" type="number" name="Number of Chairs" placeholder="Example: 40" min="0" max="80">
+              </div>
+              <div>
+                <label for="padded_chairs">White Padded Folding Chairs</label>
+                <input id="padded_chairs" type="number" name="Number of White Padded Folding Chairs" placeholder="Example: 20" min="0" max="50">
+              </div>
+              <div>
+                <label for="tables">60 Inch Round Tables</label>
+                <input id="tables" type="number" name="Number of 60 Inch Round Tables" placeholder="Example: 6" min="0" max="9">
+              </div>
+              <div>
+                <label for="rectangular_tables">6ft Rectangular Tables</label>
+                <input id="rectangular_tables" type="number" name="Number of 6ft Rectangular Tables" placeholder="Example: 5" min="0" max="5">
+              </div>
+              <div class="form-full">
+                <label for="tablecloths">White Tablecloths</label>
+                <input id="tablecloths" type="text" name="White Tablecloths" placeholder="Example: 6 round, 2 six-foot, 3 eight-foot">
+              </div>
+
+              <div class="yard-games-note"><strong>Yard games:</strong> Add the full $100 package for Corn Hole, Kan Jam, Spike Ball, Badminton, Croquet, Giant Yahtzee, and Giant Connect Four, or choose individual games from the Yard Games tab.</div>
+
+              <div>
+                <label for="yard_games">Yard Games Package</label>
+                <select id="yard_games" name="Yard Games Package">
+                  <option>No yard games package</option>
+                  <option>Yes, add the $100 yard games package</option>
+                </select>
+              </div>
+              <div>
+                <label for="individual_yard_games">Individual Yard Games</label>
+                <textarea id="individual_yard_games" name="Individual Yard Games" placeholder="Auto-filled from cart, or list individual games here"></textarea>
+              </div>
+              <div>
+                <label for="hot_dog_roller_select">Hot Dog Roller Grill</label>
+                <select id="hot_dog_roller_select" name="Hot Dog Roller Grill Request">
+                  <option>No hot dog roller grill</option>
+                  <option>Yes, add the $50/day hot dog roller grill</option>
+                </select>
+              </div>
+              <div>
+                <label for="cotton_candy_machine_select">Cotton Candy Machine</label>
+                <select id="cotton_candy_machine_select" name="Cotton Candy Machine Request">
+                  <option>No cotton candy machine</option>
+                  <option>Yes, add the $100/day cotton candy machine with two flavors</option>
+                </select>
+              </div>
+              <div class="form-full">
+                <label for="service">Service Needed</label>
+                <select id="service" name="Service Needed">
+                  <option>Customer pickup</option>
+                  <option>Delivery only</option>
+                  <option>Full service: delivery, setup, and breakdown</option>
+                </select>
+              </div>
+            </div>
+          </div>
+        </details>
+
+        <details class="booking-form-panel" open>
+          <summary><span class="summary-number">3</span> Event Location &amp; Notes</summary>
+          <div class="booking-panel-body">
+            <div class="form-grid">
+              <div class="form-full">
+                <label for="location">Event Address / Location</label>
+                <textarea id="location" name="Event Address or Location" placeholder="Enter event address or general location"></textarea>
+              </div>
+              <div class="form-full">
+                <label for="details">Additional Details</label>
+                <textarea id="details" name="Additional Details" placeholder="Tell us about delivery instructions, setup needs, surfaces, stairs, parking, or timing notes"></textarea>
+              </div>
+            </div>
+          </div>
+        </details>
+
+        <button type="submit">Submit Booking Request</button>
+
+        <p class="small-note">After submitting, you may see a quick Formspree confirmation page. We will review your request and follow up to confirm availability.</p>
+        <p class="direct-email">Prefer email? Send requests directly to <a href="mailto:ccrentalcompany@gmail.com?subject=C%26C%20Event%20Rentals%20Booking%20Request">ccrentalcompany@gmail.com</a>.</p>
+      </form>
+    </div>
   </section>
+
+  <div class="mobile-booking-bar" aria-label="Mobile booking shortcut">
+    <span>Ready to finish your quote request?</span>
+    <a href="#bookingForm">Finish</a>
+  </div>
+
 <section id="reviews">
     <div class="section-title">
       <span class="kicker">Customer Feedback</span>
@@ -2039,7 +2561,8 @@
         'Spike Ball': 'spike_ball',
         'Badminton Set': 'badminton_set',
         'Croquet': 'croquet',
-        'Giant Yahtzee': 'giant_yahtzee'
+        'Giant Yahtzee': 'giant_yahtzee',
+        'Giant Connect Four': 'giant_connect_four'
       };
 
       Object.entries(yardGameFields).forEach(([itemName, fieldId]) => {
@@ -2049,6 +2572,34 @@
 
       const yardGamesQty = cart['Yard Games Package']?.qty || 0;
       document.getElementById('yard_games').value = yardGamesQty ? 'Yes, add the $100 yard games package' : 'No yard games package';
+
+      const individualYardGames = Object.keys(yardGameFields).filter(itemName => cart[itemName]?.qty);
+      const individualYardGamesText = individualYardGames.length ? individualYardGames.join(', ') : '';
+      const individualYardGamesField = document.getElementById('individual_yard_games');
+      if (individualYardGamesField) individualYardGamesField.value = individualYardGamesText;
+
+      const yardGameSummaryField = document.getElementById('yardGameSummaryField');
+      if (yardGameSummaryField) {
+        if (yardGamesQty) {
+          yardGameSummaryField.value = 'Full Yard Games Package requested';
+        } else if (individualYardGames.length) {
+          yardGameSummaryField.value = 'Individual yard games requested: ' + individualYardGamesText;
+        } else {
+          yardGameSummaryField.value = 'No yard games selected';
+        }
+      }
+
+      const hotDogQty = cart['Hot Dog Roller Grill']?.qty || 0;
+      const hotDogHiddenField = document.getElementById('hot_dog_roller');
+      const hotDogSelectField = document.getElementById('hot_dog_roller_select');
+      if (hotDogHiddenField) hotDogHiddenField.value = hotDogQty ? `Yes, ${hotDogQty} requested` : '';
+      if (hotDogSelectField) hotDogSelectField.value = hotDogQty ? 'Yes, add the $50/day hot dog roller grill' : 'No hot dog roller grill';
+
+      const cottonCandyQty = cart['Cotton Candy Machine']?.qty || 0;
+      const cottonCandyHiddenField = document.getElementById('cotton_candy_machine');
+      const cottonCandySelectField = document.getElementById('cotton_candy_machine_select');
+      if (cottonCandyHiddenField) cottonCandyHiddenField.value = cottonCandyQty ? `Yes, ${cottonCandyQty} requested` : '';
+      if (cottonCandySelectField) cottonCandySelectField.value = cottonCandyQty ? 'Yes, add the $100/day cotton candy machine with two flavors' : 'No cotton candy machine';
     }
 
     function renderCart() {
@@ -2056,7 +2607,13 @@
       const cartTotal = document.getElementById('cartTotal');
       const cartSubtotal = document.getElementById('cartSubtotal');
       const cartSummaryField = document.getElementById('cartSummaryField');
+      const cartCountText = document.getElementById('cartCountText');
       const items = Object.values(cart);
+      const totalQuantity = items.reduce((sum, item) => sum + item.qty, 0);
+
+      if (cartCountText) {
+        cartCountText.textContent = totalQuantity ? `${totalQuantity} item${totalQuantity === 1 ? '' : 's'} added` : 'No items yet';
+      }
 
       if (!items.length) {
         cartItems.innerHTML = '<div class="cart-empty">No items added yet. Choose items from the rental section above.</div>';
@@ -2131,7 +2688,7 @@
         }
 
         const name = card.dataset.item;
-        const individualYardGames = ['Corn Hole', 'Kan Jam', 'Spike Ball', 'Badminton Set', 'Croquet', 'Giant Yahtzee'];
+        const individualYardGames = ['Corn Hole', 'Kan Jam', 'Spike Ball', 'Badminton Set', 'Croquet', 'Giant Yahtzee', 'Giant Connect Four'];
 
         if (name === 'Yard Games Package') {
           individualYardGames.forEach(game => delete cart[game]);
@@ -2256,6 +2813,21 @@
             successMessage.style.display = 'none';
           }, 2500);
         });
+      });
+    });
+  </script>
+
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const bookingCart = document.querySelector('.booking-cart');
+      const toggleCart = document.getElementById('toggleCart');
+      if (!bookingCart || !toggleCart) return;
+
+      toggleCart.addEventListener('click', function () {
+        const isCollapsed = bookingCart.classList.toggle('is-collapsed');
+        toggleCart.textContent = isCollapsed ? 'Show cart' : 'Hide cart';
+        toggleCart.setAttribute('aria-expanded', String(!isCollapsed));
       });
     });
   </script>
