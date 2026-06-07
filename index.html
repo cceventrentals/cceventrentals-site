@@ -1418,6 +1418,26 @@
       display: none !important;
     }
 
+
+    .contact-card a {
+      color: var(--forest);
+      font-weight: 900;
+      text-decoration: none;
+    }
+
+    .contact-card a:hover {
+      text-decoration: underline;
+    }
+
+    .cart-success {
+      display: none;
+      margin-top: 8px;
+      color: #2f7d32;
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+
   </style>
 </head>
 <body>
@@ -1510,6 +1530,7 @@
           </div>
           <div class="cart-helper">Maximum available: 80 chairs.</div>
           <div class="cart-warning"></div>
+          <div class="cart-success">✓ Added to your request</div>
         </div>
       </div>
 
@@ -1524,6 +1545,7 @@
           </div>
           <div class="cart-helper">Maximum available: 50 chairs.</div>
           <div class="cart-warning"></div>
+          <div class="cart-success">✓ Added to your request</div>
         </div>
       </div>
 
@@ -1538,6 +1560,7 @@
           </div>
           <div class="cart-helper">Maximum available: 9 round tables.</div>
           <div class="cart-warning"></div>
+          <div class="cart-success">✓ Added to your request</div>
         </div>
       </div>
 
@@ -1552,6 +1575,7 @@
           </div>
           <div class="cart-helper">Maximum available: 5 rectangular tables.</div>
           <div class="cart-warning"></div>
+          <div class="cart-success">✓ Added to your request</div>
         </div>
       </div>
 
@@ -1584,6 +1608,7 @@
           </div>
           <div class="cart-helper">Maximum available: 1 corn hole set.</div>
           <div class="cart-warning"></div>
+          <div class="cart-success">✓ Added to your request</div>
         </div>
       </div>
 
@@ -1598,6 +1623,7 @@
           </div>
           <div class="cart-helper">Maximum available: 1 Kan Jam set.</div>
           <div class="cart-warning"></div>
+          <div class="cart-success">✓ Added to your request</div>
         </div>
       </div>
 
@@ -1612,6 +1638,7 @@
           </div>
           <div class="cart-helper">Maximum available: 1 Spike Ball set.</div>
           <div class="cart-warning"></div>
+          <div class="cart-success">✓ Added to your request</div>
         </div>
       </div>
 
@@ -1626,6 +1653,7 @@
           </div>
           <div class="cart-helper">Maximum available: 1 badminton set.</div>
           <div class="cart-warning"></div>
+          <div class="cart-success">✓ Added to your request</div>
         </div>
       </div>
 
@@ -1640,6 +1668,7 @@
           </div>
           <div class="cart-helper">Maximum available: 1 croquet set.</div>
           <div class="cart-warning"></div>
+          <div class="cart-success">✓ Added to your request</div>
         </div>
       </div>
 
@@ -1654,6 +1683,7 @@
           </div>
           <div class="cart-helper">Maximum available: 1 Giant Yahtzee set.</div>
           <div class="cart-warning"></div>
+          <div class="cart-success">✓ Added to your request</div>
         </div>
       </div>
 
@@ -1668,6 +1698,7 @@
           </div>
           <div class="cart-helper">Maximum available: 1 Giant Connect Four set.</div>
           <div class="cart-warning"></div>
+          <div class="cart-success">✓ Added to your request</div>
         </div>
       </div>
 
@@ -1691,6 +1722,7 @@
           </div>
           <div class="cart-helper">Includes all yard games. Maximum available: 1 package.</div>
           <div class="cart-warning"></div>
+          <div class="cart-success">✓ Added to your request</div>
         </div>
       </div>
       <div class="card refined-card rental-card" data-category="concessions" data-item="Hot Dog Roller Grill" data-rate="50" data-unit="day" data-target="hot_dog_roller" data-max="1">
@@ -1704,6 +1736,7 @@
           </div>
           <div class="cart-helper">Hot dogs not included. Maximum available: 1 machine.</div>
           <div class="cart-warning"></div>
+          <div class="cart-success">✓ Added to your request</div>
         </div>
       </div>
 
@@ -1722,6 +1755,7 @@
           </div>
           <div class="cart-helper">Includes two flavors with the machine. Maximum available: 1 machine.</div>
           <div class="cart-warning"></div>
+          <div class="cart-success">✓ Added to your request</div>
         </div>
       </div>
 
@@ -1962,13 +1996,13 @@
     </div>
 
     <div class="split">
-      <div class="card">
+      <div class="card contact-card">
         <h3>Call or Text</h3>
-        <p>606-634-9988</p>
-        <p>606-634-9996</p>
+        <p><a href="tel:6066349988">606-634-9988</a></p>
+        <p><a href="tel:6066349996">606-634-9996</a></p>
       </div>
 
-      <div class="card">
+      <div class="card contact-card">
         <h3>Email</h3>
         <p><a href="mailto:ccrentalcompany@gmail.com">ccrentalcompany@gmail.com</a></p>
         <p>Website: cceventrentals.net</p>
@@ -2200,6 +2234,28 @@
       });
       document.querySelectorAll('.rental-tab').forEach(function (tab) {
         tab.classList.toggle('active', tab.dataset.filter === defaultFilter);
+      });
+    });
+  </script>
+
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      document.querySelectorAll('.add-to-cart-btn').forEach(function (button) {
+        button.addEventListener('click', function () {
+          const cartCard = button.closest('.cart-card');
+          if (!cartCard) return;
+
+          const successMessage = cartCard.querySelector('.cart-success');
+          if (!successMessage) return;
+
+          successMessage.style.display = 'block';
+
+          clearTimeout(successMessage.hideTimer);
+          successMessage.hideTimer = setTimeout(function () {
+            successMessage.style.display = 'none';
+          }, 2500);
+        });
       });
     });
   </script>
