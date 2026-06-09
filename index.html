@@ -1024,6 +1024,52 @@
     }
 
 
+
+    .package-price-line {
+      margin: 14px 0 0;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 10px;
+      color: var(--forest);
+    }
+
+    .package-price-line .package-price {
+      font-size: 28px;
+      font-weight: 950;
+    }
+
+    .package-price-line .package-price-note {
+      color: var(--muted);
+      font-size: 14px;
+      font-weight: 800;
+    }
+
+    .package-save-badge {
+      display: inline-flex;
+      align-items: center;
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: rgba(60,95,67,0.12);
+      color: var(--sage);
+      border: 1px solid rgba(60,95,67,0.2);
+      font-size: 12px;
+      font-weight: 950;
+      letter-spacing: .5px;
+      text-transform: uppercase;
+    }
+
+    .package-savings-line {
+      margin: 10px 0 0;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.5;
+    }
+
+    .package-savings-line strong {
+      color: var(--forest);
+    }
+
     .cart-card {
       margin-top: 18px;
       padding-top: 18px;
@@ -1982,7 +2028,12 @@
       <div class="card refined-card rental-card" data-category="packages" data-item="Wedding Package" data-rate="259" data-unit="package" data-target="wedding_package" data-max="1">
         <img class="rental-item-image" src="images/wedding-package.png" alt="Wedding package with tables, tablecloths, and white chairs">
         <h3>Wedding Package</h3>
-        <p>$259 base package</p>
+        <div class="package-price-line">
+          <span class="package-price">$259</span>
+          <span class="package-price-note">base package</span>
+          <span class="package-save-badge">Save $27</span>
+        </div>
+        <p class="package-savings-line">Individually: <strong>$286</strong>. Package price: <strong>$259</strong>.</p>
         <ul class="package-includes">
           <li>40 white padded folding chairs</li>
           <li>9 round tables</li>
@@ -1994,7 +2045,7 @@
             <input type="number" min="0" max="1" value="0" aria-label="Wedding Package quantity">
             <button type="button" class="add-to-cart-btn">Add to Request</button>
           </div>
-          <div class="cart-helper">Base individual price: $286. Package discount: $27.</div>
+          <div class="cart-helper">You save $27 compared with renting these items individually.</div>
           <div class="cart-warning"></div>
           <div class="cart-success">✓ Added to your request</div>
         </div>
@@ -2003,7 +2054,12 @@
       <div class="card refined-card rental-card" data-category="packages" data-item="Backyard Package" data-rate="119" data-unit="package" data-target="backyard_package" data-max="1">
         <img class="rental-item-image" src="images/backyard-package.png" alt="Backyard package with tables, chairs, and corn hole boards">
         <h3>Backyard Package</h3>
-        <p>$119 base package</p>
+        <div class="package-price-line">
+          <span class="package-price">$119</span>
+          <span class="package-price-note">base package</span>
+          <span class="package-save-badge">Save $11</span>
+        </div>
+        <p class="package-savings-line">Individually: <strong>$130</strong>. Package price: <strong>$119</strong>.</p>
         <ul class="package-includes">
           <li>30 white folding chairs</li>
           <li>5 round tables</li>
@@ -2015,7 +2071,7 @@
             <input type="number" min="0" max="1" value="0" aria-label="Backyard Package quantity">
             <button type="button" class="add-to-cart-btn">Add to Request</button>
           </div>
-          <div class="cart-helper">Base individual price: $130. Package discount: $11.</div>
+          <div class="cart-helper">You save $11 compared with renting these items individually.</div>
           <div class="cart-warning"></div>
           <div class="cart-success">✓ Added to your request</div>
         </div>
@@ -2024,7 +2080,12 @@
       <div class="card refined-card rental-card" data-category="packages" data-item="Concession Package" data-rate="149" data-unit="package" data-target="concession_package" data-max="1">
         <img class="rental-item-image" src="images/concession-package.png" alt="Concession package with hot dog roller, cotton candy machine, and folding table">
         <h3>Concession Package</h3>
-        <p>$149 base package</p>
+        <div class="package-price-line">
+          <span class="package-price">$149</span>
+          <span class="package-price-note">base package</span>
+          <span class="package-save-badge">Save $21</span>
+        </div>
+        <p class="package-savings-line">Individually: <strong>$170</strong>. Package price: <strong>$149</strong>.</p>
         <ul class="package-includes">
           <li>Hot dog roller grill</li>
           <li>Cotton candy machine</li>
@@ -2036,7 +2097,7 @@
             <input type="number" min="0" max="1" value="0" aria-label="Concession Package quantity">
             <button type="button" class="add-to-cart-btn">Add to Request</button>
           </div>
-          <div class="cart-helper">Base individual price: $170. Package discount: $21.</div>
+          <div class="cart-helper">You save $21 compared with renting these items individually.</div>
           <div class="cart-warning"></div>
           <div class="cart-success">✓ Added to your request</div>
         </div>
