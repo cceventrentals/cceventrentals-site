@@ -1971,13 +1971,77 @@
 
     
 <div class="rental-tabs" aria-label="Rental categories">
-      <button type="button" class="rental-tab active" data-filter="tables">Tables &amp; Chairs</button>
+      <button type="button" class="rental-tab active" data-filter="packages">Packages</button>
+      <button type="button" class="rental-tab" data-filter="tables">Tables &amp; Chairs</button>
       <button type="button" class="rental-tab" data-filter="linens">Linens</button>
       <button type="button" class="rental-tab" data-filter="concessions">Concessions</button>
       <button type="button" class="rental-tab" data-filter="games">Yard Games</button>
     </div>
 
 <div class="card-grid">
+      <div class="card refined-card rental-card" data-category="packages" data-item="Wedding Package" data-rate="259" data-unit="package" data-target="wedding_package" data-max="1">
+        <img class="rental-item-image" src="images/wedding-package.png" alt="Wedding package with tables, tablecloths, and white chairs">
+        <h3>Wedding Package</h3>
+        <p>$259 base package</p>
+        <ul class="package-includes">
+          <li>40 white padded folding chairs</li>
+          <li>9 round tables</li>
+          <li>9 white tablecloths</li>
+          <li>Great for receptions, showers, and formal events</li>
+        </ul>
+        <div class="cart-card">
+          <div class="cart-controls">
+            <input type="number" min="0" max="1" value="0" aria-label="Wedding Package quantity">
+            <button type="button" class="add-to-cart-btn">Add to Request</button>
+          </div>
+          <div class="cart-helper">Base individual price: $286. Package discount: $27.</div>
+          <div class="cart-warning"></div>
+          <div class="cart-success">✓ Added to your request</div>
+        </div>
+      </div>
+
+      <div class="card refined-card rental-card" data-category="packages" data-item="Backyard Package" data-rate="119" data-unit="package" data-target="backyard_package" data-max="1">
+        <img class="rental-item-image" src="images/backyard-package.png" alt="Backyard package with tables, chairs, and corn hole boards">
+        <h3>Backyard Package</h3>
+        <p>$119 base package</p>
+        <ul class="package-includes">
+          <li>30 white folding chairs</li>
+          <li>5 round tables</li>
+          <li>2 rectangular tables</li>
+          <li>Great for birthdays, reunions, cookouts, and graduations</li>
+        </ul>
+        <div class="cart-card">
+          <div class="cart-controls">
+            <input type="number" min="0" max="1" value="0" aria-label="Backyard Package quantity">
+            <button type="button" class="add-to-cart-btn">Add to Request</button>
+          </div>
+          <div class="cart-helper">Base individual price: $130. Package discount: $11.</div>
+          <div class="cart-warning"></div>
+          <div class="cart-success">✓ Added to your request</div>
+        </div>
+      </div>
+
+      <div class="card refined-card rental-card" data-category="packages" data-item="Concession Package" data-rate="149" data-unit="package" data-target="concession_package" data-max="1">
+        <img class="rental-item-image" src="images/concession-package.png" alt="Concession package with hot dog roller, cotton candy machine, and folding table">
+        <h3>Concession Package</h3>
+        <p>$149 base package</p>
+        <ul class="package-includes">
+          <li>Hot dog roller grill</li>
+          <li>Cotton candy machine</li>
+          <li>2 rectangular tables</li>
+          <li>Great for school events, fundraisers, parties, and concessions</li>
+        </ul>
+        <div class="cart-card">
+          <div class="cart-controls">
+            <input type="number" min="0" max="1" value="0" aria-label="Concession Package quantity">
+            <button type="button" class="add-to-cart-btn">Add to Request</button>
+          </div>
+          <div class="cart-helper">Base individual price: $170. Package discount: $21.</div>
+          <div class="cart-warning"></div>
+          <div class="cart-success">✓ Added to your request</div>
+        </div>
+      </div>
+
       <div class="card refined-card rental-card" data-category="tables" data-item="White Folding Chairs" data-rate="2" data-unit="each" data-target="chairs" data-max="80">
         <img class="rental-item-image" src="images/white-folding-chairs.jpg" alt="White Folding Chairs">
         <h3>White Folding Chairs</h3>
@@ -2237,7 +2301,7 @@
       <div class="pricing-summary-main">
         <div>
           <h3>Need a quick estimate?</h3>
-          <p>Use the rental cards above to choose chairs, tables, linens, concession machines, yard games, and packages. Your request cart will keep an estimated rental subtotal as you add items.</p>
+          <p>Use the rental cards above to choose packages, chairs, tables, linens, concession machines, and yard games. Your request cart will keep an estimated rental subtotal as you add items.</p>
         </div>
 
         <div class="pricing-services" aria-label="Additional service pricing">
@@ -2785,7 +2849,7 @@
 
   <script>
     document.addEventListener('DOMContentLoaded', function () {
-      const defaultFilter = 'tables';
+      const defaultFilter = 'packages';
       document.querySelectorAll('.rental-card').forEach(function (card) {
         card.hidden = card.dataset.category !== defaultFilter;
       });
