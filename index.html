@@ -2347,14 +2347,8 @@
   <section id="booking" class="booking-section-upgraded">
     <div class="section-title">
       <span class="kicker">Booking Request</span>
-      <h2>Request a Booking</h2>
-      <p>Build your request, review the estimated rental subtotal, then send your event details for availability confirmation.</p>
-    </div>
-
-    <div class="booking-steps" aria-label="Booking request steps">
-      <div class="booking-step-pill"><span>1</span> Add rental items</div>
-      <div class="booking-step-pill"><span>2</span> Review your cart</div>
-      <div class="booking-step-pill"><span>3</span> Submit event details</div>
+      <h2>Request a Quote</h2>
+      <p>Add rental items above, then send your contact and event details. Your cart will copy into the request form automatically.</p>
     </div>
 
     <div class="booking-main-grid">
@@ -2371,7 +2365,7 @@
             </div>
           </div>
           <div id="cartBody" class="cart-body">
-            <p>Add rental items above. Your selections will copy into the form automatically.</p>
+            <p>Add rental items above. They will appear in the form on the right.</p>
             <div id="cartItems" class="cart-items">
               <div class="cart-empty">No items added yet. Choose items from the rental section above.</div>
             </div>
@@ -2386,14 +2380,9 @@
           </div>
         </div>
 
-        <div class="booking-help-card">
-          <strong>Yard games tip</strong>
-          <p>The $100 yard games package is the best value if you need several games. Individual games can still be added from the Yard Games tab.</p>
-        </div>
-
         <div class="booking-help-card muted-card">
           <strong>Before payment</strong>
-          <p>Availability, delivery distance, setup needs, and final total are confirmed before booking is approved.</p>
+          <p>Availability, delivery distance, setup needs, and the final total are confirmed before booking is approved.</p>
         </div>
       </aside>
 
@@ -2401,132 +2390,66 @@
         <input type="hidden" name="_subject" value="New Booking Request from C&C Event Rentals Website">
         <input type="hidden" name="_replyto" value="ccrentalcompany@gmail.com">
         <input type="hidden" id="cartSummaryField" name="Request Cart Summary" value="No cart items selected">
-        <input type="hidden" id="yardGameSummaryField" name="Yard Games Summary" value="No yard games selected">
-        <input type="hidden" id="corn_hole" name="Corn Hole" value="">
-        <input type="hidden" id="kan_jam" name="Kan Jam" value="">
-        <input type="hidden" id="spike_ball" name="Spike Ball" value="">
-        <input type="hidden" id="badminton_set" name="Badminton Set" value="">
-        <input type="hidden" id="croquet" name="Croquet" value="">
-        <input type="hidden" id="giant_yahtzee" name="Giant Yahtzee" value="">
-        <input type="hidden" id="giant_connect_four" name="Giant Connect Four" value="">
-        <input type="hidden" id="hot_dog_roller" name="Hot Dog Roller Grill" value="">
-        <input type="hidden" id="cotton_candy_machine" name="Cotton Candy Machine" value="">
 
         <div class="form-topper">
           <span>Quick quote form</span>
-          <p>Most customers can finish this in under a minute.</p>
+          <p>Complete the basics below. Your cart selections are automatically added to the rental request box.</p>
         </div>
 
-        <details class="booking-form-panel" open>
-          <summary><span class="summary-number">1</span> Contact &amp; Event Time</summary>
-          <div class="booking-panel-body">
-            <div class="form-grid">
-              <div>
-                <label for="name">Your Name</label>
-                <input id="name" type="text" name="Customer Name" placeholder="Your Name" required>
-              </div>
-              <div>
-                <label for="email">Email</label>
-                <input id="email" type="email" name="Customer Email" placeholder="Email" required>
-              </div>
-              <div>
-                <label for="phone">Phone Number</label>
-                <input id="phone" type="tel" name="Customer Phone" placeholder="Phone Number" required>
-              </div>
-              <div>
-                <label for="event_date">Event Date</label>
-                <input id="event_date" type="date" name="Event Date" required>
-              </div>
-              <div>
-                <label for="event_time">Event Time</label>
-                <input id="event_time" type="time" name="Event Time" required>
-              </div>
+        <div class="booking-panel-body">
+          <div class="form-grid compact-fields">
+            <div>
+              <label for="name">Your Name</label>
+              <input id="name" type="text" name="Customer Name" placeholder="Your Name" required>
+            </div>
+
+            <div>
+              <label for="phone">Phone Number</label>
+              <input id="phone" type="tel" name="Customer Phone" placeholder="Phone Number" required>
+            </div>
+
+            <div>
+              <label for="email">Email</label>
+              <input id="email" type="email" name="Customer Email" placeholder="Email">
+            </div>
+
+            <div>
+              <label for="event_date">Event Date</label>
+              <input id="event_date" type="date" name="Event Date" required>
+            </div>
+
+            <div>
+              <label for="event_time">Event Time</label>
+              <input id="event_time" type="time" name="Event Time">
+            </div>
+
+            <div>
+              <label for="service">Service Needed</label>
+              <select id="service" name="Service Needed">
+                <option>Customer pickup</option>
+                <option>Delivery only</option>
+                <option>Full service: delivery, setup, and breakdown</option>
+              </select>
+            </div>
+
+            <div class="form-full">
+              <label for="requested_items">Rental Items Requested</label>
+              <textarea id="requested_items" name="Rental Items Requested" placeholder="Items added to your cart will appear here automatically. You can also type anything else you need."></textarea>
+            </div>
+
+            <div class="form-full">
+              <label for="location">Event Address / Location</label>
+              <textarea id="location" name="Event Address or Location" placeholder="Enter event address or general location"></textarea>
+            </div>
+
+            <div class="form-full">
+              <label for="details">Additional Details</label>
+              <textarea id="details" name="Additional Details" placeholder="Delivery instructions, setup needs, parking, stairs, surfaces, or other notes"></textarea>
             </div>
           </div>
-        </details>
+        </div>
 
-        <details class="booking-form-panel" open>
-          <summary><span class="summary-number">2</span> Rental Needs</summary>
-          <div class="booking-panel-body">
-            <div class="field-note">These fields auto-fill when items are added to your request cart. You can still edit them before submitting.</div>
-            <div class="form-grid compact-fields">
-              <div>
-                <label for="chairs">White Folding Chairs</label>
-                <input id="chairs" type="number" name="Number of Chairs" placeholder="Example: 40" min="0" max="80">
-              </div>
-              <div>
-                <label for="padded_chairs">White Padded Folding Chairs</label>
-                <input id="padded_chairs" type="number" name="Number of White Padded Folding Chairs" placeholder="Example: 20" min="0" max="50">
-              </div>
-              <div>
-                <label for="tables">60 Inch Round Tables</label>
-                <input id="tables" type="number" name="Number of 60 Inch Round Tables" placeholder="Example: 6" min="0" max="9">
-              </div>
-              <div>
-                <label for="rectangular_tables">6ft Rectangular Tables</label>
-                <input id="rectangular_tables" type="number" name="Number of 6ft Rectangular Tables" placeholder="Example: 5" min="0" max="5">
-              </div>
-              <div class="form-full">
-                <label for="tablecloths">White Tablecloths</label>
-                <input id="tablecloths" type="text" name="White Tablecloths" placeholder="Example: 6 round, 2 six-foot, 3 eight-foot">
-              </div>
-
-              <div class="yard-games-note"><strong>Yard games:</strong> Add the full $100 package for Corn Hole, Kan Jam, Spike Ball, Badminton, Croquet, Giant Yahtzee, and Giant Connect Four, or choose individual games from the Yard Games tab.</div>
-
-              <div>
-                <label for="yard_games">Yard Games Package</label>
-                <select id="yard_games" name="Yard Games Package">
-                  <option>No yard games package</option>
-                  <option>Yes, add the $100 yard games package</option>
-                </select>
-              </div>
-              <div>
-                <label for="individual_yard_games">Individual Yard Games</label>
-                <textarea id="individual_yard_games" name="Individual Yard Games" placeholder="Auto-filled from cart, or list individual games here"></textarea>
-              </div>
-              <div>
-                <label for="hot_dog_roller_select">Hot Dog Roller Grill</label>
-                <select id="hot_dog_roller_select" name="Hot Dog Roller Grill Request">
-                  <option>No hot dog roller grill</option>
-                  <option>Yes, add the $50/day hot dog roller grill</option>
-                </select>
-              </div>
-              <div>
-                <label for="cotton_candy_machine_select">Cotton Candy Machine</label>
-                <select id="cotton_candy_machine_select" name="Cotton Candy Machine Request">
-                  <option>No cotton candy machine</option>
-                  <option>Yes, add the $100/day cotton candy machine with two flavors</option>
-                </select>
-              </div>
-              <div class="form-full">
-                <label for="service">Service Needed</label>
-                <select id="service" name="Service Needed">
-                  <option>Customer pickup</option>
-                  <option>Delivery only</option>
-                  <option>Full service: delivery, setup, and breakdown</option>
-                </select>
-              </div>
-            </div>
-          </div>
-        </details>
-
-        <details class="booking-form-panel" open>
-          <summary><span class="summary-number">3</span> Event Location &amp; Notes</summary>
-          <div class="booking-panel-body">
-            <div class="form-grid">
-              <div class="form-full">
-                <label for="location">Event Address / Location</label>
-                <textarea id="location" name="Event Address or Location" placeholder="Enter event address or general location"></textarea>
-              </div>
-              <div class="form-full">
-                <label for="details">Additional Details</label>
-                <textarea id="details" name="Additional Details" placeholder="Tell us about delivery instructions, setup needs, surfaces, stairs, parking, or timing notes"></textarea>
-              </div>
-            </div>
-          </div>
-        </details>
-
-        <button type="submit">Submit Booking Request</button>
+        <button type="submit">Submit Quote Request</button>
 
         <p class="small-note">After submitting, you may see a quick Formspree confirmation page. We will review your request and follow up to confirm availability.</p>
         <p class="direct-email">Prefer email? Send requests directly to <a href="mailto:ccrentalcompany@gmail.com?subject=C%26C%20Event%20Rentals%20Booking%20Request">ccrentalcompany@gmail.com</a>.</p>
@@ -2610,67 +2533,35 @@
       return '$' + value.toLocaleString(undefined, { maximumFractionDigits: 2 });
     }
 
-    function updateLinkedFormFields() {
-      document.getElementById('chairs').value = cart['White Folding Chairs']?.qty || '';
-      document.getElementById('padded_chairs').value = cart['White Padded Folding Chairs']?.qty || '';
-      document.getElementById('tables').value = cart['60 Inch Round Tables']?.qty || '';
-      document.getElementById('rectangular_tables').value = cart['6ft Rectangular Tables']?.qty || '';
+    function buildCartSummary(items, subtotalText) {
+      if (!items.length) return 'No cart items selected';
 
-      const tableclothQty = cart['White Tablecloths']?.qty || 0;
-      document.getElementById('tablecloths').value = tableclothQty ? `Yes, ${tableclothQty} requested` : '';
-
-      const yardGameFields = {
-        'Corn Hole': 'corn_hole',
-        'Kan Jam': 'kan_jam',
-        'Spike Ball': 'spike_ball',
-        'Badminton Set': 'badminton_set',
-        'Croquet': 'croquet',
-        'Giant Yahtzee': 'giant_yahtzee',
-        'Giant Connect Four': 'giant_connect_four'
-      };
-
-      Object.entries(yardGameFields).forEach(([itemName, fieldId]) => {
-        const field = document.getElementById(fieldId);
-        if (field) field.value = cart[itemName]?.qty ? 'Yes' : '';
+      const lines = items.map(item => {
+        const pricing = item.rate > 0 ? `${formatMoney(item.rate)} ${item.unit}` : 'By quote';
+        return `${item.name}: ${item.qty} (${pricing})`;
       });
 
-      const yardGamesQty = cart['Yard Games Package']?.qty || 0;
-      document.getElementById('yard_games').value = yardGamesQty ? 'Yes, add the $100 yard games package' : 'No yard games package';
+      lines.push(`Estimated rental subtotal: ${subtotalText}`);
+      return lines.join('\n');
+    }
 
-      const individualYardGames = Object.keys(yardGameFields).filter(itemName => cart[itemName]?.qty);
-      const individualYardGamesText = individualYardGames.length ? individualYardGames.join(', ') : '';
-      const individualYardGamesField = document.getElementById('individual_yard_games');
-      if (individualYardGamesField) individualYardGamesField.value = individualYardGamesText;
+    function updateLinkedFormFields(summary) {
+      const requestedItemsField = document.getElementById('requested_items');
+      const cartSummaryField = document.getElementById('cartSummaryField');
 
-      const yardGameSummaryField = document.getElementById('yardGameSummaryField');
-      if (yardGameSummaryField) {
-        if (yardGamesQty) {
-          yardGameSummaryField.value = 'Full Yard Games Package requested';
-        } else if (individualYardGames.length) {
-          yardGameSummaryField.value = 'Individual yard games requested: ' + individualYardGamesText;
-        } else {
-          yardGameSummaryField.value = 'No yard games selected';
-        }
+      if (requestedItemsField) {
+        requestedItemsField.value = summary === 'No cart items selected' ? '' : summary;
       }
 
-      const hotDogQty = cart['Hot Dog Roller Grill']?.qty || 0;
-      const hotDogHiddenField = document.getElementById('hot_dog_roller');
-      const hotDogSelectField = document.getElementById('hot_dog_roller_select');
-      if (hotDogHiddenField) hotDogHiddenField.value = hotDogQty ? `Yes, ${hotDogQty} requested` : '';
-      if (hotDogSelectField) hotDogSelectField.value = hotDogQty ? 'Yes, add the $50/day hot dog roller grill' : 'No hot dog roller grill';
-
-      const cottonCandyQty = cart['Cotton Candy Machine']?.qty || 0;
-      const cottonCandyHiddenField = document.getElementById('cotton_candy_machine');
-      const cottonCandySelectField = document.getElementById('cotton_candy_machine_select');
-      if (cottonCandyHiddenField) cottonCandyHiddenField.value = cottonCandyQty ? `Yes, ${cottonCandyQty} requested` : '';
-      if (cottonCandySelectField) cottonCandySelectField.value = cottonCandyQty ? 'Yes, add the $100/day cotton candy machine with two flavors' : 'No cotton candy machine';
+      if (cartSummaryField) {
+        cartSummaryField.value = summary;
+      }
     }
 
     function renderCart() {
       const cartItems = document.getElementById('cartItems');
       const cartTotal = document.getElementById('cartTotal');
       const cartSubtotal = document.getElementById('cartSubtotal');
-      const cartSummaryField = document.getElementById('cartSummaryField');
       const cartCountText = document.getElementById('cartCountText');
       const items = Object.values(cart);
       const totalQuantity = items.reduce((sum, item) => sum + item.qty, 0);
@@ -2680,17 +2571,18 @@
       }
 
       if (!items.length) {
-        cartItems.innerHTML = '<div class="cart-empty">No items added yet. Choose items from the rental section above.</div>';
-        cartTotal.style.display = 'none';
-        cartSummaryField.value = 'No cart items selected';
-        updateLinkedFormFields();
+        if (cartItems) {
+          cartItems.innerHTML = '<div class="cart-empty">No items added yet. Choose items from the rental section above.</div>';
+        }
+        if (cartTotal) cartTotal.style.display = 'none';
+        updateLinkedFormFields('No cart items selected');
         return;
       }
 
       let subtotal = 0;
       let hasQuoteItem = false;
 
-      cartItems.innerHTML = items.map(item => {
+      const itemMarkup = items.map(item => {
         const lineTotal = item.rate * item.qty;
         if (item.rate > 0) subtotal += lineTotal;
         if (item.rate === 0) hasQuoteItem = true;
@@ -2703,19 +2595,19 @@
           <div class="cart-line">
             <div><strong>${item.name}</strong><br><span>Quantity: ${item.qty}</span></div>
             <div>${priceText}</div>
-            <button type="button" onclick="removeCartItem('${item.name.replace(/'/g, "\'")}')">Remove</button>
+            <button type="button" data-remove-cart="${item.name}">Remove</button>
           </div>
         `;
       }).join('');
 
-      cartTotal.style.display = 'flex';
-      cartSubtotal.textContent = hasQuoteItem ? `${formatMoney(subtotal)} plus quote items` : formatMoney(subtotal);
-      cartSummaryField.value = items.map(item => {
-        const pricing = item.rate > 0 ? `${formatMoney(item.rate)} ${item.unit}` : 'By quote';
-        return `${item.name}: ${item.qty} (${pricing})`;
-      }).join(' | ') + ` | Estimated rental subtotal: ${cartSubtotal.textContent}`;
+      if (cartItems) cartItems.innerHTML = itemMarkup;
 
-      updateLinkedFormFields();
+      const subtotalText = hasQuoteItem ? `${formatMoney(subtotal)} plus quote items` : formatMoney(subtotal);
+
+      if (cartTotal) cartTotal.style.display = 'flex';
+      if (cartSubtotal) cartSubtotal.textContent = subtotalText;
+
+      updateLinkedFormFields(buildCartSummary(items, subtotalText));
     }
 
     function removeCartItem(name) {
@@ -2723,98 +2615,104 @@
       renderCart();
     }
 
-    document.querySelectorAll('.rental-card').forEach(card => {
-      const button = card.querySelector('.add-to-cart-btn');
-      const input = card.querySelector('input[type="number"]');
+    document.addEventListener('DOMContentLoaded', function () {
+      document.querySelectorAll('.rental-card').forEach(card => {
+        const button = card.querySelector('.add-to-cart-btn');
+        const input = card.querySelector('input[type="number"]');
 
-      button.addEventListener('click', () => {
-        const max = Number(card.dataset.max || input.getAttribute('max') || Infinity);
-        const warning = card.querySelector('.cart-warning');
-        let qty = parseInt(input.value, 10) || 0;
+        if (!button || !input) return;
 
-        if (warning) {
-          warning.style.display = 'none';
-          warning.textContent = '';
-        }
+        button.addEventListener('click', () => {
+          const max = Number(card.dataset.max || input.getAttribute('max') || Infinity);
+          const warning = card.querySelector('.cart-warning');
+          let qty = parseInt(input.value, 10) || 0;
 
-        if (qty <= 0) {
-          input.focus();
-          return;
-        }
-
-        if (qty > max) {
-          qty = max;
-          input.value = max;
           if (warning) {
-            warning.textContent = `Only ${max} available for this item. Quantity has been adjusted.`;
-            warning.style.display = 'block';
+            warning.style.display = 'none';
+            warning.textContent = '';
           }
-        }
 
-        const name = card.dataset.item;
-        const individualYardGames = ['Corn Hole', 'Kan Jam', 'Spike Ball', 'Badminton Set', 'Croquet', 'Giant Yahtzee', 'Giant Connect Four'];
-
-        if (name === 'Yard Games Package') {
-          individualYardGames.forEach(game => delete cart[game]);
-        }
-
-        if (individualYardGames.includes(name)) {
-          delete cart['Yard Games Package'];
-        }
-
-        cart[name] = {
-          name,
-          qty,
-          rate: Number(card.dataset.rate),
-          unit: card.dataset.unit,
-          max
-        };
-
-        renderCart();
-      });
-
-      input.addEventListener('input', () => {
-        const max = Number(card.dataset.max || input.getAttribute('max') || Infinity);
-        const warning = card.querySelector('.cart-warning');
-        let qty = parseInt(input.value, 10) || 0;
-
-        if (qty > max) {
-          input.value = max;
-          if (warning) {
-            warning.textContent = `Maximum available for this item is ${max}.`;
-            warning.style.display = 'block';
+          if (qty <= 0) {
+            input.focus();
+            return;
           }
-        } else if (warning) {
-          warning.style.display = 'none';
-          warning.textContent = '';
-        }
-      });
-    });
 
-    document.getElementById('clearCart').addEventListener('click', () => {
-      Object.keys(cart).forEach(key => delete cart[key]);
-      renderCart();
-    });
+          if (qty > max) {
+            qty = max;
+            input.value = max;
+            if (warning) {
+              warning.textContent = `Only ${max} available for this item. Quantity has been adjusted.`;
+              warning.style.display = 'block';
+            }
+          }
 
-    document.getElementById('bookingForm').addEventListener('submit', (event) => {
-      const limits = {
-        chairs: 80,
-        padded_chairs: 50,
-        tables: 9,
-        rectangular_tables: 5
-      };
+          const name = card.dataset.item;
+          const individualYardGames = ['Corn Hole', 'Kan Jam', 'Spike Ball', 'Badminton Set', 'Croquet', 'Giant Yahtzee', 'Giant Connect Four'];
 
-      for (const [fieldId, max] of Object.entries(limits)) {
-        const field = document.getElementById(fieldId);
-        const value = parseInt(field.value, 10) || 0;
-        if (value > max) {
-          event.preventDefault();
-          field.value = max;
-          alert(`Maximum available for this item is ${max}. Please review your request.`);
-          field.focus();
+          if (name === 'Yard Games Package') {
+            individualYardGames.forEach(game => delete cart[game]);
+          }
+
+          if (individualYardGames.includes(name)) {
+            delete cart['Yard Games Package'];
+          }
+
+          cart[name] = {
+            name,
+            qty,
+            rate: Number(card.dataset.rate),
+            unit: card.dataset.unit,
+            max
+          };
+
           renderCart();
-          return;
-        }
+        });
+
+        input.addEventListener('input', () => {
+          const max = Number(card.dataset.max || input.getAttribute('max') || Infinity);
+          const warning = card.querySelector('.cart-warning');
+          const qty = parseInt(input.value, 10) || 0;
+
+          if (qty > max) {
+            input.value = max;
+            if (warning) {
+              warning.textContent = `Maximum available for this item is ${max}.`;
+              warning.style.display = 'block';
+            }
+          } else if (warning) {
+            warning.style.display = 'none';
+            warning.textContent = '';
+          }
+        });
+      });
+
+      const cartItems = document.getElementById('cartItems');
+      if (cartItems) {
+        cartItems.addEventListener('click', function (event) {
+          const removeButton = event.target.closest('[data-remove-cart]');
+          if (!removeButton) return;
+          removeCartItem(removeButton.getAttribute('data-remove-cart'));
+        });
+      }
+
+      const clearCart = document.getElementById('clearCart');
+      if (clearCart) {
+        clearCart.addEventListener('click', () => {
+          Object.keys(cart).forEach(key => delete cart[key]);
+          renderCart();
+        });
+      }
+
+      const bookingForm = document.getElementById('bookingForm');
+      if (bookingForm) {
+        bookingForm.addEventListener('submit', () => {
+          const requestedItemsField = document.getElementById('requested_items');
+          const cartSummaryField = document.getElementById('cartSummaryField');
+
+          if (requestedItemsField && cartSummaryField) {
+            cartSummaryField.value = requestedItemsField.value.trim() || 'No cart items selected';
+          }
+        });
       }
 
       renderCart();
