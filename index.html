@@ -1943,6 +1943,91 @@
 
     }
 
+  
+    /* Final professional service pricing sheet */
+    .pricing-summary-card.professional-rate-sheet {
+      max-width: 920px;
+      border-radius: 18px;
+      box-shadow: 0 24px 60px rgba(20,32,21,0.14);
+    }
+
+    .professional-rate-sheet .pricing-summary-main {
+      grid-template-columns: 1fr;
+      gap: 20px;
+      padding: 34px;
+    }
+
+    .professional-rate-sheet .pricing-summary-main h3 {
+      font-size: 32px;
+      margin-bottom: 8px;
+    }
+
+    .professional-rate-sheet .pricing-services {
+      margin-top: 6px;
+      padding: 0;
+      gap: 0;
+      overflow: hidden;
+      background: #ffffff;
+      border-radius: 14px;
+    }
+
+    .professional-rate-sheet .pricing-service-row {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 20px;
+      align-items: center;
+      padding: 18px 20px;
+      border-bottom: 1px solid rgba(20,32,21,0.10);
+      font-size: 17px;
+    }
+
+    .professional-rate-sheet .pricing-service-row span:first-child {
+      font-weight: 900;
+    }
+
+    .professional-rate-sheet .pricing-service-row span:last-child {
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: rgba(60,95,67,0.10);
+      color: var(--forest);
+      font-weight: 950;
+      text-align: center;
+    }
+
+    .professional-rate-sheet .pricing-service-row:last-child {
+      border-bottom: none;
+    }
+
+    .pricing-detail-note {
+      margin-top: 18px;
+      padding: 16px 18px;
+      border: 1px solid rgba(60,95,67,0.18);
+      border-radius: 12px;
+      background: rgba(60,95,67,0.08);
+      color: var(--muted);
+      line-height: 1.6;
+      font-size: 14px;
+    }
+
+    .pricing-detail-note strong {
+      color: var(--forest);
+    }
+
+    @media (max-width: 720px) {
+      .professional-rate-sheet .pricing-summary-main {
+        padding: 24px;
+      }
+
+      .professional-rate-sheet .pricing-service-row {
+        grid-template-columns: 1fr;
+        gap: 8px;
+      }
+
+      .professional-rate-sheet .pricing-service-row span:last-child {
+        justify-self: start;
+      }
+    }
+
   </style>
 </head>
 <body>
@@ -2353,37 +2438,38 @@
 
 
 <section id="pricing" class="pricing-section">
-  <div class="pricing-inner">
-    <div class="section-title">
-      <span class="kicker">Pricing</span>
-      <h2>Simple, Clear Rental Pricing</h2>
-      <p>Rental prices are listed on each item above so customers can build their request without scrolling through a second full price list.</p>
-    </div>
-
-    <div class="pricing-summary-card">
-      <div class="pricing-summary-main">
-        <div>
-          <h3>Need a quick estimate?</h3>
-          <p>Use the rental cards above to choose packages, chairs, tables, linens, concession machines, and yard games. Your request cart will keep an estimated rental subtotal as you add items.</p>
-        </div>
-
-        <div class="pricing-services" aria-label="Additional service pricing">
-          <div class="pricing-service-row"><span>Delivery</span><span>Starting at $25</span></div>
-          <div class="pricing-service-row"><span>Additional Mileage</span><span>$1/mile</span></div>
-          <div class="pricing-service-row"><span>Chair Setup &amp; Breakdown</span><span>$1 each</span></div>
-          <div class="pricing-service-row"><span>Table Setup &amp; Breakdown</span><span>$3 each</span></div>
-          <div class="pricing-service-row"><span>Hot Dog Roller Grill</span><span>$50/day</span></div>
-          <div class="pricing-service-row"><span>Cotton Candy Machine</span><span>$100/day</span></div>
-        </div>
+    <div class="pricing-inner">
+      <div class="section-title">
+        <span class="kicker">Pricing</span>
+        <h2>Service Pricing Overview</h2>
+        <p>Simple service fees for delivery, setup, and breakdown.</p>
       </div>
 
-      <div class="pricing-summary-footer">
-        <div><strong>Final quotes are confirmed before payment.</strong> Availability, delivery distance, and service needs are reviewed before booking is approved.</div>
-        <a href="#booking">Request a Quote</a>
+      <div class="pricing-summary-card professional-rate-sheet">
+        <div class="pricing-summary-main">
+          <div>
+            <h3>Professional Service Rate Sheet</h3>
+            <p>Rental item pricing is listed in the rental inventory. Delivery, setup, and breakdown are calculated separately based on your event details.</p>
+          </div>
+
+          <div class="pricing-services">
+            <div class="pricing-service-row"><span>Delivery</span><span>$1 Per Mile</span></div>
+            <div class="pricing-service-row"><span>Setup &amp; Breakdown (Up to 50 Guests)</span><span>$50 Flat Fee</span></div>
+            <div class="pricing-service-row"><span>Setup &amp; Breakdown (50-100 Guests)</span><span>$100 Flat Fee</span></div>
+          </div>
+
+          <div class="pricing-detail-note">
+            <strong>Important Information:</strong> Delivery is calculated by mileage to your event location. Setup and breakdown fees are based on event size and are added to rental item costs. Custom quotes are available for events over 100 guests or special setup needs.
+          </div>
+        </div>
+
+        <div class="pricing-summary-footer">
+          <span><strong>Need a custom quote?</strong> Send your event date, location, guest count, and rental list.</span>
+          <a href="#booking">Request a Quote</a>
+        </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
 
 <section id="gallery">
