@@ -4139,6 +4139,200 @@ height:24px!important;
       }
     }
 
+
+
+    /* Mobile-only stability fixes: keeps desktop styling unchanged */
+    @media (max-width: 780px) {
+      html,
+      body {
+        width: 100%;
+        max-width: 100%;
+        overflow-x: hidden;
+      }
+
+      img,
+      svg,
+      video,
+      iframe {
+        max-width: 100%;
+      }
+
+      .topbar,
+      .acq-topbar {
+        width: 100%;
+      }
+
+      .nav-wrap,
+      .acq-nav-wrap {
+        width: 100%;
+        padding-left: 16px !important;
+        padding-right: 16px !important;
+        gap: 14px !important;
+      }
+
+      .brand-block,
+      .brand,
+      .acq-brand {
+        max-width: 100%;
+        white-space: normal !important;
+        text-align: center;
+      }
+
+      .header-socials {
+        justify-content: center;
+        width: 100%;
+      }
+
+      .nav,
+      .acq-nav {
+        width: 100%;
+        display: grid !important;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px !important;
+      }
+
+      .nav a,
+      .acq-nav a {
+        width: 100%;
+        text-align: center;
+        padding: 10px 8px;
+        border: 1px solid rgba(255,255,255,0.12);
+        border-radius: 8px;
+      }
+
+      .nav .quote,
+      .acq-nav .quote,
+      .acq-nav .acq-quote {
+        grid-column: 1 / -1;
+        width: 100%;
+      }
+
+      .hero-inner,
+      .acq-hero-grid {
+        width: 100%;
+        grid-template-columns: 1fr !important;
+        padding-left: 18px !important;
+        padding-right: 18px !important;
+        overflow: hidden;
+      }
+
+      .hero h1,
+      .acq-hero-copy h1 {
+        overflow-wrap: anywhere;
+        word-break: normal;
+      }
+
+      .hero-actions,
+      .inline-actions,
+      .acq-hero-actions {
+        width: 100%;
+      }
+
+      .hero-actions .button,
+      .hero-actions .hero-button,
+      .inline-actions .button,
+      .acq-hero-actions a {
+        width: 100%;
+      }
+
+      .feature-strip,
+      .card-grid,
+      .quality-grid,
+      .service-grid,
+      .testimonial-grid,
+      .gallery-grid,
+      .package-tier-grid,
+      .package-tight-grid,
+      .acq-three-grid,
+      .booking-main-grid,
+      .booking-intro-grid,
+      .pricing-summary-main,
+      .service-area-inner,
+      .split,
+      .process,
+      .process-summary,
+      .highlight-inner {
+        grid-template-columns: 1fr !important;
+      }
+
+      .package-tier-card,
+      .package-tight-card {
+        min-height: auto !important;
+        width: 100% !important;
+      }
+
+      .package-card-head,
+      .package-premium .package-card-head {
+        min-height: auto !important;
+      }
+
+      .package-qty-grid,
+      .cart-controls,
+      .cart-line,
+      .delivery-choice-grid,
+      .delivery-address-row,
+      .manual-mile-row {
+        grid-template-columns: 1fr !important;
+      }
+
+      .rate-board,
+      .pricing-summary-card,
+      .booking-cart,
+      .form-shell,
+      .upgraded-booking-form,
+      .compact-rate-sheet,
+      .package-tier-card,
+      .card,
+      .quality-card,
+      .service-card,
+      .testimonial-card,
+      .gallery-item,
+      .acq-offer-card {
+        max-width: 100%;
+      }
+
+      .rate-table,
+      .compare-table-wrap {
+        width: 100%;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+      }
+
+      .compare-table {
+        min-width: 540px;
+      }
+
+      .gallery-item img,
+      .rental-item-image {
+        height: auto !important;
+        max-height: 330px;
+      }
+
+      .form-grid,
+      .compact-fields,
+      .booking-panel-body .form-grid {
+        grid-template-columns: 1fr !important;
+      }
+
+      .booking-form-panel summary {
+        overflow-wrap: anywhere;
+      }
+
+      input,
+      textarea,
+      select,
+      button {
+        max-width: 100%;
+      }
+
+      .mobile-booking-bar {
+        position: fixed !important;
+        left: 12px !important;
+        right: 12px !important;
+        bottom: 12px !important;
+      }
+    }
+
 </style>
 </head>
 <body>
