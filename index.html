@@ -4416,6 +4416,301 @@ height:24px!important;
 
 
 .footer-socials .social-icon svg{width:15px;height:15px;fill:currentColor;display:block}
+
+
+/* Mobile navigation upgrade: keeps content the same, but makes phones easier to browse */
+.mobile-quick-actions,
+.mobile-bottom-nav,
+.back-to-top-mobile {
+  display: none;
+}
+
+@media (max-width: 720px) {
+  html {
+    scroll-padding-top: 78px;
+  }
+
+  .topbar,
+  .acq-topbar {
+    position: sticky !important;
+    top: 0 !important;
+    z-index: 80 !important;
+  }
+
+  .nav-wrap,
+  .acq-nav-wrap {
+    padding: 10px 14px !important;
+    gap: 10px !important;
+  }
+
+  .brand,
+  .acq-brand {
+    font-size: 15px !important;
+  }
+
+  .brand span,
+  .acq-brand span {
+    font-size: 9px !important;
+    letter-spacing: 1.4px !important;
+  }
+
+  .nav-area {
+    width: 100%;
+  }
+
+  .nav,
+  .acq-nav {
+    width: 100%;
+    display: grid !important;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 7px !important;
+    font-size: 10px !important;
+  }
+
+  .nav a,
+  .acq-nav a {
+    padding: 8px 6px;
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 999px;
+    text-align: center;
+    background: rgba(255,255,255,0.06);
+  }
+
+  .nav .quote,
+  .acq-nav .quote {
+    width: auto !important;
+    padding: 8px 6px !important;
+    box-shadow: none !important;
+  }
+
+  .acq-hero-grid,
+  .hero-inner {
+    padding-top: 34px !important;
+    padding-bottom: 34px !important;
+    min-height: auto !important;
+  }
+
+  .acq-proof-row {
+    gap: 8px !important;
+  }
+
+  .mobile-quick-actions {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    padding: 14px;
+    background: rgba(255,253,248,0.96);
+    border-bottom: 1px solid var(--line);
+  }
+
+  .mobile-quick-actions a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 44px;
+    padding: 10px 12px;
+    border-radius: 999px;
+    border: 1px solid var(--line);
+    background: #fffaf2;
+    color: var(--forest);
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: 950;
+    letter-spacing: .6px;
+    text-transform: uppercase;
+    box-shadow: var(--shadow-soft);
+  }
+
+  .mobile-quick-actions a.primary {
+    background: var(--forest);
+    color: #fff;
+    border-color: var(--forest);
+  }
+
+  .acq-belief-strip {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 0 !important;
+  }
+
+  .acq-belief-strip div {
+    padding: 16px 12px !important;
+  }
+
+  section,
+  .pricing-section,
+  .service-area {
+    padding-top: 34px !important;
+    padding-bottom: 34px !important;
+  }
+
+  .section-title {
+    margin-bottom: 20px !important;
+  }
+
+  .section-title p {
+    font-size: 16px !important;
+  }
+
+  .rental-tabs {
+    position: sticky !important;
+    top: 96px !important;
+    z-index: 55 !important;
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    overflow-x: auto !important;
+    justify-content: flex-start !important;
+    gap: 8px !important;
+    width: calc(100% + 8px) !important;
+    margin: 0 -4px 18px !important;
+    padding: 10px 4px !important;
+    background: rgba(246,240,230,.96) !important;
+    border-radius: 0 !important;
+    border-left: none !important;
+    border-right: none !important;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .rental-tabs::-webkit-scrollbar {
+    display: none;
+  }
+
+  .rental-tab {
+    flex: 0 0 auto !important;
+    min-width: 132px;
+    padding: 11px 13px !important;
+  }
+
+  .card,
+  .quality-card,
+  .service-card,
+  .testimonial-card,
+  .package-tier-card,
+  .form-shell,
+  .booking-cart,
+  .pricing-summary-card {
+    border-radius: 12px !important;
+  }
+
+  .card-grid,
+  .quality-grid,
+  .service-grid,
+  .testimonial-grid,
+  .gallery-grid,
+  .split {
+    gap: 14px !important;
+  }
+
+  .gallery-item img {
+    height: 235px !important;
+  }
+
+  .booking-steps {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 8px !important;
+  }
+
+  .booking-step-pill {
+    justify-content: flex-start !important;
+  }
+
+  .booking-cart {
+    position: sticky !important;
+    top: 96px !important;
+    z-index: 50 !important;
+  }
+
+  .booking-cart.is-collapsed .cart-body {
+    display: none !important;
+  }
+
+  .cart-toggle {
+    display: inline-flex !important;
+  }
+
+  .booking-help-card {
+    display: none !important;
+  }
+
+  .mobile-bottom-nav {
+    position: fixed;
+    left: 10px;
+    right: 10px;
+    bottom: 10px;
+    z-index: 100;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 6px;
+    padding: 8px;
+    background: rgba(20, 32, 21, 0.97);
+    border: 1px solid rgba(255,255,255,0.14);
+    border-radius: 18px;
+    box-shadow: 0 18px 42px rgba(0,0,0,0.28);
+  }
+
+  .mobile-bottom-nav a {
+    color: rgba(255,255,255,0.88);
+    text-decoration: none;
+    text-align: center;
+    font-size: 10px;
+    font-weight: 900;
+    letter-spacing: .35px;
+    text-transform: uppercase;
+    line-height: 1.15;
+    padding: 6px 2px;
+  }
+
+  .mobile-bottom-nav a span {
+    display: block;
+    font-size: 17px;
+    margin-bottom: 3px;
+  }
+
+  .mobile-bottom-nav a.quote-link {
+    background: var(--tan-soft);
+    color: var(--forest);
+    border-radius: 12px;
+  }
+
+  .mobile-booking-bar {
+    display: none !important;
+  }
+
+  .back-to-top-mobile {
+    position: fixed;
+    right: 16px;
+    bottom: 86px;
+    z-index: 101;
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    border: 1px solid rgba(255,255,255,0.16);
+    background: var(--forest);
+    color: #fff;
+    text-decoration: none;
+    display: grid;
+    place-items: center;
+    font-size: 20px;
+    font-weight: 900;
+    box-shadow: 0 12px 30px rgba(0,0,0,0.24);
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(8px);
+    transition: opacity .2s ease, transform .2s ease;
+  }
+
+  .back-to-top-mobile.is-visible {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
+  }
+
+  body {
+    padding-bottom: 92px !important;
+  }
+}
+
 </style>
 </head>
 <body>
@@ -4482,6 +4777,12 @@ height:24px!important;
 </aside>
 </div>
 </header>
+<div class="mobile-quick-actions" aria-label="Quick mobile links">
+<a class="primary" href="#booking">Get Quote</a>
+<a href="#rentals">Rentals</a>
+<a href="#pricing">Pricing</a>
+<a href="#booking">Book Now</a>
+</div>
 <section aria-label="Why choose C&amp;C Event Rentals" class="acq-belief-strip">
 <div><strong>Clean &amp; Sanitized</strong><span>Prepared before each rental</span></div>
 <div><strong>Fast Responses</strong><span>Simple communication from start to finish</span></div>
@@ -5020,6 +5321,15 @@ height:24px!important;
 <span>Ready for a stress-free event?</span>
 <a href="#bookingForm">Finish</a>
 </div>
+
+<nav class="mobile-bottom-nav" aria-label="Mobile bottom navigation">
+<a href="#top"><span>⌂</span>Home</a>
+<a href="#rentals"><span>🪑</span>Rentals</a>
+<a href="#pricing"><span>$</span>Pricing</a>
+<a class="quote-link" href="#booking"><span>✓</span>Book</a>
+</nav>
+<a class="back-to-top-mobile" href="#top" aria-label="Back to top">↑</a>
+
 <footer>
 <p><strong>C&amp;C Event Rentals LLC</strong></p>
 <p>Tables • Chairs • Events</p>
@@ -5690,5 +6000,31 @@ Estimated grand total: ${formatMoney(rentalSubtotalNumber + currentDeliveryCharg
       items.forEach(function (item) { observer.observe(item); });
     });
   </script>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const backToTop = document.querySelector('.back-to-top-mobile');
+    if (!backToTop) return;
+
+    function toggleBackToTop() {
+      backToTop.classList.toggle('is-visible', window.scrollY > 600);
+    }
+
+    toggleBackToTop();
+    window.addEventListener('scroll', toggleBackToTop, { passive: true });
+
+    document.querySelectorAll('.mobile-bottom-nav a, .mobile-quick-actions a, .acq-nav a').forEach(function (link) {
+      link.addEventListener('click', function () {
+        const bookingCart = document.querySelector('.booking-cart');
+        const toggleCart = document.getElementById('toggleCart');
+        if (bookingCart && toggleCart && window.matchMedia('(max-width: 720px)').matches) {
+          bookingCart.classList.add('is-collapsed');
+          toggleCart.textContent = 'Show cart';
+          toggleCart.setAttribute('aria-expanded', 'false');
+        }
+      });
+    });
+  });
+</script>
 </body>
 </html>
