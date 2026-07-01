@@ -4333,6 +4333,89 @@ height:24px!important;
       }
     }
 
+
+
+/* Added social links for Instagram and YouTube */
+.header-socials {
+  gap: 9px !important;
+}
+
+.header-social-label {
+  color: var(--tan-soft) !important;
+  font-size: 12px !important;
+  font-weight: 950 !important;
+  letter-spacing: 1.4px !important;
+  text-transform: uppercase !important;
+}
+
+.header-social-icon {
+  width: 26px !important;
+  height: 26px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  border-radius: 50% !important;
+  background: rgba(234,220,197,0.14) !important;
+  border: 1px solid rgba(234,220,197,0.38) !important;
+  color: var(--tan-soft) !important;
+  text-decoration: none !important;
+  transition: transform .2s ease, background .2s ease, color .2s ease, border-color .2s ease !important;
+}
+
+.header-social-icon:hover {
+  background: var(--tan-soft) !important;
+  color: var(--forest) !important;
+  border-color: var(--tan-soft) !important;
+  transform: translateY(-1px) !important;
+}
+
+.footer-socials {
+  margin-top: 16px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+}
+
+.social-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 14px;
+  border: 1px solid rgba(234,220,197,.25);
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: 800;
+  color: #eadcc5;
+  transition: .2s;
+  background: rgba(255,255,255,.05);
+}
+
+.social-link:hover {
+  background: var(--tan-soft);
+  color: var(--forest);
+  border-color: var(--tan-soft);
+}
+
+.social-link .social-icon {
+  display: inline-grid;
+  place-items: center;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: rgba(234,220,197,0.14);
+  color: #fff;
+  font-weight: 900;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.social-link:hover .social-icon {
+  background: var(--forest);
+  color: #fff;
+}
+
+
+.footer-socials .social-icon svg{width:15px;height:15px;fill:currentColor;display:block}
 </style>
 </head>
 <body>
@@ -4341,13 +4424,21 @@ height:24px!important;
 <div class="brand-block">
 <a aria-label="C&amp;C Event Rentals Home" class="brand acq-brand" href="#top">C&amp;C Event Rentals LLC <span>Wedding &amp; Event Rentals</span></a>
 <div class="header-socials">
-<a aria-label="C&amp;C Event Rentals LLC on Facebook" class="header-social-link" href="https://www.facebook.com/share/1BVHGaEqqs/?mibextid=wwXIfr" rel="noopener" target="_blank">
-<span>Socials</span>
-<span aria-hidden="true" class="facebook-icon">
+<span class="header-social-label">Socials</span>
+<a aria-label="C&amp;C Event Rentals LLC on Facebook" class="header-social-icon" href="https://www.facebook.com/share/1BVHGaEqqs/?mibextid=wwXIfr" rel="noopener" target="_blank">
 <svg fill="currentColor" height="15" viewbox="0 0 24 24" width="15">
 <path d="M24 12.073C24 5.405 18.627 0 12 0S0 5.405 0 12.073C0 18.099 4.388 23.094 10.125 24v-8.438H7.078v-3.49h3.047V9.413c0-3.007 1.792-4.669 4.533-4.669 1.313 0 2.686.235 2.686.235v2.953H15.83c-1.49 0-1.955.925-1.955 1.874v2.25h3.328l-.532 3.49h-2.796V24C19.612 23.094 24 18.099 24 12.073z"></path>
 </svg>
-</span>
+</a>
+<a aria-label="C&amp;C Event Rentals LLC on Instagram" class="header-social-icon" href="https://www.instagram.com/cceventrentalsllc?igsh=MTEwbWVmcTJ4NDNqbQ%3D%3D&amp;utm_source=qr" rel="noopener" target="_blank">
+<svg fill="currentColor" height="15" viewbox="0 0 24 24" width="15">
+<path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.848s-.011 3.584-.069 4.849c-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.646.07-4.85.07s-3.584-.012-4.849-.07c-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.645-.07-4.848s.012-3.583.07-4.848C2.38 3.924 3.896 2.38 7.151 2.232 8.416 2.175 8.796 2.163 12 2.163zm0 3.675a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zm0 10.162a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-10.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"></path>
+</svg>
+</a>
+<a aria-label="C&amp;C Event Rentals LLC on YouTube" class="header-social-icon" href="https://youtube.com/@cceventrentalsllc?si=WElEVqk5CMpHxBfo" rel="noopener" target="_blank">
+<svg fill="currentColor" height="16" viewbox="0 0 24 24" width="16">
+<path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.016 3.016 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.121 2.136c1.872.505 9.377.505 9.377.505s7.505 0 9.376-.505a3.016 3.016 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"></path>
+</svg>
 </a>
 </div>
 </div>
@@ -4367,8 +4458,7 @@ height:24px!important;
 <div class="eyebrow acq-eyebrow">Eastern Kentucky Event Rentals</div>
 <h1>C&amp;C Event Rentals LLC</h1>
 <div aria-hidden="true" class="hero-divider"><span></span></div>
-<p class="acq-subhead">Weddings &bull; Parties &bull; Corporate Events</p>
-
+<p class="acq-subhead">Weddings • Parties • Corporate Events</p>
 <div class="acq-hero-actions">
 <a class="hero-button acq-main-cta" href="#booking">Get My Free Quote</a>
 <a class="button secondary acq-secondary-cta" href="#pricing">View Pricing</a>
@@ -4934,7 +5024,15 @@ height:24px!important;
 <p><strong>C&amp;C Event Rentals LLC</strong></p>
 <p>Tables • Chairs • Events</p>
 <p>Serving Eastern Kentucky</p>
-<div class="footer-facebook"><a class="facebook-link" href="https://www.facebook.com/share/1BVHGaEqqs/?mibextid=wwXIfr" rel="noopener" target="_blank"><span class="fb-icon">f</span><span>Follow C&amp;C Event Rentals LLC</span></a></div>
+<div class="footer-socials">
+<a class="social-link" href="https://www.facebook.com/share/1BVHGaEqqs/?mibextid=wwXIfr" rel="noopener" target="_blank"><span class="social-icon">f</span><span>Follow on Facebook</span></a>
+<a class="social-link" href="https://www.instagram.com/cceventrentalsllc?igsh=MTEwbWVmcTJ4NDNqbQ%3D%3D&amp;utm_source=qr" rel="noopener" target="_blank"><span class="social-icon"><svg fill="currentColor" height="15" viewbox="0 0 24 24" width="15">
+<path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.848s-.011 3.584-.069 4.849c-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.646.07-4.85.07s-3.584-.012-4.849-.07c-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.645-.07-4.848s.012-3.583.07-4.848C2.38 3.924 3.896 2.38 7.151 2.232 8.416 2.175 8.796 2.163 12 2.163zm0 3.675a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zm0 10.162a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-10.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"></path>
+</svg></span><span>Follow on Instagram</span></a>
+<a class="social-link" href="https://youtube.com/@cceventrentalsllc?si=WElEVqk5CMpHxBfo" rel="noopener" target="_blank"><span class="social-icon"><svg fill="currentColor" height="16" viewbox="0 0 24 24" width="16">
+<path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.016 3.016 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.121 2.136c1.872.505 9.377.505 9.377.505s7.505 0 9.376-.505a3.016 3.016 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"></path>
+</svg></span><span>Subscribe on YouTube</span></a>
+</div>
 </footer>
 <script>
     const cart = {};
