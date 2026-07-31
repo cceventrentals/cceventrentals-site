@@ -745,6 +745,21 @@
     }
 
 
+
+    .form-submit-status {
+      min-height: 22px;
+      margin: 12px 26px 0;
+      text-align: center;
+      color: var(--muted);
+      font-size: 14px;
+      font-weight: 800;
+      line-height: 1.5;
+    }
+
+    .form-submit-status.success { color: #2f7d32; }
+    .form-submit-status.error { color: #a23a2a; }
+    .upgraded-booking-form button[type="submit"]:disabled { opacity: .65; cursor: wait; }
+
     .small-note { margin: 16px 0 0; color: var(--muted); font-size: 14px; line-height: 1.55; }
     .direct-email { margin-top: 14px; text-align: center; color: var(--muted); }
     .direct-email a { color: var(--forest); font-weight: 900; }
@@ -5260,7 +5275,6 @@ height:24px!important;
 </aside>
 <form action="https://formspree.io/f/xwvznknz" class="form-shell upgraded-booking-form" id="bookingForm" method="POST">
 <input name="_subject" type="hidden" value="New Booking Request from C&amp;C Event Rentals Website"/>
-<input name="_replyto" type="hidden" value="ccrentalcompany@gmail.com"/>
 <input id="cartSummaryField" name="Request Cart Summary" type="hidden" value="No cart items selected"/>
 <input id="deliverySummaryField" name="Delivery Estimate" type="hidden" value="Customer pickup or delivery not calculated"/>
 <input id="grandTotalField" name="Estimated Grand Total" type="hidden" value="$0.00"/>
@@ -5280,7 +5294,7 @@ height:24px!important;
 </div>
 <div>
 <label for="email">Email</label>
-<input id="email" name="Customer Email" placeholder="Email" type="email"/>
+<input autocomplete="email" id="email" name="email" placeholder="Email" required="" type="email"/>
 </div>
 <div>
 <label for="event_date">Event Date</label>
@@ -5313,6 +5327,7 @@ height:24px!important;
 </div>
 </div>
 <button type="submit">Send My Request</button>
+<p aria-live="polite" class="form-submit-status" id="bookingFormStatus"></p>
 <p class="small-note">This sends us your request so we can confirm availability and final pricing.</p>
 <p class="direct-email">Prefer email? Send requests directly to <a href="mailto:ccrentalcompany@gmail.com?subject=C%26C%20Event%20Rentals%20Booking%20Request">ccrentalcompany@gmail.com</a>.</p>
 </form>
@@ -5786,11 +5801,15 @@ Estimated grand total: ${formatMoney(rentalSubtotalNumber + currentDeliveryCharg
 
       const bookingForm = document.getElementById('bookingForm');
       if (bookingForm) {
-        bookingForm.addEventListener('submit', () => {
+        bookingForm.addEventListener('submit', async (event) => {
+          event.preventDefault();
+
           const requestedItemsField = document.getElementById('requested_items');
           const cartSummaryField = document.getElementById('cartSummaryField');
           const deliverySummaryField = document.getElementById('deliverySummaryField');
           const grandTotalField = document.getElementById('grandTotalField');
+          const statusField = document.getElementById('bookingFormStatus');
+          const submitButton = bookingForm.querySelector('button[type="submit"]');
 
           const typed = requestedItemsField ? requestedItemsField.value.trim() : '';
           const cartText = cartSummaryField && cartSummaryField.value.trim()
@@ -5804,6 +5823,46 @@ Estimated grand total: ${formatMoney(rentalSubtotalNumber + currentDeliveryCharg
           if (cartSummaryField) cartSummaryField.value = finalSummary;
           if (deliverySummaryField) deliverySummaryField.value = currentDeliverySummary;
           if (grandTotalField) grandTotalField.value = formatMoney(rentalSubtotalNumber + currentDeliveryCharge);
+
+          if (statusField) {
+            statusField.className = 'form-submit-status';
+            statusField.textContent = 'Sending your request...';
+          }
+          if (submitButton) {
+            submitButton.disabled = true;
+            submitButton.textContent = 'Sending...';
+          }
+
+          try {
+            const response = await fetch(bookingForm.action, {
+              method: 'POST',
+              body: new FormData(bookingForm),
+              headers: { 'Accept': 'application/json' }
+            });
+
+            if (!response.ok) {
+              const result = await response.json().catch(() => ({}));
+              const message = result.errors?.map(error => error.message).join(', ')
+                || 'Your request could not be sent. Please try again or email us directly.';
+              throw new Error(message);
+            }
+
+            if (statusField) {
+              statusField.className = 'form-submit-status success';
+              statusField.textContent = 'Your request was sent successfully. We will contact you soon.';
+            }
+            bookingForm.reset();
+          } catch (error) {
+            if (statusField) {
+              statusField.className = 'form-submit-status error';
+              statusField.textContent = error.message || 'Your request could not be sent. Please try again or email us directly.';
+            }
+          } finally {
+            if (submitButton) {
+              submitButton.disabled = false;
+              submitButton.textContent = 'Send My Request';
+            }
+          }
         });
       }
 
