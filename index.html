@@ -4,6 +4,7 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta name="referrer" content="strict-origin-when-cross-origin"/>
 <title>C&amp;C Event Rentals LLC | Event Rentals in Eastern Kentucky</title>
 <!-- Google tag (gtag.js) -->
 <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-R8786SP0J0"></script>
@@ -744,21 +745,6 @@
       cursor: pointer;
     }
 
-
-
-    .form-submit-status {
-      min-height: 22px;
-      margin: 12px 26px 0;
-      text-align: center;
-      color: var(--muted);
-      font-size: 14px;
-      font-weight: 800;
-      line-height: 1.5;
-    }
-
-    .form-submit-status.success { color: #2f7d32; }
-    .form-submit-status.error { color: #a23a2a; }
-    .upgraded-booking-form button[type="submit"]:disabled { opacity: .65; cursor: wait; }
 
     .small-note { margin: 16px 0 0; color: var(--muted); font-size: 14px; line-height: 1.55; }
     .direct-email { margin-top: 14px; text-align: center; color: var(--muted); }
@@ -5286,11 +5272,11 @@ height:24px!important;
 <div class="form-grid compact-fields">
 <div>
 <label for="name">Your Name</label>
-<input id="name" name="Customer Name" placeholder="Your name" required="" type="text"/>
+<input autocomplete="name" id="name" name="Customer Name" placeholder="Your name" required="" type="text"/>
 </div>
 <div>
 <label for="phone">Phone</label>
-<input id="phone" name="Customer Phone" placeholder="Best phone number" required="" type="tel"/>
+<input autocomplete="tel" id="phone" name="Customer Phone" placeholder="Best phone number" required="" type="tel"/>
 </div>
 <div>
 <label for="email">Email</label>
@@ -5327,7 +5313,6 @@ height:24px!important;
 </div>
 </div>
 <button type="submit">Send My Request</button>
-<p aria-live="polite" class="form-submit-status" id="bookingFormStatus"></p>
 <p class="small-note">This sends us your request so we can confirm availability and final pricing.</p>
 <p class="direct-email">Prefer email? Send requests directly to <a href="mailto:ccrentalcompany@gmail.com?subject=C%26C%20Event%20Rentals%20Booking%20Request">ccrentalcompany@gmail.com</a>.</p>
 </form>
@@ -5801,15 +5786,11 @@ Estimated grand total: ${formatMoney(rentalSubtotalNumber + currentDeliveryCharg
 
       const bookingForm = document.getElementById('bookingForm');
       if (bookingForm) {
-        bookingForm.addEventListener('submit', async (event) => {
-          event.preventDefault();
-
+        bookingForm.addEventListener('submit', () => {
           const requestedItemsField = document.getElementById('requested_items');
           const cartSummaryField = document.getElementById('cartSummaryField');
           const deliverySummaryField = document.getElementById('deliverySummaryField');
           const grandTotalField = document.getElementById('grandTotalField');
-          const statusField = document.getElementById('bookingFormStatus');
-          const submitButton = bookingForm.querySelector('button[type="submit"]');
 
           const typed = requestedItemsField ? requestedItemsField.value.trim() : '';
           const cartText = cartSummaryField && cartSummaryField.value.trim()
@@ -5823,46 +5804,6 @@ Estimated grand total: ${formatMoney(rentalSubtotalNumber + currentDeliveryCharg
           if (cartSummaryField) cartSummaryField.value = finalSummary;
           if (deliverySummaryField) deliverySummaryField.value = currentDeliverySummary;
           if (grandTotalField) grandTotalField.value = formatMoney(rentalSubtotalNumber + currentDeliveryCharge);
-
-          if (statusField) {
-            statusField.className = 'form-submit-status';
-            statusField.textContent = 'Sending your request...';
-          }
-          if (submitButton) {
-            submitButton.disabled = true;
-            submitButton.textContent = 'Sending...';
-          }
-
-          try {
-            const response = await fetch(bookingForm.action, {
-              method: 'POST',
-              body: new FormData(bookingForm),
-              headers: { 'Accept': 'application/json' }
-            });
-
-            if (!response.ok) {
-              const result = await response.json().catch(() => ({}));
-              const message = result.errors?.map(error => error.message).join(', ')
-                || 'Your request could not be sent. Please try again or email us directly.';
-              throw new Error(message);
-            }
-
-            if (statusField) {
-              statusField.className = 'form-submit-status success';
-              statusField.textContent = 'Your request was sent successfully. We will contact you soon.';
-            }
-            bookingForm.reset();
-          } catch (error) {
-            if (statusField) {
-              statusField.className = 'form-submit-status error';
-              statusField.textContent = error.message || 'Your request could not be sent. Please try again or email us directly.';
-            }
-          } finally {
-            if (submitButton) {
-              submitButton.disabled = false;
-              submitButton.textContent = 'Send My Request';
-            }
-          }
         });
       }
 
